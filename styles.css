@@ -3,12 +3,12 @@ body {
 
 }
 
-.one {
+/*.one {
   float: left;
 }
 .two {
   float: right;
-}
+}*/
 #systemNav {
   float: left;
 }
@@ -16,7 +16,7 @@ body {
   float: right;
 }
 
-.navbar-inverse {
+/*.navbar-inverse {
     background-color: #4764ef;
     border-color: #11166b;
 }
@@ -25,4 +25,13 @@ body {
 }
 .navbar-inverse .navbar-brand {
     color: #1a1a1f;
+}*/
+.mainBody {
+  display: inline;
+}
+.horizontalList {
+  display: inline;
+}
+.see-cols {
+  border: 1px solid black;
 }
