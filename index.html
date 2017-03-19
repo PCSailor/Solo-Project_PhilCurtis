@@ -1,20 +1,188 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Phil-Curtis_Solo-Project</title>
-    <script src="client.js" charset="utf-8"></script>
-    <link rel="stylesheet" href="bootstrap.min.css">
-    <link rel="stylesheet" href="styles.css">
-  </head>
-  <body>
-    <h1>Phil-Curtis_Solo-Project</h1>
-    <div class="row">
-    <div class="col-md-3 ">
-    <button id="dbIdButton" class="btn btn-info btn-lg">Database ID</button> <!-- TODO: add angular -->
-    <button id="userIdButton" class="btn btn-primary btn-lg">User Log In</button> <!-- TODO: add angular -->
-    <button id="accesCrmButton" class="btn btn-primary btn-lg">Access CRM</button> <!-- TODO: add angular -->
-    </div>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- NOTE: Bootstrap -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- NOTE: Bootstrap -->
+  <title>Phil-Curtis_Solo-Project</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="server/vendors/bootstrap.min.js" charset="utf-8"></script>
+  <!-- <script src="server/vendors/angular.min.js" charset="utf-8"></script> -->
+  <script src="client.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="server/vendors/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body ng-app="pcSoloApp">
+  <div class="container">
+    <h1></h1>
+
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Home</a>
         </div>
-  </body>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Residential<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">1600 Penn Ave</a></li>
+                <li><a href="#">1400 Lafeyette Ave.</a></li>
+                <li><a href="#">1More Cabin Road</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Main Home</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Vehicles<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">BMW M5</a></li>
+                <li><a href="#">1964 Ford Shelby</a></li>
+                <li><a href="#">Ferrari Testarosa</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Harley Davidson Fatboy</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Professional<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Dry Cleaner Business Bldg.</a></li>
+                <li><a href="#">Rental_Residential</a></li>
+                <li><a href="#">Rental_Commercial</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">My Office Bldg.</a></li>
+              </ul>
+            </li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">User Name<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Switch User</a></li>
+                <li><a href="#">Add a User</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Settings</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+    <div id="systemNav">
+      <nav>
+      <th>Systems List</th>
+      <td>Air Compressors</td>
+      Audio / Visual
+      Communication
+      Computer-Networking
+      Doors / Windows
+      Electrical
+      Emergency
+      Foundation
+      Furnace
+      Furniture
+      Hot Water Heater
+      HVAC
+      Insulation
+      Kitchen Appliances
+      Lighting
+      Mechanical_Misc
+      Monitoring & Safety
+      Paint
+      Potable Water
+      Roof
+      Sewage
+      ...add new system
+    </nav>
+  </div>
+      <div id="mainBody">
+<table class="table">
+  <thead>
+    <tr>
+      <th class="thead-inverse">Business</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <td>name</td>
+    <td>address</td>
+    <td>city</td>
+    <td>state</td>
+    <td>Zip</td>
+    <td>Phone</td>
+    <td>Email</td>
+    <td>Website</td>
+    </tr>
+    <tr>
+    <td>name</td>
+    <td>address</td>
+    <td>city</td>
+    <td>state</td>
+    <td>Zip</td>
+    <td>Phone</td>
+    <td>Email</td>
+    <td>Website</td>
+    </tr>
+    <thead>
+      <tr>
+        <th class="thead-inverse">History</th>
+      </tr>
+    </thead>
+    <tr>
+      <td>date</td>
+      <td>history goes here</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<div class="repairs">
+<table class="table">
+  <thead class="thead-inverse">
+    <th>
+      <tr class="one">
+      <th>Date</th>
+      <th>Repair</th>
+    </tr>
+
+
+  <tr scope="row"class="two">
+    <th>Part</th>
+    <th>Cost</th>
+    <th>Vendor</th>
+  </tr>
+  </th>
+  </thead>
+
+<tbody>
+  <tr class="one">
+    <td>2017-03-31</td>
+    <td>Fixed the furnance</td>
+  </tr>
+  <tr class="two">
+    <td>fan blower</td>
+    <td>$199.99</td> <!-- TODO: Format to currency -->
+    <td>Home Depot</td>
+  </tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="form-group">
+  <label for="userNotes">User Notes</label>
+  <textarea class="form-control" rows="8" cols="120"></textarea>
+</div>
+
+  </div>
+</body>
 </html>

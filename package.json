@@ -1,0 +1,30 @@
+{
+  "name": "phil-curtis_solo-project",
+  "version": "1.0.0",
+  "description": "prime-academy_phil-curtis-solo-full-stack-solo-project",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PCSailor/Solo-Project_PhilCurtis.git"
+  },
+  "keywords": [
+    "crm",
+    "solo"
+  ],
+  "author": "Philip Curtis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PCSailor/Solo-Project_PhilCurtis/issues"
+  },
+  "homepage": "https://github.com/PCSailor/Solo-Project_PhilCurtis#readme",
+  "dependencies": {
+    "angular": "^1.6.3",
+    "body-parser": "^1.17.1",
+    "bootstrap": "^3.3.7",
+    "express": "^4.15.2",
+    "pg": "^6.1.4"
+  }
+}

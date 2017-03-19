@@ -1,4 +1,28 @@
 body {
-  color: red;
+  color: #1a1a1f;
 
+}
+
+.one {
+  float: left;
+}
+.two {
+  float: right;
+}
+#systemNav {
+  float: left;
+}
+#mainBody {
+  float: right;
+}
+
+.navbar-inverse {
+    background-color: #4764ef;
+    border-color: #11166b;
+}
+.navbar-inverse .navbar-nav>li>a {
+    color: #1a1a1f;
+}
+.navbar-inverse .navbar-brand {
+    color: #1a1a1f;
 }
