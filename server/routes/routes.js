@@ -25,3 +25,4 @@ router.get('/', function(req, res) { // NOTE: replaced by SELECT statement in SQ
     }
   });
 }); // NOTE: for: router.get
+module.exports = router; // NOTE: missing module.exports causes a "TypeError: Router.use() requires middleware function but got a Object"

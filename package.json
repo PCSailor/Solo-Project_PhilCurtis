@@ -4,7 +4,8 @@
   "description": "prime-academy_phil-curtis-solo-full-stack-solo-project",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server/app.js"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,7 @@
     "body-parser": "^1.17.1",
     "bootstrap": "^3.3.7",
     "express": "^4.15.2",
+    "nodemon": "^1.11.0",
     "pg": "^6.1.4"
   }
 }
