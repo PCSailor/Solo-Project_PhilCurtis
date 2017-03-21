@@ -22,14 +22,14 @@ soloProjectApp.config(['$routeProvider', function($routeProvider) {
 
 .when('/arrayList', {
   // templateUrl: 'views/mainPage.html',
-  templateUrl: 'test.html',
+  templateUrl: '/views/test.html',
   controller: 'mainPageController', // NOTE: controller value must match controller.js
   controllerAs: 'mpc' // NOTE: controller abbr
 }) // NOTE: no semi-colon
 .otherwise({
   redirectTo: 'index'
-console.log('clientJs/.when functions run');
+  // QUESTION: What's best way to log which .when function is running?
 }); // NOTE: semi-colon needed here
-
+// console.log('clientJs/.when functions run');
 console.log('clientJS/soloProjectApp.config function run');
 }]); // NOTE: for .config function
