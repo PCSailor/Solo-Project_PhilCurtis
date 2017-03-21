@@ -1,20 +1,27 @@
 <!DOCTYPE html>
-<html>
+<!-- <html ng-app="soloProjectAngularApp"> <!- NOTE: Angular-to-ClientJS -->
+<html> <!-- NOTE: test -->
 <head>
+<title>AdaptablePM_by-Phil-Curtis</title>
   <meta charset="utf-8">
+    <!-- NOTE: Scripts -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- NOTE: Bootstrap -->
   <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- NOTE: Bootstrap -->
-  <title>Phil-Curtis_Solo-Project</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- <script src="server/vendors/angular.min.js"></script> -->
+  <!-- <script src="server/vendors/angular-route.min.js"></script> -->
+  <script src="server/vendors/jquery-3.2.0.min.js"></script>
   <script src="server/vendors/bootstrap.min.js" charset="utf-8"></script>
-  <!-- <script src="server/vendors/angular.min.js" charset="utf-8"></script> -->
-  <script src="client.js" charset="utf-8"></script>
+  <script src="server/scripts/client.js" charset="utf-8"></script>
   <link rel="stylesheet" href="server/vendors/bootstrap.min.css">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="server/styles/styles.css">
+    <!-- NOTE: END Scripts -->
 </head>
-<body ng-app="pcSoloApp">
+
+<body>
+  <!-- <header class="jumbotron text-center" ng-include="'public/views/header.html'"></header> -->
+  <!-- NOTE: Navigation Header Bar -->
   <nav class="navbar navbar-inverse">
-    <div class="container-fluid"> <!-- make nav bar full width -->
+    <div class="container-fluid"> <!-- NOTE: make nav bar full width -->
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -79,6 +86,7 @@
 
     <div class="container">
       <div class="row">
+
         <div class="col-lg-3 col-sm-3 col-xs-3">
           <div class="list-group">
             <!-- <a href="#" class="list-group-item"><h2>System List</h2></a> -->

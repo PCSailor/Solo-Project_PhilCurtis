@@ -1,5 +1,5 @@
 body {
-  color: #1a1a1f;
+  color: red;
 
 }
 
@@ -34,4 +34,7 @@ body {
 }
 .see-cols {
   border: 1px solid black;
+}
+.list-group {
+  border: 1px #4764ef;
 }
