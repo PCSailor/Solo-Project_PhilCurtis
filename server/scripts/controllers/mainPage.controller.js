@@ -4,8 +4,9 @@ soloProjectApp.controller('mainPageController', ['mainPageFactory', function(mai
   // NOTE: self.sumthing is 'glue' between DOM & controller, "if it's teid to DOM, start with self"
   var self = this; // NOTE: self points to 'mpc' abbr defined in clientJS & used in html
   self.message = 'Test message from mainPage.Controller.js';
+  self.arrayList = []; 
   self.objectApp = {}; // NOTE: object connected to HTML User Entry Fields // QUESTION: NEEDED for Login??
-  self.arrayList = mainPageFactory.factoryAppPort; // NOTE: replaced by & brings in full array // QUESTION: ID from where??
+  self.arrayList = mainPageFactory.factoryAppPort; // NOTE: says this.arrayList equals factoryJS-created-variable pointing to array with property inside of object
 
   console.log('mainPageController.JS is run');
   console.log('self = ', self);
