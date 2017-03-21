@@ -10,7 +10,7 @@ function getData () {
 console.log('getData function runs-before success');
 $http({
   method: 'GET',
-  url: '/arrayList'
+  url: '/arrayList' // NOTE: domain routes to app.js
   // NOTE: use same domain if all controllers/factories use same table, then can relate to same routesJS file using same domain
 }).then(function(response) {
   console.log('GET response.data from factory = ', response.data);

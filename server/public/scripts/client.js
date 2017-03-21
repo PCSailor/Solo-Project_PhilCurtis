@@ -20,14 +20,16 @@ soloProjectApp.config(['$routeProvider', function($routeProvider) {
 //   controllerAs: '' // NOTE: controller abbr
 // })
 
-.when('/mainPage', {
-  templateUrl: 'views/mainPage.html',
+.when('/arrayList', {
+  // templateUrl: 'views/mainPage.html',
+  templateUrl: 'test.html',
   controller: 'mainPageController', // NOTE: controller value must match controller.js
   controllerAs: 'mpc' // NOTE: controller abbr
 }) // NOTE: no semi-colon
 .otherwise({
   redirectTo: 'index'
+console.log('clientJs/.when functions run');
 }); // NOTE: semi-colon needed here
 
-console.log('soloProjectApp.config function run');
+console.log('clientJS/soloProjectApp.config function run');
 }]); // NOTE: for .config function
