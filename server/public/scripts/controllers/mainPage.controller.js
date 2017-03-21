@@ -15,9 +15,13 @@ soloProjectApp.controller('mainPageController', ['mainPageFactory', function(mai
   console.log('mainPageController.JS is run');
   console.log('self = ', self);
   console.log('typeof self = ', typeof self);
-  console.log('self.objectApp = ', self.objectApp);
-  console.log('typeof self.objectApp = ', typeof self.objectApp);
   console.log('self.arrayList = ', self.arrayList);
   console.log('typeof self.arrayList = ', typeof self.arrayList);
+// NOTE: NOPE: self.arrayList[manufacturer]);
+// NOTE: NOPE = undefined = self.arrayList.manufacturer
+// NOTE: NOPE = empty array = self.arrayList.list
+// NOTE: NOPE = undefined = self.arrayList[0]
+console.log('typeof self.arrayList = ', typeof self.arrayList)
+
 
 }]);

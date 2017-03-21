@@ -14,15 +14,15 @@ soloProjectApp.config(['$routeProvider', function($routeProvider) {
 //   controllerAs: '' // NOTE: controller abbr
 // })
 // TODO: Bring in later:
-// .when('/navHtmlEntry', {
-//   templateUrl: 'views/.html',
-//   controller: '', // NOTE: controller value must match controller.js
-//   controllerAs: '' // NOTE: controller abbr
-// })
+.when('/login', {
+  templateUrl: 'views/login.html',
+  controller: 'mainPageController', // NOTE: controller value must match controller.js
+  controllerAs: 'mpc' // NOTE: controller abbr
+})
 
-.when('/arrayList', {
+.when('/mainPage', { // NOTE: this sets the actual domain(matched with nav.html)
   // templateUrl: 'views/mainPage.html',
-  templateUrl: '/views/test.html',
+  templateUrl: '/views/test.html', // NOTE: this page puts info on the DOM
   controller: 'mainPageController', // NOTE: controller value must match controller.js
   controllerAs: 'mpc' // NOTE: controller abbr
 }) // NOTE: no semi-colon
