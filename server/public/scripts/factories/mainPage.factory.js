@@ -16,7 +16,8 @@ $http({
   // NOTE: use same domain if all controllers/factories use same table, then can relate to same routesJS file using same domain
 }).then(function(response) {
   console.log('GET response.data from factory = ', response.data);
-  factoryAppPort.list = response.data;
+  console.log('typeof response.data = ', typeof response.data);
+  factoryAppPort.list = response.data; // NOTE: THIS IS THE DATABASE RETURNED DATA
   // NOTE: Ensure factoryAppPort points to an object property (.list)
   // NOTE: .data pulls only results from server & not other response information
 });
@@ -30,10 +31,10 @@ return {
 // NOTE: mainPageFactory = set here within soloProjectApp.factory
 // NOTE: factoryAppPort = var set here connecting to controllorJS
 // NOTE: Return example = controller connection: factory connection
+makeItUp: factoryAppPort // NOTE: NOT factoryAppPort: mainPageFactory
 
-factoryAppPort: mainPageFactory
 // NOTE: code from controllerJS: // self.arrayList = mainPageFactory.factoryAppPort; // NOTE: says this.arrayList equals factoryJS-created-variable pointing to array with property inside of object
 
-}; // QUESTION: needs semi-colon yes!
+}; // QUESTION: needs semi-colon!
 console.log('soloProjectApp.factory is run');
 }]); // NOTE: from soloProjectApp.factory function

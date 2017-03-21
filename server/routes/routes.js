@@ -18,7 +18,8 @@ router.get('/', function(req, res) { // NOTE: replaced by SELECT statement in SQ
           console.log('Error on routes.js/router.get-db query = ');
           res.sendStatus(500);
         } else {
-          console.log('RoutesJS/Router.GET/db Query success = ', result.rows);
+          console.log('RoutesJS/Router.GET/db Query success shown below');
+          console.log(result.rows);
           res.status(200).send(result.rows);
         }
       });

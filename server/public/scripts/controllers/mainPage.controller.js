@@ -7,7 +7,10 @@ soloProjectApp.controller('mainPageController', ['mainPageFactory', function(mai
   self.message = 'Test message from mainPage.Controller.js';
   self.arrayList = [];
   self.objectApp = {}; // NOTE: object connected to HTML User Entry Fields // QUESTION: NEEDED for Login??
-  self.arrayList = mainPageFactory.factoryAppPort; // NOTE: says this.arrayList equals factoryJS-created-variable pointing to array with property inside of object
+  self.arrayList = mainPageFactory.makeItUp; // NOTE: says this.arrayList equals factoryJS-created-variable pointing to array with property inside of object
+
+  console.log('self.arrayList = ', self.arrayList);
+
 
   console.log('mainPageController.JS is run');
   console.log('self = ', self);
