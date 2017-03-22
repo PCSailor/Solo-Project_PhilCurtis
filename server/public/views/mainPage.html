@@ -1,14 +1,4 @@
-
-    <!-- NOTE: angular code to add in -->
-  <!-- <header class="jumbotron text-center" ng-include="'public/views/header.html'"></header> -->
-  <!-- <nav ng-include="'server/public/views/nav.html'"></nav> -->
-  <!-- QUESTION: why the double/single quotes? -->
-  <!-- <main ng-view></main>  -->
-  <!-- TODO: Need to add an ng-view for three areas -->
-<!-- NOTE: ng-view matched to ng-route in clientJS AND is dependency of angular-route.js -->
-<!-- NOTE: clientJS/config function placed into ng-view area -->
-
-  <!-- NOTE: Navigation Header Bar -->
+<!-- NOTE: Navigation Header Bar -->
   <nav class="navbar navbar-inverse">
     <div class="container-fluid"> <!-- NOTE: make nav bar full width -->
       <!-- Brand and toggle get grouped for better mobile display -->
@@ -126,16 +116,13 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <!-- ng-repeat="id in mpc.arraylist.list" -->
+                <tr ng-repeat="id in mpc.arrayList.list">
                   <td >{{id.manufacturer}}</td>
-
-
-                </td>
-
-                  <td>#</td>
-                  <td>#</td>
-                  <td>#</td>
+                  <td>{{id.model_number}}</td>
+                  <td>{{id.serial_number}}</td>
+                  <td>{{id.date_of_manufacturer}}</td>
+                  <td>{{id.input_voltage}}</td>
+                  <td>{{id.other_notes}}</td>
                 </tr>
               </tbody>
             </table>

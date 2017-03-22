@@ -1,7 +1,7 @@
 soloProjectApp.controller('mainPageController', ['pagesFactory', function(pagesFactory) {
   console.log('mainPageController.JS is run');
   // NOTE: soloProjectApp defined in clientJS AND mainPageController matches clientJS/.when function
-  // NOTE: 1st mainPageController is dependency to factoryJS file factory name & 1st line of code AND 2nd mainPageController used here for factoryJS data reference
+  // NOTE: 1st pagesFactory is dependency to factoryJS file factory name & 1st line of code AND 2nd pagesFactory used here for factoryJS data reference
   // NOTE: self.sumthing is 'glue' between DOM & controller, "if it's teid to DOM, start with self"
   var self = this; // NOTE: self points to 'mpc' abbr defined in clientJS & used in html
   // self.message = 'self.whatever always equals an object - VERIFY';
