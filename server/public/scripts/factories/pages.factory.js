@@ -24,6 +24,10 @@ $http({
 } // NOTE: for: function getData
 // NOTE: After this GET, should have an array on DOM
 
+function saveNameplateData(thingToSave) {
+  // post to database
+  // data: thingToSave
+}
 
 return {
 // NOTE: returning $http function AND this area is the public API
@@ -31,7 +35,8 @@ return {
 // NOTE: mainPageFactory = set here within soloProjectApp.factory
 // NOTE: factoryAppPort = var set here connecting to controllorJS
 // NOTE: Return example = controller connection: factory connection
-makeItUp: factoryAppPort // NOTE: NOT factoryAppPort: mainPageFactory
+makeItUp: factoryAppPort, // NOTE: NOT factoryAppPort: mainPageFactory
+saveNameplateData: saveNameplateData
 
 // NOTE: code from controllerJS: // self.arrayList = mainPageFactory.factoryAppPort; // NOTE: says this.arrayList equals factoryJS-created-variable pointing to array with property inside of object
 

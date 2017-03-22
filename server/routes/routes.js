@@ -28,9 +28,7 @@ router.get('/', function(req, res) { // NOTE: replaced by SELECT statement in SQ
 }); // NOTE: for: router.get
 // NOTE: create new Nameplate data
 router.post('/', function(req, res) {
-
   console.log('RouteJS/RouterPOST/Req.body = ', req.body);
-
   var nameplateObject = req.body;
   pool.connect(function(err, client, done) { // NOTE: db query starts
     if(err) {
@@ -38,11 +36,10 @@ router.post('/', function(req, res) {
       res.sendStatus(500);
     } else {
       client.query('INSERT INTO nameplate_data (manufacturer, model_number, serial_number, date_of_manufacturer, input_voltage, other_notes) VALUES ($1, $2, $3, $4, $5, $6);',
-      // TODO: [taskObject.taskName],
-      function(err, result) {
+      [nameplateObject.manufacturer, nameplateObject.model_number, nameplateObject.serial_number, nameplateObject.date_of_manufacturer, nameplateObject.input_voltage, nameplateObject.other_notes], function(err, result) { // NOTE: [var-name-within-this-post.html-page/input-ng-model]
         done();
         if(err) {
-          console.log('RouteJS/RouterPOST/Pool.connect/query-post error = ', err);
+          console.log('RouteJS/RouterPOST/Pool.connect/db query-post error = ', err);
           res.sendStatus(500); // NOTE: error
         } else {
           res.sendStatus(201); // NOTE: Success
