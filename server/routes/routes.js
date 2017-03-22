@@ -26,4 +26,36 @@ router.get('/', function(req, res) { // NOTE: replaced by SELECT statement in SQ
     }
   });
 }); // NOTE: for: router.get
+// NOTE: create new Nameplate data
+router.post('/', function(req, res) {
+
+  console.log('RouteJS/RouterPOST/Req.body = ', req.body);
+
+  var nameplateObject = req.body;
+  pool.connect(function(err, client, done) { // NOTE: db query starts
+    if(err) {
+      console.log('RouteJS/RouterPOST/Pool.connect error = ', err);
+      res.sendStatus(500);
+    } else {
+      client.query('INSERT INTO nameplate_data (manufacturer, model_number, serial_number, date_of_manufacturer, input_voltage, other_notes) VALUES ($1, $2, $3, $4, $5, $6);',
+      // TODO: [taskObject.taskName],
+      function(err, result) {
+        done();
+        if(err) {
+          console.log('RouteJS/RouterPOST/Pool.connect/query-post error = ', err);
+          res.sendStatus(500); // NOTE: error
+        } else {
+          res.sendStatus(201); // NOTE: Success
+        } // NOTE: else
+      }); // NOTE: client.query
+    } // NOTE: else
+  }); // NOTE: pool.connect
+}); // NOTE: router.post
+
+
+
+
+
+
+
 module.exports = router; // NOTE: missing module.exports causes a "TypeError: Router.use() requires middleware function but got a Object"
