@@ -116,6 +116,12 @@
                 </tr>
               </thead>
               <tbody>
+                <tr>
+                  <!-- TODO: set values -->
+                  <td><input ng-model="mpc.newNameplateDate.manufacturer" placeholder="Add Manufacturer"></td>
+
+                  <button ng-click="mpc.addNameplate()">Add New Equipment Nameplate Data</button>
+                </tr>
                 <tr ng-repeat="id in mpc.arrayList.list">
                   <td >{{id.manufacturer}}</td>
                   <td>{{id.model_number}}</td>
