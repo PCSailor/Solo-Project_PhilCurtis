@@ -1,6 +1,14 @@
 body {
-  color: red;
-
+  margin: 10px;
+  padding: 10px;
+  background-color: #D3D3D3;
+  color: black;
+}
+/*THIS IS NOT WORKING: */
+#loginBody {
+  background-color: red !important;
+  color: red !important;
+  display: block;
 }
 
 /*.one {

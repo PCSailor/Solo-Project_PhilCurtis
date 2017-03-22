@@ -7,28 +7,42 @@ soloProjectApp.config(['$routeProvider', function($routeProvider) {
   $routeProvider
   // QUESTION: define again why $routeProvider 3 times?
 
-  // TODO: Bring in later:
-// .when('/navHtmlLogin', {
-//   templateUrl: 'views/login.html',
-//   controller: '', // NOTE: controller value must match controller.js
-//   controllerAs: '' // NOTE: controller abbr
-// })
-// TODO: Bring in later:
-.when('/login', {
-  templateUrl: 'views/login.html',
-  controller: 'mainPageController', // NOTE: controller value must match controller.js
-  controllerAs: 'mpc' // NOTE: controller abbr
-})
 
-.when('/mainPage', { // NOTE: this sets the actual domain(matched with nav.html)
+// NOTE: 01 view
+.when('/home', { // NOTE: this sets the actual domain(matched with nav.html)
   // templateUrl: 'views/mainPage.html',
-  templateUrl: '/views/test.html', // NOTE: this page puts info on the DOM
+  templateUrl: 'views/nav.html', // NOTE: this page puts info on the DOM
   controller: 'mainPageController', // NOTE: controller value must match controller.js
   controllerAs: 'mpc' // NOTE: controller abbr
 }) // NOTE: no semi-colon
+
+// NOTE: 02 view
+.when('/login', { // NOTE: this sets the actual domain(matched with nav.html)
+  // templateUrl: 'views/mainPage.html',
+  templateUrl: '/views/login.html', // NOTE: this page puts info on the DOM
+  controller: 'loginController', // NOTE: controller value must match controller.js
+  controllerAs: 'lc' // NOTE: controller abbr
+}) // NOTE: no semi-colon
+
+// NOTE: 03 view
+.when('/mainPage', { // NOTE: this sets the actual domain(matched with nav.html)
+  // templateUrl: 'views/mainPage.html',
+  templateUrl: '/views/mainPage.html', // NOTE: this page puts info on the DOM
+  controller: 'mainPageController', // NOTE: controller value must match controller.js
+  controllerAs: 'mpc' // NOTE: controller abbr
+}) // NOTE: no semi-colon
+
+// NOTE: 04 view
+.when('/angjslessons', { // NOTE: this sets the actual domain(matched with nav.html)
+  // templateUrl: 'views/mainPage.html',
+  templateUrl: '/views/angjs-object-array-lessons.html', // NOTE: this page puts info on the DOM
+  controller: 'mainPageController', // NOTE: controller value must match controller.js
+  controllerAs: 'mpc' // NOTE: controller abbr
+}) // NOTE: no semi-colon
+
+// NOTE: 05 view
 .otherwise({
   redirectTo: 'index'
-  // QUESTION: What's best way to log which .when function is running?
 }); // NOTE: semi-colon needed here
 // console.log('clientJs/.when functions run');
 console.log('clientJS/soloProjectApp.config function run');

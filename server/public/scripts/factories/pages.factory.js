@@ -1,4 +1,4 @@
-soloProjectApp.factory('mainPageFactory', ['$http', function($http) {
+soloProjectApp.factory('pagesFactory', ['$http', function($http) {
   // QUESTION: This-why?:
 // NOTE: Drop-down needed on 2 different controller.js files = good candidate for factoryJS files // TODO: Determine if factory needed
 // NOTE: Factoryis a dependency controller.JS needs requiring return (at end of this file)

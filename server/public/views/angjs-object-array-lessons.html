@@ -1,0 +1,59 @@
+<h3>Playing with Object & Array Selection</h3>
+<p>
+  mpc<br>
+  MPC equals self.<em>whatever</em> in the ...controller.js file associated with mpc.<br>
+  QUESTION: self.<em>whatever</em> always equals an object<br>
+  In this case, MPC equals self.arrayList. <em>(also .message & .objectApp which are commented out)</em><br>
+  self.arrayList is an <strong>object</strong> holding another <strong>object</strong>, called arrayList, which is holding an  <strong>array</strong>, called list, which holds  <strong>object(s)</strong> containing all table data as object properties with values.<br>
+  Therefore mpc displays all table data + name defined afer self. in controller.js file (arrayList) + name defined in factory.js file (list) + brackets & curlys + any other data defined in the controller.js file placed after self. <em>(like .message & .objectApp which are commented out)</em>:<br>
+  <strong>{{mpc}}</strong>
+</p>
+<br>
+<p>
+  mpc.arrayList.list<br>
+  Displays complete array, including brackets [ ], and all table data stored in objects, each within curly braces { }:<br>
+  <strong>{{mpc.arrayList.list}}</strong>
+</p>
+<br>
+<p>
+  mpc.arrayList.list[0].other_notes<br>
+  Displays the array-zero-index, value from 'other_notes' table column:<br>
+  <em>Note: The array index order is adjusted with the SQL query which is coded in the routes.js file</em><br>
+  <strong>{{mpc.arrayList.list[0].other_notes}}</strong>
+</p>
+<br>
+<p>
+  <h4>Start of AngularJS data:</h4>
+  <p>
+    Targeting a specific table cell/object property is not normally done with AngJS.<br>
+    However to target one property within an object use this format:<br>
+    "(ANY-table-column-name)<br>in<br>(controllerAs-value-given).<br>(controllerJS-file-value-given-after-self-dot).<br>(FactoryJS-file-value-given-within-the-object-to-collect-the-array-giving-table-data)"<br>
+    <em>Note: enter data without ()</em><br>
+    <em>Example:</em> serial_number in mpc.arrayList.list<br>
+  </p>
+  <br>
+</p>
+<ul style="list-style: none;">
+  <h5>Some examples:</h5>
+  <li ng-repeat="serial_number in mpc.arrayList.list">
+    <strong>{{serial_number.id}}</strong>
+  </li>
+  <br>
+  <li ng-repeat="id in mpc.arrayList.list">
+    <strong>{{id.manufacturer}}</strong>
+  </li>
+  <br>
+  <li ng-repeat="manufacturer in mpc.arrayList.list">
+    <strong>{{manufacturer.model_number}}</strong>
+  </li>
+  <br>
+  <li ng-repeat="model_number in mpc.arrayList.list">
+    <strong>{{model_number.other_notes}}</strong>
+  </li>
+  <br>
+  <li ng-repeat="id in mpc.arrayList.list">
+    <input value={{id.manufacturer}}>
+  </li>
+</ul>
+</p>
+<br>

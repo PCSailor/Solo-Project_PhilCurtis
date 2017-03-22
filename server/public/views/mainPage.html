@@ -111,7 +111,8 @@
               <h3 class="panel-title">Nameplate Data</h3>
             </div>
             <div class="panel-body">
-              Search for the device nameplate and enter it here one time only
+              Search for the device nameplate and enter it here one time only<br>
+              <input type="text" placeholder="Enter Nameplate Data" value="">
             </div>
             <table class="table">
               <thead>
@@ -126,10 +127,15 @@
               </thead>
               <tbody>
                 <tr>
-                  <th>#</th>
-                  <th>#</th>
-                  <th>#</th>
-                  <th>#</th>
+                  <!-- ng-repeat="id in mpc.arraylist.list" -->
+                  <td >{{id.manufacturer}}</td>
+
+
+                </td>
+
+                  <td>#</td>
+                  <td>#</td>
+                  <td>#</td>
                 </tr>
               </tbody>
             </table>

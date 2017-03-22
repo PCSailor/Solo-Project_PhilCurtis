@@ -12,7 +12,7 @@ router.get('/', function(req, res) { // NOTE: replaced by SELECT statement in SQ
       res.sendStatus(500);
     } else {
       // NOTE: database query
-      client.query('SELECT * FROM nameplate_data ORDER BY manufacturer, id asc;', function(err, result) {
+      client.query('SELECT * FROM nameplate_data ORDER BY id asc;', function(err, result) {
         done();
         if(err) {
           console.log('Error on routes.js/router.get-db query = ');
