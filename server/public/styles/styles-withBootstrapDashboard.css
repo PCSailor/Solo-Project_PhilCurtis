@@ -1,24 +1,28 @@
-/*body {
+body {
   margin: 10px;
   padding: 10px;
   background-color: #D3D3D3;
   color: black;
-}*/
+}
 /*THIS IS NOT WORKING: */
-/*#loginBody {
+#loginBody {
   background-color: red !important;
   color: red !important;
   display: block;
 }
-#systemNav {
+
+/*.one {
+  float: left;
+}
+.two {
+  float: right;
+}*/
+#systemNav, #mainNav {
   float: left;
 }
 #mainBody {
   float: right;
 }
-#mainNav {
-  inlines
-}*/
 
 /*.navbar-inverse {
     background-color: #4764ef;
@@ -30,21 +34,21 @@
 .navbar-inverse .navbar-brand {
     color: #1a1a1f;
 }*/
-/*.mainBody {
+.mainBody {
   display: inline;
 }
 .horizontalList {
   display: inline;
 }
+.see-cols {
+  border: 1px solid black;
+}
 .list-group {
   border: 1px #4764ef;
-}*/
+}
 
 
 /* NOTE:  */
-/*.see-cols {
-  border: 1px solid black;
-}*/
 /* NOTE:  */
 /* NOTE:  */
 /* NOTE: From Bootstrap Dashboard Example */
