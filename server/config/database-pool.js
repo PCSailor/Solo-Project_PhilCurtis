@@ -1,3 +1,4 @@
+console.log(new Date().getFullYear() + ' database-pool.js reached');
 var pg = require ('pg'); // NOTE: communication of SQL to server
 var config = {
   database: 'phi', // NOTE: db name

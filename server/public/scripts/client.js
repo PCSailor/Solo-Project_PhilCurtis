@@ -1,5 +1,5 @@
-console.log('JS script loaded');
-console.log('All scripts loaded!!!');
+console.log(new Date().getFullYear() + ' client.js run');
+console.log('  ');
 var soloProjectApp = angular.module('soloProjectAngularApp', ['ngRoute']);
 // NOTE: soloProjectAngularApp on clientJS, Index.html
 // NOTE: ngRoute matched to indexHTML/ng-view AND is a dependency of script Angular-route.js AND the .config function below places content within the ng-view area of indexHTML.
@@ -43,6 +43,7 @@ soloProjectApp.config(['$routeProvider', function($routeProvider) {
 }) // NOTE: no semi-colon
 
 // NOTE: 04 mainPage/nameplateData POST
+// NOTE: add nameplateData
 .when('mainPage/nameplateData/add', { // NOTE: this sets the actual domain(matched with nav.html)
   templateUrl: '/views/mainPage.html', // NOTE: this puts info on the DOM
   controller: 'mainPageController', // NOTE: controller value must match controller.js
@@ -50,6 +51,7 @@ soloProjectApp.config(['$routeProvider', function($routeProvider) {
 }) // NOTE: no semi-colon
 
 // NOTE: 04 mainPage/nameplateData PUT
+// NOTE: edit nameplateData
 .when('mainPage/nameplateData/edit', { // NOTE: this sets the actual domain(matched with nav.html)
   templateUrl: '/views/mainPage.html', // NOTE: this puts info on the DOM
   controller: 'mainPageController', // NOTE: controller value must match controller.js
@@ -57,6 +59,7 @@ soloProjectApp.config(['$routeProvider', function($routeProvider) {
 }) // NOTE: no semi-colon
 
 // NOTE: 04 mainPage/nameplateData DELETE
+// NOTE: Delete nameplateData
 .when('mainPage/nameplateData/delete', { // NOTE: this sets the actual domain(matched with nav.html)
   templateUrl: '/views/mainPage.html', // NOTE: this puts info on the DOM
   controller: 'mainPageController', // NOTE: controller value must match controller.js

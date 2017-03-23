@@ -111,12 +111,12 @@
                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                   <form id="nameplateForm" class="form-inline">
                     <!-- QUESTION:  need ng-submit="submit" in form?-->
-                    <td><input ng-model="mpc.addNameplate.manufacturer" class="form-control"  placeholder="Manufacturer"></td>
-                    <td><input ng-model="mpc.addNameplate.model_number" class="form-control" placeholder="Model Number"></td>
-                    <td><input ng-model="mpc.addNameplate.serial_number" class="form-control" placeholder="Serial Number"></td>
-                    <td><input ng-model="mpc.addNameplate.date_of_manufacturer" placeholder="Date-of-Manufacturer"></td>
-                    <td><input ng-model="mpc.addNameplate.input_voltage" class="form-control" placeholder="Volts"></td>
-                    <td><input ng-model="mpc.addNameplate.other_notes" class="form-control" placeholder="Other Data"></td>
+                    <td><input ng-model="mpc.newNameplate.manufacturer" class="form-control"  placeholder="Manufacturer"></td>
+                    <td><input ng-model="mpc.newNameplate.model_number" class="form-control" placeholder="Model Number"></td>
+                    <td><input ng-model="mpc.newNameplate.serial_number" class="form-control" placeholder="Serial Number"></td>
+                    <td><input ng-model="mpc.newNameplate.date_of_manufacturer" placeholder="Date-of-Manufacturer"></td>
+                    <td><input ng-model="mpc.newNameplate.input_voltage" class="form-control" placeholder="Volts"></td>
+                    <td><input ng-model="mpc.newNameplate.other_notes" class="form-control" placeholder="Other Data"></td>
                     <tr><td><button ng-click="mpc.addNameplate()" type="submit" class="btn btn-primary">Add New Nameplate Data</button></td></tr>
                     <!-- NOTE: .addNameplate tied with controller.js AND factory.js -->
                     <!-- NOTE: .nameplateData tied with routes.js -->
@@ -126,7 +126,7 @@
               <tbody>
               </tr>
               <tr>
-                <td>{{mpc.addNameplate}}</td>
+                <!-- <td>{{mpc.addNameplate}}</td> -->
               </tr>
               <tr ng-repeat="id in mpc.arrayList.list">
                 <!-- QUESTION: Identify where 'id' is from?  Is it a made up name or any column title from the db table?-->
