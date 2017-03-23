@@ -19,7 +19,7 @@ router.get('/', function(req, res) { // NOTE: replaced by SELECT statement in SQ
           res.sendStatus(500);
         } else {
           console.log('RoutesJS/Router.GET/db Query success shown below');
-          console.log(result.rows);
+          console.log('Result.rows data shown below:', result.rows);
           res.status(200).send(result.rows);
         }
       });
@@ -27,7 +27,10 @@ router.get('/', function(req, res) { // NOTE: replaced by SELECT statement in SQ
   });
 }); // NOTE: for: router.get
 // NOTE: create new Nameplate data
-router.post('/', function(req, res) {
+
+// QUESTION: '/' NOT '/mainPage'?
+// router.post('/mainPage', function(req, res) { // NOTE: 404 error
+router.post('/', function(req, res) { // NOTE: 500 error
   console.log('RouteJS/RouterPOST/Req.body = ', req.body);
   var nameplateObject = req.body;
   pool.connect(function(err, client, done) { // NOTE: db query starts

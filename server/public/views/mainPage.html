@@ -17,31 +17,31 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Residential<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">1600 Penn Ave</a></td>
-              <li><a href="#">1400 Lafeyette Ave.</a></li>
-              <li><a href="#">1More Cabin Road</a></li>
+            <li><a href="#">Residence_Vacation</a></td>
+              <li><a href="#">Residence_03</a></li>
+              <li><a href="#">Residence_04</a></li>
               <li role="separator" class="divider"></li>
-              <li><a href="#">Main Home</a></li>
+              <li><a href="#">Residence_Main</a></li>
             </ul>
           </li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Vehicles<span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href="#">BMW M5</a></li>
-              <li><a href="#">1964 Ford Shelby</a></li>
-              <li><a href="#">Ferrari Testarosa</a></li>
+              <li><a href="#">Auto number01</a></li>
+              <li><a href="#">Auto number02</a></li>
+              <li><a href="#">Auto number03</a></li>
               <li role="separator" class="divider"></li>
-              <li><a href="#">Harley Davidson Fatboy</a></li>
+              <li><a href="#">Motorcycle</a></li>
             </ul>
           </li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Professional<span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href="#">Dry Cleaner Business Bldg.</a></li>
-              <li><a href="#">Rental_Residential</a></li>
-              <li><a href="#">Rental_Commercial</a></li>
+              <li><a href="#">Professional_01</a></li>
+              <li><a href="#">Professional_Rental_Residential</a></li>
+              <li><a href="#">Professional_Rental_Commercial</a></li>
               <li role="separator" class="divider"></li>
-              <li><a href="#">My Office Bldg.</a></li>
+              <li><a href="#">Professional_Office</a></li>
             </ul>
           </li>
         </ul>
@@ -61,11 +61,8 @@
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
-
-
   <div class="container">
     <div class="row">
-
       <div class="col-lg-3 col-sm-3 col-xs-3">
         <div class="list-group">
           <!-- <a href="#" class="list-group-item"><h2>System List</h2></a> -->
@@ -95,7 +92,6 @@
         </div>
       </div>
       <div class="col-lg-9 col-sm-9 col-xs-9 mainBody">
-
         <div class="panel panel-info">
           <div class="panel-heading">
             <h3 class="panel-title">Nameplate Data</h3>
@@ -110,171 +106,154 @@
                 <th>Voltage</th>
                 <th>Other Data</th>
               </tr>
-
               <tr>
-                <!-- <form class="form-inline"> -->
-                  <!-- <label class="sr-only" for="inlineFormInput">Manufacturer</label>
-                  <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput" placeholder="Manufacturer">
-
-                  <label class="sr-only" for="inlineFormInputGroup">Model Number</label> -->
-
-                  <!-- <div class="input-group mb-2 mr-sm-2 mb-sm-0"> -->
-                  <!-- <div class="input-group-addon">@</div> -->
-                  <!-- <input  type="text" class="form-control" id="inlineFormInputGroup" placeholder="Manufacter">
-                  <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Model Number">
-                  <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Serial Number">
-                  <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Date-of-Manufacturer">
-                  <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Voltage">
-                  <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Other Data"> -->
-                  <!-- need to tie this to variable in controller.js -->
-                  <!-- </div> -->
-                  <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
-                <!-- </form> -->
-
+                <!-- NOTE: mainPage/nameplateData -->
                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                   <form id="nameplateForm" class="form-inline">
                     <!-- QUESTION:  need ng-submit="submit" in form?-->
-                    <td><input ng-model="mpc.newNameplate.manufacturer" class="form-control"  placeholder="Manufacturer"></td>
-                    <td><input ng-model="mpc.newNameplate.modelNumber" class="form-control" placeholder="Model Number"></td>
-                    <td><input ng-model="mpc.newNameplate.serialNumber" class="form-control" placeholder="Serial Number"></td>
-                    <td><input ng-model="mpc.newNameplate.dateOfManufacturer" placeholder="Date-of-Manufacturer"></td>
-                    <td><input ng-model="mpc.newNameplate.voltage" class="form-control" placeholder="Volts"></td>
-                    <td><input ng-model="mpc.newNameplate.otherData" class="form-control" placeholder="Other Data"></td>
+                    <td><input ng-model="mpc.addNameplate.manufacturer" class="form-control"  placeholder="Manufacturer"></td>
+                    <td><input ng-model="mpc.addNameplate.model_number" class="form-control" placeholder="Model Number"></td>
+                    <td><input ng-model="mpc.addNameplate.serial_number" class="form-control" placeholder="Serial Number"></td>
+                    <td><input ng-model="mpc.addNameplate.date_of_manufacturer" placeholder="Date-of-Manufacturer"></td>
+                    <td><input ng-model="mpc.addNameplate.input_voltage" class="form-control" placeholder="Volts"></td>
+                    <td><input ng-model="mpc.addNameplate.other_notes" class="form-control" placeholder="Other Data"></td>
                     <tr><td><button ng-click="mpc.addNameplate()" type="submit" class="btn btn-primary">Add New Nameplate Data</button></td></tr>
-                    <!-- NOTE: .newNameplate tied with controller.js AND factory.js -->
+                    <!-- NOTE: .addNameplate tied with controller.js AND factory.js -->
                     <!-- NOTE: .nameplateData tied with routes.js -->
                   </form>
                 </div>
               </thead>
               <tbody>
-
-
               </tr>
               <tr>
-                  <td>{{mpc.newNameplate}}</td>
+                <td>{{mpc.addNameplate}}</td>
               </tr>
               <tr ng-repeat="id in mpc.arrayList.list">
+                <!-- QUESTION: Identify where 'id' is from?  Is it a made up name or any column title from the db table?-->
+                <!-- NOTE: book (aka: 'id' here) is name & the loop, current item looping through with repeat must pass an array after -->
                 <td>{{id.manufacturer}}</td>
                 <td>{{id.model_number}}</td>
                 <td>{{id.serial_number}}</td>
                 <td>{{id.date_of_manufacturer}}</td>
                 <td>{{id.input_voltage}}</td>
                 <td>{{id.other_notes}}</td>
-                <td><button ng-click="mpc.editNameplate(nameplate_data)" class="btn btn-success">Edit</button></td>
-                <td><button ng-click="mpc.deleteNameplate(nameplate_data.id)" class="btn btn-danger">X</button></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-
-
-          <div class="panel panel-info">
-            <div class="panel-heading">
-              <h3 class="panel-title">System History and Parts</h3>
-            </div>
-            <div class="panel-body">
-              Enter all histroy
-            </div>
-            <table class="table">
-              <thead>
-                <tr>
-                  <th>Date</th>
-                  <th>Services and Repairs</th>
-                  <th>Vendors</th>
-                  <th>Parts Used</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th>#</th>
-                  <th>#</th>
-                  <th>#</th>
-                  <th>#</th>
-                </tr>
-                <tr>
-                  <th>#</th>
-                  <th>#</th>
-                  <th>#</th>
-                  <th>#</th>
-                </tr>
-                <tr>
-                  <th>#</th>
-                  <th>#</th>
-                  <th>#</th>
-                  <th>#</th>
-                </tr>
-                <tr>
-                  <th>#</th>
-                  <th>#</th>
-                  <th>#</th>
-                  <th>#</th>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <div class="panel panel-info">
-            <div class="panel-heading">
-              <h3 class="panel-title">Businesses</h3>
-            </div>
-            <div class="panel-body">
-              Enter businesses used
-            </div>
-            <table class="table">
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Address No.1</th>
-                  <!-- <th>address#2</th> -->
-                  <th>City</th>
-                  <!-- <th>state</th> -->
-                  <!-- <th>country</th> -->
-                  <!-- <th>zip</th> -->
-                  <th>Phone No.1</th>
-                  <!-- <th>Phoe#2</th> -->
-                  <th>Email</th>
-                  <th>Website</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th>#</th>
-                  <th>#</th>
-                  <th>#</th>
-                  <th>#</th>
-                  <th>#</th>
-                  <th>#</th>
-                </tr>
-                <tr>
-                  <th>#</th>
-                  <th>#</th>
-                  <th>#</th>
-                  <th>#</th>
-                  <th>#</th>
-                  <th>#</th>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <div class="panel panel-info">
-            <div class="panel-heading">
-              <h3 class="panel-title">User Notes</h3>
-            </div>
-            <div class="panel-body">
-              Current user notes to enter
-            </div>
-            <ul style="list-style-type: none">
-              <li>Previous User Notes 01</li>
-              <li>Previous User Notes 02</li>
-              <li>Previous User Notes 03</li>
-              <li>Previous User Notes 04</li>
-              <li>Previous User Notes 05</li>
-              <li>Previous User Notes 06</li>
-            </ul>
-          </div>
-
+                <!-- QUESTION:  -->
+                <!-- <td><button ng-click="mpc.editNameplate(nameplate_data)" class="btn btn-success">Edit</button></td>
+                <td><button ng-click="mpc.deleteNameplate(nameplate_data.id)" class="btn btn-danger">X</button></td> -->
+                <!-- QUESTION: or this one:  -->
+                <td><button ng-click="mpc.editNameplate(id)" class="btn btn-success">Edit</button></td>
+                <td><button ng-click="mpc.deleteNameplate(id.id)" class="btn btn-danger">X</button></td>
+                <!-- QUESTION:  -->
+              </tr>
+            </tbody>
+          </table>
         </div>
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <h3 class="panel-title">System History and Parts</h3>
+          </div>
+          <div class="panel-body">
+            Enter all histroy
+          </div>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Services and Repairs</th>
+                <th>Vendors</th>
+                <th>Parts Used</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>#</th>
+                <th>#</th>
+                <th>#</th>
+                <th>#</th>
+              </tr>
+              <tr>
+                <th>#</th>
+                <th>#</th>
+                <th>#</th>
+                <th>#</th>
+              </tr>
+              <tr>
+                <th>#</th>
+                <th>#</th>
+                <th>#</th>
+                <th>#</th>
+              </tr>
+              <tr>
+                <th>#</th>
+                <th>#</th>
+                <th>#</th>
+                <th>#</th>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <h3 class="panel-title">Businesses</h3>
+          </div>
+          <div class="panel-body">
+            Enter businesses used
+          </div>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Address No.1</th>
+                <!-- <th>address#2</th> -->
+                <th>City</th>
+                <!-- <th>state</th> -->
+                <!-- <th>country</th> -->
+                <!-- <th>zip</th> -->
+                <th>Phone No.1</th>
+                <!-- <th>Phoe#2</th> -->
+                <th>Email</th>
+                <th>Website</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>#</th>
+                <th>#</th>
+                <th>#</th>
+                <th>#</th>
+                <th>#</th>
+                <th>#</th>
+              </tr>
+              <tr>
+                <th>#</th>
+                <th>#</th>
+                <th>#</th>
+                <th>#</th>
+                <th>#</th>
+                <th>#</th>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <h3 class="panel-title">User Notes</h3>
+          </div>
+          <div class="panel-body">
+            Current user notes to enter
+          </div>
+          <ul style="list-style-type: none">
+            <li>Previous User Notes 01</li>
+            <li>Previous User Notes 02</li>
+            <li>Previous User Notes 03</li>
+            <li>Previous User Notes 04</li>
+            <li>Previous User Notes 05</li>
+            <li>Previous User Notes 06</li>
+          </ul>
+        </div>
+
       </div>
     </div>
+  </div>

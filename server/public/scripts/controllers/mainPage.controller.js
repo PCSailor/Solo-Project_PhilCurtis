@@ -8,16 +8,14 @@ soloProjectApp.controller('mainPageController', ['pagesFactory', function(pagesF
   self.arrayList = [];
   //self.objectApp = {}; // NOTE: object connected to HTML User Entry Fields // QUESTION: NEEDED for Login??
   self.arrayList = pagesFactory.makeItUp; // NOTE: says this.arrayList equals factoryJS-created-variable pointing to array with property inside of object
-  self.newNameplate = {};
+  self.addNameplate = {};
+
+  console.log('self typeof =', typeof self, "AND = ", self);
+  console.log('self.arrayList typeof =', typeof self.arrayList, "AND =", self.arrayList);
 
   self.addNameplate = function() {
-    console.log('Nameplate Data to save: ', self.newNameplate);
-    pagesFactory.saveNameplateData(self.newNameplate);
-  }
-
-  self.editNameplate = function() {
-    console.log('Nameplate data to edit: ', self.editNameplate);
-    pagesFactory.editNameplateData(self.editNameplateData)
+    console.log('Nameplate Data to save: ', self.addNameplate);
+    pagesFactory.addNameplateData(self.addNameplate);
   }
 
   self.deleteNameplate = function() {
@@ -25,11 +23,12 @@ soloProjectApp.controller('mainPageController', ['pagesFactory', function(pagesF
     pagesFactory.deleteNameplateData(nameplate_data.id);
   }
 
+    self.editNameplate = function() {
+      console.log('Nameplate data to edit: ', self.editNameplate);
+      pagesFactory.editNameplateData(self.editNameplateData)
+    }
 // NOTE: _..._NameplateData is function created in factory
 
-
-  console.log('self typeof =', typeof self, "AND = ", self);
-  console.log('self.arrayList typeof =', typeof self.arrayList, "AND =", self.arrayList);
 
 
 }]);
