@@ -32,46 +32,6 @@ soloProjectApp.config(['$routeProvider', function($routeProvider) {
   controllerAs: 'mpc' // NOTE: controller abbr
 }) // NOTE: no semi-colon
 
-// NOTE: ------------------------------------------------------------>
-
-// NOTE: Use this for different views but I am not changing views, only http requests.
-// // NOTE: 04 mainPage/nameplateData GET
-// .when('mainPage/nameplateData', { // NOTE: this sets the actual domain(matched with nav.html)
-//   templateUrl: '/views/mainPage.html', // NOTE: this puts info on the DOM
-//   controller: 'mainPageController', // NOTE: controller value must match controller.js
-//   controllerAs: 'mpc' // NOTE: controller abbr
-// }) // NOTE: no semi-colon
-
-// // NOTE: 04 mainPage/nameplateData POST
-// // NOTE: add nameplateData
-// .when('mainPage/nameplateData/add', { // NOTE: this sets the actual domain(matched with nav.html)
-//   templateUrl: '/views/mainPage.html', // NOTE: this puts info on the DOM
-//   controller: 'mainPageController', // NOTE: controller value must match controller.js
-//   controllerAs: 'mpc' // NOTE: controller abbr
-// }) // NOTE: no semi-colon
-//
-// // NOTE: 04 mainPage/nameplateData PUT
-// // NOTE: edit nameplateData
-// .when('mainPage/nameplateData/edit', { // NOTE: this sets the actual domain(matched with nav.html)
-//   templateUrl: '/views/mainPage.html', // NOTE: this puts info on the DOM
-//   controller: 'mainPageController', // NOTE: controller value must match controller.js
-//   controllerAs: 'mpc' // NOTE: controller abbr
-// }) // NOTE: no semi-colon
-//
-// // NOTE: 04 mainPage/nameplateData DELETE
-// // NOTE: Delete nameplateData
-// .when('mainPage/nameplateData/delete', { // NOTE: this sets the actual domain(matched with nav.html)
-//   templateUrl: '/views/mainPage.html', // NOTE: this puts info on the DOM
-//   controller: 'mainPageController', // NOTE: controller value must match controller.js
-//   controllerAs: 'mpc' // NOTE: controller abbr
-// }) // NOTE: no semi-colon
-
-
-
-
-
-
-
 
 // NOTE: 04 view
 .when('/angjslessons', { // NOTE: this sets the actual domain(matched with nav.html)

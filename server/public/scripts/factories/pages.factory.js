@@ -39,7 +39,6 @@ soloProjectApp.factory('pagesFactory', ['$http', function($http) {
     // console.log('deleteNameplate = ', deleteNameplate);
     $http({
       method: 'DELETE',
-      // url: 'mainPage/nameplateData/delete' + nameplateid // NOTE: 
       url: '/mainPage/deleteMustMatch' + nameplateid // NOTE: changing path resulted with this error: DELETE http://localhost:5500/mainPage/deleteMustMatc26 404 (Not Found)
     }).then(function(response) {
       getData();
@@ -51,7 +50,7 @@ soloProjectApp.factory('pagesFactory', ['$http', function($http) {
   // function editNameplate (editNameplate) {
   //   $http({
   //     method: 'PUT'
-  //     url: 'mainPage/nameplateData/edit' + editNameplate
+  //     url: 'mainPage/edit' + editNameplate
   //   }).then(function(response) {
   //     getData();
   //   });

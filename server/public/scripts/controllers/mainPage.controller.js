@@ -11,6 +11,7 @@ soloProjectApp.controller('mainPageController', ['pagesFactory', function(pagesF
   // console.log('self typeof =', typeof self, "AND = ", self);
   console.log('self.arrayList typeof =', typeof self.arrayList, "AND =", self.arrayList);
 
+  // self.addNameplateData = function() {
   self.addNameplate = function() {
     console.log('self.newNameplate: ', self.newNameplate);
     pagesFactory.addNameplateData(self.newNameplate);
@@ -19,10 +20,10 @@ soloProjectApp.controller('mainPageController', ['pagesFactory', function(pagesF
   console.log('Nameplate to delete: ', nameplateid); // NOTE: 01: logging ok!
     pagesFactory.deleteNameplate(nameplateid);
   } // NOTE: Working!!
-  
-  self.editNameplate = function() {
-    console.log('Nameplate data to edit: ', self.editNameplate);
-    pagesFactory.editNameplateData(self.editNameplateData)
+
+  self.editNameplate = function(nameplate) {
+    console.log('Nameplate data to edit: ', nameplate);
+    pagesFactory.editNameplateData(nameplate)
   } // NOTE:
   // NOTE: _..._NameplateData is function created in factory
 }]);
