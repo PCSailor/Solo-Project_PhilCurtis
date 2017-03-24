@@ -14,14 +14,15 @@ soloProjectApp.controller('mainPageController', ['pagesFactory', function(pagesF
   self.addNameplate = function() {
     console.log('self.newNameplate: ', self.newNameplate);
     pagesFactory.addNameplateData(self.newNameplate);
-  }
+  } // NOTE: Working!!
   self.deleteNameplate = function(nameplateid) {
   console.log('Nameplate to delete: ', nameplateid); // NOTE: 01: logging ok!
     pagesFactory.deleteNameplate(nameplateid);
-  }
+  } // NOTE: Working!!
+  
   self.editNameplate = function() {
     console.log('Nameplate data to edit: ', self.editNameplate);
     pagesFactory.editNameplateData(self.editNameplateData)
-  }
+  } // NOTE:
   // NOTE: _..._NameplateData is function created in factory
 }]);

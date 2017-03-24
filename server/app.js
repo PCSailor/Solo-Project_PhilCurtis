@@ -17,9 +17,9 @@ app.use('/mainPage', routesJS);
 // app.post('mainPage/add', routesJS);
 // app.put('mainPage/edit', routesJS);
 // app.delete('mainPage/delete', routesJS);
-app.post('mainPage/add', routesJS);
-app.put('mainPage/edit', routesJS);
-app.delete('/mainPage/delete', routesJS);
+// app.post('mainPage/add', routesJS);
+// app.put('mainPage/edit', routesJS);
+// app.delete('/mainPage/delete', routesJS);
 
 
 

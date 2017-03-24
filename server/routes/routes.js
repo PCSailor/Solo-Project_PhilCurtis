@@ -80,7 +80,7 @@ router.put('/nameplateData/edit/:id', function(req, res) {
 // NOTE: delete Nameplate data
 // router.delete('/nameplateData/delete/:id', function(req, res) {
 // router.delete('/mainPage/delete:id', function(req, res) {
-router.delete('/delete:id', function(req, res) {
+router.delete('/deleteMustMatch:id', function(req, res) { // NOTE: changing path resulted with this error: DELETE http://localhost:5500/mainPage/deleteMustMatch26 500 (Internal Server Error)
   var nameplateToDelete = req.params.id;
   console.log('RouteJS/RouternameplateToDelete = ', nameplateToDelete); // NOTE: 03 - terminal
   pool.connect(function(err, client, done) { // NOTE: db query starts

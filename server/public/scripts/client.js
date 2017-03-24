@@ -10,7 +10,7 @@ soloProjectApp.config(['$routeProvider', function($routeProvider) {
 
  // NOTE: Error on bad controller: $controller:ctrlreg/A controller with this name is not registered.
 // NOTE: 01 view
-.when('/home', { // NOTE: this sets the actual domain(matched with nav.html)
+.when('/home', { // NOTE: this sets the actual domain(matched with nav.html & backend files)
   // templateUrl: 'views/mainPage.html',
   templateUrl: 'views/nav.html', // NOTE: this page puts info on the DOM
   controller: 'mainPageController', // NOTE: controller value must match controller.js
@@ -18,7 +18,7 @@ soloProjectApp.config(['$routeProvider', function($routeProvider) {
 }) // NOTE: no semi-colon
 
 // NOTE: 02 view
-.when('/login', { // NOTE: this sets the actual domain(matched with nav.html)
+.when('/login', { // NOTE: this sets the actual domain(matched with nav.html & backend files)
   // templateUrl: 'views/mainPage.html',
   templateUrl: '/views/login.html', // NOTE: this page puts info on the DOM
   controller: 'loginController', // NOTE: controller value must match controller.js
@@ -26,7 +26,7 @@ soloProjectApp.config(['$routeProvider', function($routeProvider) {
 }) // NOTE: no semi-colon
 
 // NOTE: 03 mainPage HTML Page
-.when('/mainPage/', { // NOTE: this sets the actual domain(matched with nav.html)
+.when('/mainPage/', { // NOTE: this sets the actual domain(matched with nav.html & backend files)
   templateUrl: '/views/mainPage.html', // NOTE: this puts info on the DOM
   controller: 'mainPageController', // NOTE: controller value must match controller.js
   controllerAs: 'mpc' // NOTE: controller abbr
