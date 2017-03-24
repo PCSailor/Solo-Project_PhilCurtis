@@ -19,8 +19,8 @@ router.get('/nameplateData/', function(req, res) { // NOTE: replaced by SELECT s
           console.log('Error on routes.js/router.get-db query = ');
           res.sendStatus(500);
         } else {
-          console.log('RoutesJS/Router.GET/db Query success shown below');
-          console.log('Result.rows data shown below:', result.rows);
+          console.log('RoutesJS/Router.GET/db Query/Result.rows data is available');
+          // console.log('Result.rows data shown below:', result.rows);
           res.status(200).send(result.rows);
         }
       });
@@ -29,7 +29,8 @@ router.get('/nameplateData/', function(req, res) { // NOTE: replaced by SELECT s
 }); // NOTE: for: router.get
 
 // NOTE: add new Nameplate data
-router.post('/nameplateData/add', function(req, res) {
+// router.post('/nameplateData/add', function(req, res) {
+router.post('/add', function(req, res) { // NOTE: Path must match factory.JS path
   console.log('RouteJS/RouterPOST/Req.body = ', req.body);
   var nameplateObject = req.body;
   pool.connect(function(err, client, done) { // NOTE: db query starts
@@ -77,9 +78,11 @@ router.put('/nameplateData/edit/:id', function(req, res) {
 }); // NOTE: router.put
 
 // NOTE: delete Nameplate data
-router.delete('/nameplateData/delete/:id', function(req, res) {
+// router.delete('/nameplateData/delete/:id', function(req, res) {
+// router.delete('/mainPage/delete:id', function(req, res) {
+router.delete('/delete:id', function(req, res) {
   var nameplateToDelete = req.params.id;
-  console.log('RouteJS/RouternameplateToDelete = ', nameplateToDelete);
+  console.log('RouteJS/RouternameplateToDelete = ', nameplateToDelete); // NOTE: 03 - terminal
   pool.connect(function(err, client, done) { // NOTE: db query starts
     if(err) {
       console.log('RouteJS/Router.delete/Pool.connect error = ', err);
@@ -93,6 +96,7 @@ router.delete('/nameplateData/delete/:id', function(req, res) {
           res.sendStatus(500); // NOTE: error
         } else {
           res.sendStatus(201); // NOTE: Success
+          console.log('item deleted!!');  // NOTE: 04 - terminal
         } // NOTE: else
       }); // NOTE: client.query
     } // NOTE: else

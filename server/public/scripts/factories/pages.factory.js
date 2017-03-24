@@ -1,10 +1,9 @@
 soloProjectApp.factory('pagesFactory', ['$http', function($http) {
-  // QUESTION: This-why?:
   // NOTE: Drop-down needed on 2 different controller.js files = good candidate for factoryJS files // TODO: Determine if factory needed
   // NOTE: Factoryis a dependency controller.JS needs requiring return (at end of this file)
   // NOTE: $http is ajax jump from F/E logic to server // QUESTION: which adds the dependency? AND catches the factory request as glue between factory & server
   // in ang like ajax requests server
-  var factoryAppPort = { list: [] }; // NOTE: data to controller AND must be property inside of object // QUESTION: Will this code work inside controller, client.js also?
+  var factoryAppPort = { list: [] }; // NOTE: data to controller AND must be property inside of object // NOTE: Will this code work inside controller, client.js also? YES
   getData();
 
   // NOTE: GET Nameplate Data
@@ -27,8 +26,8 @@ soloProjectApp.factory('pagesFactory', ['$http', function($http) {
   function addNameplateData(addNameplateData) {
     $http({
       method: 'POST',
-      // url: '/NameplateData/add',
-      url: 'mainPage/nameplateData/add',
+      // url: 'mainPage/nameplateData/add',
+      url: 'mainPage/add', // NOTE: Path must match route.JS path
       data: addNameplateData
     }).then(function(response) {
       getData();
@@ -36,13 +35,16 @@ soloProjectApp.factory('pagesFactory', ['$http', function($http) {
   } // NOTE: for: function addNameplate
 
   // NOTE: Delete Nameplate
-  function deleteNameplate (deleteNameplate) {
+  function deleteNameplate(nameplateid) {
+    // console.log('deleteNameplate = ', deleteNameplate);
     $http({
       method: 'DELETE',
-      url: 'mainPage/nameplateData/delete' + deleteNameplate
+      // url: 'mainPage/nameplateData/delete' + nameplateid // NOTE: was: deleteNameplate
+      url: '/mainPage/delete' + nameplateid // NOTE: was: deleteNameplate
     }).then(function(response) {
       getData();
     });
+    console.log('delete from factory.js'); // NOTE: 02: logging ok!           last one
   } // NOTE: for: function deleteNameplate
 
   // // NOTE: Edit Nameplate
@@ -63,8 +65,8 @@ soloProjectApp.factory('pagesFactory', ['$http', function($http) {
     // NOTE: factoryAppPort = var set here connecting to controllorJS
     // NOTE: Return example = controller connection: factory connection
     makeItUp: factoryAppPort, // NOTE: NOT factoryAppPort: mainPageFactory
-    addNameplateData: addNameplateData // NOTE: controller connection: factory connection
-
+    addNameplateData: addNameplateData, // NOTE: controller connection: factory connection
+    deleteNameplate: deleteNameplate
     // NOTE: code from controllerJS: // self.arrayList = mainPageFactory.factoryAppPort; // NOTE: says this.arrayList equals factoryJS-created-variable pointing to array with property inside of object
 
   }; // NOTE: needs semi-colon!

@@ -136,22 +136,16 @@
               <tr>
                 <!-- <td>{{mpc.addNameplate}}</td> -->
               </tr>
-              <tr ng-repeat="id in mpc.arrayList.list">
-                <!-- QUESTION: Identify where 'id' is from?  Is it a made up name or any column title from the db table?-->
-                <!-- NOTE: book (aka: 'id' here) is name & the loop, current item looping through with repeat must pass an array after -->
-                <td>{{id.manufacturer}}</td>
-                <td>{{id.model_number}}</td>
-                <td>{{id.serial_number}}</td>
-                <td>{{id.date_of_manufacturer}}</td>
-                <td>{{id.input_voltage}}</td>
-                <td>{{id.other_notes}}</td>
-                <!-- QUESTION:  -->
-                <!-- <td><button ng-click="mpc.editNameplate(nameplate_data)" class="btn btn-success">Edit</button></td>
-                <td><button ng-click="mpc.deleteNameplate(nameplate_data.id)" class="btn btn-danger">X</button></td> -->
-                <!-- QUESTION: or this one:  -->
-                <td><button ng-click="mpc.editNameplate(id)" class="btn btn-success">Edit</button></td>
-                <td><button ng-click="mpc.deleteNameplate(id.id)" class="btn btn-danger">X</button></td>
-                <!-- QUESTION:  -->
+              <tr ng-repeat="nameplate in mpc.arrayList.list">
+                <!-- NOTE: 'nameplate' is a made-up-name to identify values to use in thie table for the current item to loop.-->
+                <td>{{nameplate.manufacturer}}</td>
+                <td>{{nameplate.model_number}}</td>
+                <td>{{nameplate.serial_number}}</td>
+                <td>{{nameplate.date_of_manufacturer}}</td>
+                <td>{{nameplate.input_voltage}}</td>
+                <td>{{nameplate.other_notes}}</td>
+                <td><button ng-click="mpc.editNameplate(nameplate)" class="btn btn-success">Edit</button></td>
+                <td><button ng-click="mpc.deleteNameplate(nameplate.id)" class="btn btn-danger">X</button></td>
               </tr>
             </tbody>
           </table>

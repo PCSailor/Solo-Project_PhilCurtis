@@ -6,29 +6,22 @@ soloProjectApp.controller('mainPageController', ['pagesFactory', function(pagesF
   var self = this; // NOTE: self points to 'mpc' abbr defined in clientJS & used in html
   // self.message = 'self.whatever always equals an object - VERIFY';
   self.arrayList = [];
-  //self.objectApp = {}; // NOTE: object connected to HTML User Entry Fields // QUESTION: NEEDED for Login??
   self.arrayList = pagesFactory.makeItUp; // NOTE: says this.arrayList equals factoryJS-created-variable pointing to array with property inside of object
   self.newNameplate = {};
-
   // console.log('self typeof =', typeof self, "AND = ", self);
-  // console.log('self.arrayList typeof =', typeof self.arrayList, "AND =", self.arrayList);
+  console.log('self.arrayList typeof =', typeof self.arrayList, "AND =", self.arrayList);
 
   self.addNameplate = function() {
+    console.log('self.newNameplate: ', self.newNameplate);
     pagesFactory.addNameplateData(self.newNameplate);
   }
-
-
-  self.deleteNameplate = function() {
-    console.log('Nameplate to delete: ', self.deleteNameplate);
-    pagesFactory.deleteNameplateData(nameplate_data.id);
+  self.deleteNameplate = function(nameplateid) {
+  console.log('Nameplate to delete: ', nameplateid); // NOTE: 01: logging ok!
+    pagesFactory.deleteNameplate(nameplateid);
   }
-
-    self.editNameplate = function() {
-      console.log('Nameplate data to edit: ', self.editNameplate);
-      pagesFactory.editNameplateData(self.editNameplateData)
-    }
-// NOTE: _..._NameplateData is function created in factory
-
-
-
+  self.editNameplate = function() {
+    console.log('Nameplate data to edit: ', self.editNameplate);
+    pagesFactory.editNameplateData(self.editNameplateData)
+  }
+  // NOTE: _..._NameplateData is function created in factory
 }]);

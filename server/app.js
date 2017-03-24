@@ -13,10 +13,13 @@ app.use('/mainPage', routesJS);
 // NOTE: app.use drops to a '/' within routes.js AND app.post still uses /mainPage
 
 // NOTE: mainPage/nameplateData
-app.use('mainPage/nameplateData/', routesJS);
-app.post('mainPage/nameplateData/add', routesJS);
-app.put('mainPage/nameplateData/edit', routesJS);
-app.delete('mainPage/nameplateData/delete', routesJS);
+// app.use('mainPage/nameplateData/', routesJS);
+// app.post('mainPage/add', routesJS);
+// app.put('mainPage/edit', routesJS);
+// app.delete('mainPage/delete', routesJS);
+app.post('mainPage/add', routesJS);
+app.put('mainPage/edit', routesJS);
+app.delete('/mainPage/delete', routesJS);
 
 
 
