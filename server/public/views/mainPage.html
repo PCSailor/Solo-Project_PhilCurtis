@@ -138,124 +138,157 @@
               </tr>
               <tr ng-repeat="nameplate in mpc.arrayList.list">
                 <!-- NOTE: 'nameplate' is a made-up-name to identify values to use in thie table for the current item to loop.-->
-                <td>{{nameplate.manufacturer}}</td>
+                <!-- <td>{{nameplate.manufacturer}}</td>
                 <td>{{nameplate.model_number}}</td>
                 <td>{{nameplate.serial_number}}</td>
                 <td>{{nameplate.date_of_manufacturer}}</td>
                 <td>{{nameplate.input_voltage}}</td>
                 <td>{{nameplate.other_notes}}</td>
-                <td><button ng-click="mpc.editNameplate(nameplate)" class="btn btn-success">Edit</button></td>
-                <td><button ng-click="mpc.deleteNameplate(nameplate.id)" class="btn btn-danger">X</button></td>
-                <!-- NOTE: These two buttons point to controller.js functions -->
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="panel panel-info">
-          <div class="panel-heading">
-            <h3 class="panel-title">System History and Parts</h3>
-          </div>
-          <div class="panel-body">
-            Enter all histroy
-          </div>
-          <table class="table">
-            <thead>
-              <tr>
-                <th>Date</th>
-                <th>Services and Repairs</th>
-                <th>Vendors</th>
-                <th>Parts Used</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th>#</th>
-                <th>#</th>
-                <th>#</th>
-                <th>#</th>
-              </tr>
-              <tr>
-                <th>#</th>
-                <th>#</th>
-                <th>#</th>
-                <th>#</th>
-              </tr>
-              <tr>
-                <th>#</th>
-                <th>#</th>
-                <th>#</th>
-                <th>#</th>
-              </tr>
-              <tr>
-                <th>#</th>
-                <th>#</th>
-                <th>#</th>
-                <th>#</th>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+                <input type="text" ng-model="nameplate.manufacturer">The Manufacturer is {{nameplate.manufacturer}} -->
+                <!-- QUESTION: Why is this showing up at the top of the view? -->
+<!--
+                NOTE: IMPORT CODE WRITTEN
+                http://plnkr.co/edit/lXq1WB?p=preview-->
+                <td><div ng-hide="mpc.object[nameplate.id]">{{nameplate.manufacturer}}</div>
+                  <div ng-show="mpc.editNameplate[nameplate.id]"><input type="text" ng-model="nameplate.manufacturer"/></div></td>
+                  <td><div ng-hide="mpc.editNameplate[nameplate.id]">{{nameplate.model_number}}</div>
+                    <div ng-show="mpc.editNameplate[nameplate.id]"><input type="text" ng-model="nameplate.model_number"/></div></td>
+                    <td><div ng-hide="mpc.editNameplate[nameplate.id]">{{nameplate.serial_number}}</div>
+                      <div ng-show="mpc.editNameplate[nameplate.id]"><input type="text" ng-model="nameplate.serial_number"/></div></td>
+                      <td><div ng-hide="mpc.editNameplate[nameplate.id]">{{nameplate.date_of_manufacturer}}</div>
+                        <div ng-show="mpc.editNameplate[nameplate.id]"><input type="text" ng-model="nameplate.date_of_manufacturer"/></div></td>
+                        <td><div ng-hide="mpc.editNameplate[nameplate.id]">{{nameplate.input_voltage}}</div>
+                          <div ng-show="mpc.editNameplate[nameplate.id]"><input type+="text" ng-model="nameplate.input_voltage"/></div></td>
+                          <td><div ng-hide="mpc.editNameplate[nameplate.id]">{{nameplate.other_notes}}</div>
+                            <div ng-show="mpc.newNameplate[nameplate.id]"><input type="text" ng-model="nameplate.other_notes"/></div>
+                          </td>
 
-        <div class="panel panel-info">
-          <div class="panel-heading">
-            <h3 class="panel-title">Businesses</h3>
-          </div>
-          <div class="panel-body">
-            Enter businesses used
-          </div>
-          <table class="table">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Address No.1</th>
-                <!-- <th>address#2</th> -->
-                <th>City</th>
-                <!-- <th>state</th> -->
-                <!-- <th>country</th> -->
-                <!-- <th>zip</th> -->
-                <th>Phone No.1</th>
-                <!-- <th>Phoe#2</th> -->
-                <th>Email</th>
-                <th>Website</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th>#</th>
-                <th>#</th>
-                <th>#</th>
-                <th>#</th>
-                <th>#</th>
-                <th>#</th>
-              </tr>
-              <tr>
-                <th>#</th>
-                <th>#</th>
-                <th>#</th>
-                <th>#</th>
-                <th>#</th>
-                <th>#</th>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+                          <!-- QUESTION: should 'nameplate' be 'newNameplate'? -->
+                          <!-- (factory.js empty self.object) AND [html file madeup name after ng-repeat]
+                          newNameplate[nameplate.id] -->
 
-        <div class="panel panel-info">
-          <div class="panel-heading">
-            <h3 class="panel-title">User Notes</h3>
-          </div>
-          <div class="panel-body">
-            Current user notes to enter
-          </div>
-          <ul style="list-style-type: none">
-            <li>Previous User Notes 01</li>
-            <li>Previous User Notes 02</li>
-            <li>Previous User Notes 03</li>
-            <li>Previous User Notes 04</li>
-            <li>Previous User Notes 05</li>
-            <li>Previous User Notes 06</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
+
+                          <!-- <td><button ng-hide="mpc.object true or false[nameplate.id]" ng-click="modify(nameplate)" class="btn btn-success">Edit</button></td> -->
+
+
+
+                          <td><button ng-hide="mpc.newNameplate[nameplate.id]" ng-click="modify(nameplate)" class="btn btn-success">Edit</button></td>
+                          <td><button ng-show="mpc.newNameplate[nameplate.id]" ng-click="update(nameplate)" class="btn btn-success">Save</button></td>
+                          <!-- NOTE: IMPORT CODE WRITTEN
+                          http://plnkr.co/edit/lXq1WB?p=preview -->
+
+                          <td><button ng-click="mpc.editNameplate(nameplate)" class="btn btn-success">Edit</button></td>
+                          <td><button ng-click="mpc.deleteNameplate(nameplate.id)" class="btn btn-danger">X</button></td>
+                          <!-- NOTE: These two buttons point to controller.js functions -->
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="panel panel-info">
+                    <div class="panel-heading">
+                      <h3 class="panel-title">System History and Parts</h3>
+                    </div>
+                    <div class="panel-body">
+                      Enter all history
+                    </div>
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th>Date</th>
+                          <th>Services and Repairs</th>
+                          <th>Vendors</th>
+                          <th>Parts Used</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th>#</th>
+                          <th>#</th>
+                          <th>#</th>
+                          <th>#</th>
+                        </tr>
+                        <tr>
+                          <th>#</th>
+                          <th>#</th>
+                          <th>#</th>
+                          <th>#</th>
+                        </tr>
+                        <tr>
+                          <th>#</th>
+                          <th>#</th>
+                          <th>#</th>
+                          <th>#</th>
+                        </tr>
+                        <tr>
+                          <th>#</th>
+                          <th>#</th>
+                          <th>#</th>
+                          <th>#</th>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <div class="panel panel-info">
+                    <div class="panel-heading">
+                      <h3 class="panel-title">Businesses</h3>
+                    </div>
+                    <div class="panel-body">
+                      Enter businesses used
+                    </div>
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th>Name</th>
+                          <th>Address No.1</th>
+                          <!-- <th>address#2</th> -->
+                          <th>City</th>
+                          <!-- <th>state</th> -->
+                          <!-- <th>country</th> -->
+                          <!-- <th>zip</th> -->
+                          <th>Phone No.1</th>
+                          <!-- <th>Phoe#2</th> -->
+                          <th>Email</th>
+                          <th>Website</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th>#</th>
+                          <th>#</th>
+                          <th>#</th>
+                          <th>#</th>
+                          <th>#</th>
+                          <th>#</th>
+                        </tr>
+                        <tr>
+                          <th>#</th>
+                          <th>#</th>
+                          <th>#</th>
+                          <th>#</th>
+                          <th>#</th>
+                          <th>#</th>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <div class="panel panel-info">
+                    <div class="panel-heading">
+                      <h3 class="panel-title">User Notes</h3>
+                    </div>
+                    <div class="panel-body">
+                      Current user notes to enter
+                    </div>
+                    <ul style="list-style-type: none">
+                      <li>Previous User Notes 01</li>
+                      <li>Previous User Notes 02</li>
+                      <li>Previous User Notes 03</li>
+                      <li>Previous User Notes 04</li>
+                      <li>Previous User Notes 05</li>
+                      <li>Previous User Notes 06</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>

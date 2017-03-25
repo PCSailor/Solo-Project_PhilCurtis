@@ -46,15 +46,18 @@ soloProjectApp.factory('pagesFactory', ['$http', function($http) {
     console.log('delete from factory.js'); // NOTE: 02: logging ok!           last one
   } // NOTE: for: function deleteNameplate
 
-  // // NOTE: Edit Nameplate
-  // function editNameplate (editNameplate) {
-  //   $http({
-  //     method: 'PUT'
-  //     url: 'mainPage/edit' + editNameplate
-  //   }).then(function(response) {
-  //     getData();
-  //   });
-  // } // NOTE: for: function editNameplate
+  // NOTE: Edit Nameplate
+  function editNameplate (editNameplate) {
+    console.log('editNameplate function01');
+    $http({
+      method: 'PUT',
+      url: 'mainPage/edit/' + editNameplate.id,
+      data: editNameplate
+    }).then(function(response) {
+      getData();
+    });
+    console.log('editNameplate.id', editNameplate.id);
+  } // NOTE: for: function editNameplate
 
 
   return {
@@ -65,7 +68,8 @@ soloProjectApp.factory('pagesFactory', ['$http', function($http) {
     // NOTE: Return example = controller connection: factory connection
     makeItUp: factoryAppPort, // NOTE: NOT factoryAppPort: mainPageFactory
     addNameplateData: addNameplateData, // NOTE: controller connection: factory connection
-    deleteNameplate: deleteNameplate
+    deleteNameplate: deleteNameplate,
+    editNameplate: editNameplate
     // NOTE: code from controllerJS: // self.arrayList = mainPageFactory.factoryAppPort; // NOTE: says this.arrayList equals factoryJS-created-variable pointing to array with property inside of object
 
   }; // NOTE: needs semi-colon!

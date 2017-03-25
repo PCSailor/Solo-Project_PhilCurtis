@@ -53,7 +53,7 @@ router.post('/add', function(req, res) { // NOTE: Path must match factory.JS pat
 }); // NOTE: router.post
 
 // NOTE: edit Nameplate data
-router.put('/nameplateData/edit/:id', function(req, res) {
+router.put('/edit/:id', function(req, res) {
   var nameplateToedit = req.params.id;
   var nameplateObject = req.body;
   console.log('RouteJS/RouterPUT/Req.body = ', nameplateObject);
@@ -63,7 +63,8 @@ router.put('/nameplateData/edit/:id', function(req, res) {
       console.log('RouteJS/RouterPUT/Pool.connect error = ', err);
       res.sendStatus(500);
     } else {
-      client.query('UPDATE nameplate_data SET manufacturer=$1, model_number=$2, serial_number=$3, date_of_manufacturer=$4, input_voltage=$5, other_notes=$6 WHERE id=$1, $2, $3, $4, $5, $6;',
+      // NOTE: from task.js = client.query('UPDATE task SET status=TRUE WHERE ID=$1;',[taskToCompleteId], function(err, result) { done();
+      client.query('UPDATE nameplate_data SET manufacturer=$1, model_number=$2, serial_number=$3, date_of_manufacturer=$4, input_voltage=$5, other_notes=$62017- WHERE id=$1, $2, $3, $4, $5, $6;',
       [nameplateObject.manufacturer, nameplateObject.model_number, nameplateObject.serial_number, nameplateObject.date_of_manufacturer, nameplateObject.input_voltage, nameplateObject.other_notes], function(err, result) { // NOTE: [var-name-within-this-post.html-page/input-ng-model]
         done();
         if(err) {

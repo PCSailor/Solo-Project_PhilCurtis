@@ -21,9 +21,28 @@ soloProjectApp.controller('mainPageController', ['pagesFactory', function(pagesF
     pagesFactory.deleteNameplate(nameplateid);
   } // NOTE: Working!!
 
+// NOTE: IMPORT CODE WRITTEN http://plnkr.co/edit/lXq1WB?p=preview
+// NOTE: newNameplate = editingdata AND arrayList = tabledata
+// for (var i = 0, length = self.arrayList.length; i < length; i++) {
+for (var i = 0; i < self.arrayList.length; i++) {
+  self.newNameplate[self.arrayList[i].id] = false;
+}
+self.modify = function(arrayList) {
+  self.newNameplate[arrayList.id] = true;
+};
+self.update = function(arrayList) {
+  self.newNameplate[arrayList.id] = false;
+};
+// NOTE: IMPORT CODE WRITTEN http://plnkr.co/edit/lXq1WB?p=preview
+
+
   self.editNameplate = function(nameplate) {
+    console.log('self = ', self); // NOTE: shows: editNameplate:(nameplate) / arguments:null / caller:null / length:1 / name:"" <-- // QUESTION: PROBLEM??
+    console.log('self.editNameplate = ', self.editNameplate); // NOTE:
     console.log('Nameplate data to edit: ', nameplate);
-    pagesFactory.editNameplateData(nameplate)
+    // pagesFactory.editNameplateData(nameplate)
+    pagesFactory.editNameplate(nameplate)
   } // NOTE:
+
   // NOTE: _..._NameplateData is function created in factory
 }]);
