@@ -154,30 +154,7 @@
 
                 <!--Original Code-->
                 <td>
-                  <!--<div ng-hide="mpc.object[nameplate.id]">{{nameplate.manufacturer}}</div>
-                  <div ng-show="mpc.newNameplate[nameplate.id]"><input type="text" ng-model="nameplate.manufacturer"/></div>-->
-                  
-<!--Angular-xeditable Play:-->
-                <!--WORKING CODE:
-                <div><a href="#" editable-text="user.name" e-placeholder="User Name">{{ user.name || "empty" }}</a></div>-->
-<!--
-  <notes>This line of code explained: <div><a href="#" editable-text="user.name" e-placeholder="User Name">{{ user.name || "empty" }}</a></div> </notes>
-1) href="#" <NOTE>Adding AngJS-db-data here changes</NOTE>
-
-2) editable-text="user.name" <NOTE>Replacing AngJS-db-data within quotes here adds the db values from the manufacturer column AND clicking on it is editable</NOTE>
-
-3) {{ user.name || "empty" }} <NOTE>Adds data with an OR selection</NOTE>
-
--->
-
-
 <div><a href="#" editable-text=nameplate.manufacturer e-placeholder="Manufacturer">{{ nameplate.manufacturer || "Manufacturer" }}</a></div>
-
-<!--<div><a href="#" editable-text="user.name" e-placeholder="Manufacturer">{{ nameplate.manufacturer || "Manufacturer" }}</a></div>-->
-<!--<div><a href="mpc.object[nameplate.id]" editable-text="mpc.object[nameplate.id]" e-placeholder="User Name">{{ nameplate.manufacturer || " " }}</a></div>-->
-
-
-
                   </td>
                   <!--<td><div ng-hide="mpc.newNameplate[nameplate.id]">{{nameplate.model_number}}</div>
                     <div ng-show="mpc.newNameplate[nameplate.id]"><input type="text" ng-model="nameplate.model_number"/></div></td>
@@ -208,7 +185,7 @@
                     <!--<a href="#" editable-text="user.name" e-label="User Name">{{ user.name || "empty" }}</a></div>-->
 
 
-                          <td><button ng-click="mpc.editNameplate(nameplate)" class="btn btn-success">Edit</button></td>
+                          <!--<td><button ng-click="mpc.editNameplate(nameplate)" class="btn btn-success">Edit</button></td>-->
                           <td><button ng-click="mpc.deleteNameplate(nameplate.id)" class="btn btn-danger">X</button></td>
                           <!-- NOTE: These two buttons point to controller.js functions -->
                         </tr>
