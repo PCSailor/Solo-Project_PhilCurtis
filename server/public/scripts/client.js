@@ -1,6 +1,6 @@
 console.log(new Date().getFullYear() + ' client.js run');
 console.log('  ');
-var soloProjectApp = angular.module('soloProjectAngularApp', ['ngRoute']);
+var soloProjectApp = angular.module('soloProjectAngularApp', ['ngRoute', 'xeditable']);
 // NOTE: soloProjectAngularApp on clientJS, Index.html
 // NOTE: ngRoute matched to indexHTML/ng-view AND is a dependency of script Angular-route.js AND the .config function below places content within the ng-view area of indexHTML.
 // QUESTION: How to have ng-route point to different ng-views on indexHTML with different information?

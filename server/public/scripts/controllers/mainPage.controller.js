@@ -11,6 +11,8 @@ soloProjectApp.controller('mainPageController', ['pagesFactory', function(pagesF
   // console.log('self typeof =', typeof self, "AND = ", self);
   console.log('self.arrayList typeof =', typeof self.arrayList, "AND =", self.arrayList);
 
+
+
   // self.addNameplateData = function() {
   self.addNameplate = function() {
     console.log('self.newNameplate: ', self.newNameplate);
@@ -24,15 +26,15 @@ soloProjectApp.controller('mainPageController', ['pagesFactory', function(pagesF
 // NOTE: IMPORT CODE WRITTEN http://plnkr.co/edit/lXq1WB?p=preview
 // NOTE: newNameplate = editingdata AND arrayList = tabledata
 // for (var i = 0, length = self.arrayList.length; i < length; i++) {
-for (var i = 0; i < self.arrayList.length; i++) {
-  self.newNameplate[self.arrayList[i].id] = false;
-}
-self.modify = function(arrayList) {
-  self.newNameplate[arrayList.id] = true;
-};
-self.update = function(arrayList) {
-  self.newNameplate[arrayList.id] = false;
-};
+// for (var i = 0; i < self.arrayList.length; i++) {
+//   self.newNameplate[self.arrayList[i].id] = false;
+// }
+// self.modify = function(arrayList) {
+//   self.newNameplate[arrayList.id] = true;
+// };
+// self.update = function(arrayList) {
+//   self.newNameplate[arrayList.id] = false;
+// };
 // NOTE: IMPORT CODE WRITTEN http://plnkr.co/edit/lXq1WB?p=preview
 
 
@@ -45,4 +47,18 @@ self.update = function(arrayList) {
   } // NOTE:
 
   // NOTE: _..._NameplateData is function created in factory
+
+
+
+
+// self.newNameObject = {};
+
+// soloProjectApp.controller('Ctrl', ['self', function(self) {
+// self.user = {
+//   name: 'awesome user'
+// };
+// }]);
+  
+  
+  
 }]);
