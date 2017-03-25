@@ -129,33 +129,39 @@
                     <!-- NOTE: .addNameplate tied with controller.js AND factory.js -->
                     <!-- NOTE: .nameplateData tied with routes.js -->
                   </form>
-
-           
                 </div>
               </thead>
               <tbody>
-              </tr>
               <tr>
                 <!-- <td>{{mpc.addNameplate}}</td> -->
               </tr>
               <tr ng-repeat="nameplate in mpc.arrayList.list">
-                <!-- NOTE: 'nameplate' is a made-up-name to identify values to use in thie table for the current item to loop.-->
-                <!-- <td>{{nameplate.manufacturer}}</td>
-                <td>{{nameplate.model_number}}</td>
-                <td>{{nameplate.serial_number}}</td>
-                <td>{{nameplate.date_of_manufacturer}}</td>
-                <td>{{nameplate.input_voltage}}</td>
-                <td>{{nameplate.other_notes}}</td>
-                <input type="text" ng-model="nameplate.manufacturer">The Manufacturer is {{nameplate.manufacturer}} -->
-                <!-- QUESTION: Why is this showing up at the top of the view? -->
-                <!--NOTE: IMPORT CODE WRITTEN
-                http://plnkr.co/edit/lXq1WB?p=preview-->
-
-
-                <!--Original Code-->
+                <form editable-form-name="nameplateInputForm" onaftersave="saveUser">
                 <td>
 <div><a href="#" editable-text=nameplate.manufacturer e-placeholder="Manufacturer">{{ nameplate.manufacturer || "Manufacturer" }}</a></div>
                   </td>
+                  <span editable-text="" e-name="" e-form="rowform" onbeforesave="checkName($data, manufacturer.id)"></span>
+
+                </form>
+
+
+
+
+
+
+                <!-- NOTE: 'nameplate' is a made-up-name to identify values to use in thie table for the current item to loop.-->
+                  <!--<td>{{nameplate.manufacturer}}</td>
+                  <td>{{nameplate.model_number}}</td>
+                  <td>{{nameplate.serial_number}}</td>
+                  <td>{{nameplate.date_of_manufacturer}}</td>
+                  <td>{{nameplate.input_voltage}}</td>
+                  <td>{{nameplate.other_notes}}</td>
+                  <input type="text" ng-model="nameplate.manufacturer">The Manufacturer is {{nameplate.manufacturer}} -->
+
+
+
+                <!--NOTE: IMPORT CODE WRITTEN
+                http://plnkr.co/edit/lXq1WB?p=preview-->
                   <!--<td><div ng-hide="mpc.newNameplate[nameplate.id]">{{nameplate.model_number}}</div>
                     <div ng-show="mpc.newNameplate[nameplate.id]"><input type="text" ng-model="nameplate.model_number"/></div></td>
                     <td><div ng-hide="mpc.newNameplate[nameplate.id]">{{nameplate.serial_number}}</div>
@@ -167,25 +173,23 @@
                           <td><div ng-hide="mpc.newNameplate[nameplate.id]">{{nameplate.other_notes}}</div>
                             <div ng-show="mpc.newNameplate[nameplate.id]"><input type="text" ng-model="nameplate.other_notes"/></div>
                           </td>-->
+                          <!-- <td><button ng-hide="mpc.object true or false[nameplate.id]" ng-click="modify(nameplate)" class="btn btn-success">Edit</button></td> -->
+                          <!--<td><button ng-hide="mpc.newNameplate[nameplate.id]" ng-click="modify(nameplate)" class="btn btn-success">Edit</button></td>
+                          <td><button ng-show="mpc.newNameplate[nameplate.id]" ng-click="update(nameplate)" class="btn btn-success">Save</button></td>
+                          <!-- NOTE: IMPORT CODE WRITTEN-->
+                          <!--http://plnkr.co/edit/lXq1WB?p=preview-->
 
                           <!-- (factory.js empty self.object) AND [html file madeup name after ng-repeat]
                           newNameplate[nameplate.id] -->
 
 
-                          <!-- <td><button ng-hide="mpc.object true or false[nameplate.id]" ng-click="modify(nameplate)" class="btn btn-success">Edit</button></td> -->
-
-
-
-                          <!--<td><button ng-hide="mpc.newNameplate[nameplate.id]" ng-click="modify(nameplate)" class="btn btn-success">Edit</button></td>
-                          <td><button ng-show="mpc.newNameplate[nameplate.id]" ng-click="update(nameplate)" class="btn btn-success">Save</button></td>
-                          <!-- NOTE: IMPORT CODE WRITTEN-->
-                          <!--http://plnkr.co/edit/lXq1WB?p=preview-->
-                                 <!--Angular-xeditable-->
-                  <!--<div ng-controller="Ctrl">-->
-                    <!--<a href="#" editable-text="user.name" e-label="User Name">{{ user.name || "empty" }}</a></div>-->
-
-
+                                 <!--Angular-xeditable - WORKING CODE BUT DELETE IF EDIT FORM SUCCESS-->
+                <td>
+<div><a href="#" editable-text=nameplate.manufacturer e-placeholder="Manufacturer">{{ nameplate.manufacturer || "Manufacturer" }}</a></div>
+                  </td>
+                          <!--old edit button-->
                           <!--<td><button ng-click="mpc.editNameplate(nameplate)" class="btn btn-success">Edit</button></td>-->
+                          <!--delete button-->
                           <td><button ng-click="mpc.deleteNameplate(nameplate.id)" class="btn btn-danger">X</button></td>
                           <!-- NOTE: These two buttons point to controller.js functions -->
                         </tr>
