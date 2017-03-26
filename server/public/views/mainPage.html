@@ -140,8 +140,15 @@
                 <td>
 <div><a href="#" editable-text=nameplate.manufacturer e-placeholder="Manufacturer">{{ nameplate.manufacturer || "Manufacturer" }}</a></div>
                   </td>
-                  <span editable-text="" e-name="" e-form="rowform" onbeforesave="checkName($data, manufacturer.id)"></span>
-
+                  <td>
+                  <!-- editable username (text with validation) -->
+                  <span editable-text="manufacturer" e-name="Manufacturer" e-form="rowform" onbeforesave="checkName($data, manufacturer.id)">{{ nameplate.manufacturer || " " }}</span>
+                  </td>
+                  <td>
+                    <!-- editable group (select-remote) 
+                    <todo>need to fix this tag</todo>-->
+                    <span editable-select="manufacturer" e-name="group" onshow="loadGroups()" e-form="rowform" e-ng-options="g.id as g.text for g in groups">{{ showGroup(user) }}</span>
+                  </td>
                 </form>
 
 
