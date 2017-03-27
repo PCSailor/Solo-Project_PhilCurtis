@@ -50,7 +50,7 @@ soloProjectApp.factory('pagesFactory', ['$http', function($http) {
     }).then(function(response) {
       getData();
     });
-    console.log('delete from factory.js'); // NOTE: 02: logging ok!           last one
+    console.log('delete from nameplate.factory.js'); // NOTE: 02: logging ok!           last one
   } // NOTE: for: function deleteNameplate
 
   // NOTE: Edit Nameplate
@@ -120,9 +120,9 @@ soloProjectApp.factory('pagesFactory', ['$http', function($http) {
       method: 'DELETE',
       url: '/mainpage/history/delete' + historyid // NOTE: changing path resulted with this error: DELETE http://localhost:5500/mainpage/deleteMustMatc26 404 (Not Found)
     }).then(function(response) {
-      getData();
+      getHistory();
     });
-    console.log('delete history from factory.js'); // NOTE: 02: logging ok!
+    console.log('delete from history.factory.js ', historyid); // NOTE: 02: logging ok!
   } // NOTE: for: function deleteNameplate
 
   // NOTE: Edit System History and Parts Data

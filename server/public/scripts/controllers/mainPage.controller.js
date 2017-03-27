@@ -32,15 +32,15 @@ soloProjectApp.controller('mainPageController', ['pagesFactory', function(pagesF
   self.addNameplate = function() {
     console.log('self.newNameplate: ', self.newNameplate); // Note: this log equals the factoryJS console.log('add Nameplate = ', addNameplateData); // NOTE: Should be a filled-in object
     pagesFactory.addNameplateData(self.newNameplate);
-  }; // NOTE: Working!!
+  };
   self.deleteNameplate = function(nameplateid) {
-  console.log('Nameplate to delete: ', nameplateid); // NOTE: 01: logging ok!
+  console.log('delete from nameplate.controller.js: ', nameplateid); // NOTE: 01: logging ok!
     pagesFactory.deleteNameplate(nameplateid);
-  }; // NOTE: Working!!
+  };
  self.editNameplate = function(edited) {
     console.log('Edited nameplate: ', edited); // NOTE:
      pagesFactory.editNameplate(edited);
-    }; // NOTE: Working!!
+    };
   // NOTE: System History and Parts Data //
     // NOTE: System History and Parts Data //
       // NOTE: System History and Parts Data //
@@ -52,16 +52,16 @@ soloProjectApp.controller('mainPageController', ['pagesFactory', function(pagesF
   self.addHistory = function(history) {
     console.log('self.newHistory: ', self.newHistory); // Note: this log equals the controllerJS console.log('addHistory = ',); // NOTE: Should be a filled-in object
     pagesFactory.addHistoryData(self.newHistory);
-  }; // NOTE: Working!!
+  };
   self.deleteHistory = function(historyid) {
-  console.log('History to delete: ', historyid, deleteHistory); // NOTE: 01: logging ok!
+ console.log('delete from history.controller.js: ', historyid); // NOTE: 01: logging ok!
     pagesFactory.deleteHistory(historyid);
-  }; // NOTE: Working!!
+  };
  self.editHistory = function(edited) {
     console.log('Edited history: ', edited); // NOTE:
      pagesFactory.editHistory(edited);
     }; 
-// NOTE: Working!!
+
 
   // NOTE: Businesses Data //
     // NOTE: Businesses Data //

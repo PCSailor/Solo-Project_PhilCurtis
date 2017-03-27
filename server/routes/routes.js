@@ -162,7 +162,7 @@ router.post('/history/add', function(req, res) { // NOTE: Path must match factor
 
 // NOTE: delete History data
 // router.delete('history/delete:id', function(req, res) { // NOTE: changing path resulted with this error: DELETE http://localhost:5500/mainPage/deleteMustMatch26 500 (Internal Server Error)
-router.delete('/delete:id', function(req, res) { // NOTE: 
+router.delete('/history/delete:id', function(req, res) { // NOTE: 
   var historyToDelete = req.params.id;
   console.log('routeJS/router/historyToDelete = ', historyToDelete); // NOTE: 03 - terminal
   pool.connect(function(err, client, done) { // NOTE: db query starts
