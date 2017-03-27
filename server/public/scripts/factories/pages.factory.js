@@ -58,7 +58,7 @@ soloProjectApp.factory('pagesFactory', ['$http', function($http) {
     console.log('editNameplate function is run');
     $http({
       method: 'PUT',
-      url: 'mainPage/editnameplate/' + editNameplate.id,
+      url: 'mainPage/nameplate/edit' + editNameplate.id,
       data: editNameplate
     }).then(function(response) {
       getData();
