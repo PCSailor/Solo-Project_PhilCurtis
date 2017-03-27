@@ -1,0 +1,1 @@
+console.log(new Date().getFullYear() + ' history.factory.js is run');

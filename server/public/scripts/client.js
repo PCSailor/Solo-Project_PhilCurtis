@@ -26,8 +26,8 @@ soloProjectApp.config(['$routeProvider', function($routeProvider) {
 }) // NOTE: no semi-colon
 
 // NOTE: 03 mainPage HTML Page
-.when('/mainPage/', { // NOTE: this sets the actual domain(matched with nav.html & backend files)
-  templateUrl: '/views/mainPage.html', // NOTE: this puts info on the DOM
+.when('/mainpage/', { // NOTE: this sets the actual domain(matched with nav.html & backend files)
+  templateUrl: '/views/mainpage.html', // NOTE: this puts info on the DOM
   controller: 'mainPageController', // NOTE: controller value must match controller.js
   controllerAs: 'mpc' // NOTE: controller abbr
 }) // NOTE: no semi-colon

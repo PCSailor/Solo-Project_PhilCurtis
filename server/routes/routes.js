@@ -32,7 +32,6 @@ router.get('/nameplateData/', function(req, res) { // NOTE: replaced by SELECT s
 // router.post('/nameplateData/add', function(req, res) {
 router.post('/add', function(req, res) { // NOTE: Path must match factory.JS path
   console.log('RouteJS/RouterPOST/Req.body = ', req.body);
-  // 
   var nameplateObject = req.body;
   pool.connect(function(err, client, done) { // NOTE: db query starts
     if(err) {
@@ -53,35 +52,7 @@ router.post('/add', function(req, res) { // NOTE: Path must match factory.JS pat
   }); // NOTE: pool.connect
 }); // NOTE: router.post
 
-// NOTE: edit Nameplate data
-router.put('/edit/:id', function(req, res) {
-  var nameplateToedit = req.params.id;
-  var nameplateObject = req.body;
-  console.log('RouteJS/RouterPUT/Req.body = ', nameplateObject);
-  console.log('RouteJS/RouterPUT/req.params.id = ', nameplateToedit);
-  pool.connect(function(err, client, done) { // NOTE: db query starts
-    if(err) {
-      console.log('RouteJS/RouterPUT/Pool.connect error = ', err);
-      res.sendStatus(500);
-    } else {
-      // NOTE: from task.js = client.query('UPDATE task SET status=TRUE WHERE ID=$1;',[taskToCompleteId], function(err, result) { done();
-      client.query('UPDATE nameplate_data SET manufacturer=$1, model_number=$2, serial_number=$3, date_of_manufacturer=$4, input_voltage=$5, other_notes=$6 WHERE id=$7;',
-      [nameplateObject.manufacturer, nameplateObject.model_number, nameplateObject.serial_number, nameplateObject.date_of_manufacturer, nameplateObject.input_voltage, nameplateObject.other_notes, nameplateToedit], function(err, result) { // NOTE: [var-name-within-this-post.html-page/input-ng-model]
-        done();
-        if(err) {
-          console.log('RouteJS/RouterPUT/Pool.connect/db query-put error = ', err);
-          res.sendStatus(500); // NOTE: error
-        } else {
-          res.sendStatus(201); // NOTE: Success
-        } // NOTE: else
-      }); // NOTE: client.query
-    } // NOTE: else
-  }); // NOTE: pool.connect
-}); // NOTE: router.put
-
 // NOTE: delete Nameplate data
-// router.delete('/nameplateData/delete/:id', function(req, res) {
-// router.delete('/mainPage/delete:id', function(req, res) {
 router.delete('/deleteMustMatch:id', function(req, res) { // NOTE: changing path resulted with this error: DELETE http://localhost:5500/mainPage/deleteMustMatch26 500 (Internal Server Error)
   var nameplateToDelete = req.params.id;
   console.log('RouteJS/RouternameplateToDelete = ', nameplateToDelete); // NOTE: 03 - terminal
@@ -105,6 +76,120 @@ router.delete('/deleteMustMatch:id', function(req, res) { // NOTE: changing path
   }); // NOTE: pool.connect
 }); // NOTE: router.delete
 
+// NOTE: edit Nameplate data
+router.put('/editnameplate/:id', function(req, res) {
+  var nameplateToedit = req.params.id;
+  var nameplateObject = req.body;
+  console.log('RouteJS/RouterPUT/editnameplate/req.body = ', nameplateObject);
+  console.log('RouteJS/RouterPUT/editnameplate/req.params.id = ', nameplateToedit);
+  pool.connect(function(err, client, done) { // NOTE: db query starts
+    if(err) {
+      console.log('RouteJS/RouterPUT/Pool.connect/editnameplate error = ', err);
+      res.sendStatus(500);
+    } else {
+      // NOTE: from task.js = client.query('UPDATE task SET status=TRUE WHERE ID=$1;',[taskToCompleteId], function(err, result) { done();
+      client.query('UPDATE nameplate_data SET manufacturer=$1, model_number=$2, serial_number=$3, date_of_manufacturer=$4, input_voltage=$5, other_notes=$6 WHERE id=$7;',
+      [nameplateObject.manufacturer, nameplateObject.model_number, nameplateObject.serial_number, nameplateObject.date_of_manufacturer, nameplateObject.input_voltage, nameplateObject.other_notes, nameplateToedit], function(err, result) { // NOTE: [var-name-within-this-post.html-page/input-ng-model]
+        done();
+        if(err) {
+          console.log('RouteJS/RouterPUT/Pool.connect/db query-put/editnameplate error = ', err);
+          res.sendStatus(500); // NOTE: error
+        } else {
+          res.sendStatus(201); // NOTE: Success
+        } // NOTE: else
+      }); // NOTE: client.query
+    } // NOTE: else
+  }); // NOTE: pool.connect
+}); // NOTE: router.put
+
+
+
+
+
+  // NOTE: System History and Parts Data //
+    // NOTE: System History and Parts Data //
+      // NOTE: System History and Parts Data //
+        // get / .GET
+          // add / .POST
+            // delete / .DELETE
+              // edit / .PUT
+
+
+// NOTE: add new History data
+router.post('/history/add', function(req, res) { // NOTE: Path must match factory.JS path
+  console.log('RouteJS/RouterPOST/history/add/Req.body = ', req.body);
+  // 
+  var historyObject = req.body;
+  pool.connect(function(err, client, done) { // NOTE: db query starts
+    if(err) {
+      console.log('RouteJS/RouterPOST/history/add/Pool.connect error = ', err);
+      res.sendStatus(500);
+    } else {
+      client.query('INSERT INTO system_history (date, services_and_repairs, vendors, parts_used) VALUES ($1, $2, $3, $4);',
+      [historyObject.date, historyObject.services_and_repairs, historyObject.vendors, historyObject.parts_used], function(err, result) { // NOTE: [var-name-within-this-post.html-page/input-ng-model]
+        done();
+        if(err) {
+          console.log('RouteJS/RouterPOST/history/add/Pool.connect/db query-post error = ', err);
+          res.sendStatus(500); // NOTE: error
+        } else {
+          res.sendStatus(201); // NOTE: Success
+        } // NOTE: else
+      }); // NOTE: client.query
+    } // NOTE: else
+  }); // NOTE: pool.connect
+}); // NOTE: router.post
+
+// NOTE: delete History data
+router.delete('history/delete:id', function(req, res) { // NOTE: changing path resulted with this error: DELETE http://localhost:5500/mainPage/deleteMustMatch26 500 (Internal Server Error)
+  var historyToDelete = req.params.id;
+  console.log('routeJS/router/historyToDelete = ', historyToDelete); // NOTE: 03 - terminal
+  pool.connect(function(err, client, done) { // NOTE: db query starts
+    if(err) {
+      console.log('routeJS/router/historyToDelete/Pool.connect error = ', err);
+      res.sendStatus(500);
+    } else {
+      client.query('DELETE FROM system_history WHERE id=$1;',
+      [historyToDelete], function(err, result) { // NOTE: [var-name-within-this-post.html-page/input-ng-model]
+        done();
+        if(err) {
+          console.log('routeJS/router/historyToDelete/Pool.connect/db query-post error = ', err);
+          res.sendStatus(500); // NOTE: error
+        } else {
+          res.sendStatus(201); // NOTE: Success
+          console.log('routeJS/router/historyToDelete/item deleted!!');  // NOTE: 04 - terminal
+        } // NOTE: else
+      }); // NOTE: client.query
+    } // NOTE: else
+  }); // NOTE: pool.connect
+}); // NOTE: router.delete
+
+
+
+// NOTE: edit History data
+router.put('/edithistory/:id', function(req, res) {
+  var historyToedit = req.params.id;
+  var historyObject = req.body;
+  console.log('RouteJS/RouterPUT/req.body/edithistory = ', historyObject);
+  console.log('RouteJS/RouterPUT/req.params.id/edithistory = ', historyToedit);
+  pool.connect(function(err, client, done) { // NOTE: db query starts
+    if(err) {
+      console.log('RouteJS/RouterPUT/Pool.connect/edithistory error = ', err);
+      res.sendStatus(500);
+    } else {
+      // NOTE: from task.js = client.query('UPDATE task SET status=TRUE WHERE ID=$1;',[taskToCompleteId], function(err, result) { done();
+      client.query('UPDATE system_history SET date=$1, services_and_repairs=$2, vendors=$3, parts_used=$4 WHERE id=$5;',
+      [historyObject.date, historyObject.services_and_repairs, historyObject.vendors, historyObject.parts_used, historyToedit], function(err, result) { // NOTE: [var-name-within-this-post.html-page/input-ng-model]
+        done();
+        if(err) {
+          console.log('RouteJS/RouterPUT/Pool.connect/db query-put error/edithistory = ', err);
+          res.sendStatus(500); // NOTE: error
+        } else {
+          res.sendStatus(201); // NOTE: Success
+        } // NOTE: else
+      }); // NOTE: client.query
+    } // NOTE: else
+  }); // NOTE: pool.connect
+}); // NOTE: router.put
 
 
 

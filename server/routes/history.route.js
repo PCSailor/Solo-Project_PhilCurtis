@@ -1,0 +1,1 @@
+console.log(new Date().getFullYear() + ' history.route.js is run');
