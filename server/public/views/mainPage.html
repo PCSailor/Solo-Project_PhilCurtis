@@ -1,4 +1,5 @@
-{{mpc.arrayList.list[0].manufacturer}}
+{{mpc.arrayList.list[0].manufacturer}}<br>
+{{mpc.historyArrayList.list[2].services_and_repairs}}<br>
 <!-- NOTE: Navigation Header Bar -->
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid"> <!-- NOTE: make nav bar full width -->
@@ -97,31 +98,7 @@
       </div>
     </div>
     <div class="col-lg-9 col-sm-9 col-xs-9 mainBody">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      
-                <!-- NOTE: mainPage/nameplateData START -->
+<!-- NOTE: mainPage/nameplateData START -->
       <div class="panel panel-info">
         <div class="panel-heading">
           <h3 class="panel-title">Nameplate Data</h3>
@@ -168,31 +145,7 @@
                       </tbody>
                     </table>
                   </div>
-                <!-- NOTE: mainPage/nameplateData END -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                
+                <!-- NOTE: mainPage/nameplateData END -->            
                 <!-- NOTE: mainPage/System History and Parts START -->
       <div class="panel panel-info">
         <div class="panel-heading">
@@ -209,12 +162,12 @@
               </tr>
               <tr>
                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                  <form id="nameplateForm" class="form-inline">
+                  <form id="historyForm" class="form-inline">
                     <td><input ng-model="mpc.newHistory.date" class="form-control"  placeholder="Date"></td>
                     <td><input ng-model="mpc.newHistory.services_repairs" class="form-control" placeholder="Services and Repairs"></td>
                     <td><input ng-model="mpc.newHistory.vendors" class="form-control" placeholder="Vendors"></td>
                     <td><input ng-model="mpc.newHistory.parts_used" placeholder="Parts Used"></td>
-                    <tr><td><button ng-click="mpc.newHistory()" type="submit" class="btn btn-primary">Add New System History</button></td></tr>
+                    <tr><td><button ng-click="mpc.addHistory(history)" type="submit" class="btn btn-primary">Add New System History</button></td></tr>
                     <!-- NOTE: .addNameplate tied with controller.js AND factory.js -->
                     <!-- NOTE: .nameplateData tied with routes.js -->
                   </form>

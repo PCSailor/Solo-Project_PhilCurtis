@@ -32,7 +32,7 @@ soloProjectApp.factory('pagesFactory', ['$http', function($http) {
   // NOTE: After this GET, should have an array on DOM
   // NOTE: Add new Nameplate
   function addNameplateData(addNameplateData) {
-    console.log('add Nameplate = ', addNameplateData);
+    console.log('add Nameplate = ', addNameplateData); // Note: this log equals the controllerJS console.log('self.newNameplate: ', self.newNameplate); // NOTE: Should be a filled-in object
     $http({
       method: 'POST',
       url: 'mainpage/add', // NOTE: Path must match route.JS path
@@ -104,9 +104,10 @@ soloProjectApp.factory('pagesFactory', ['$http', function($http) {
 
   // NOTE: Add new System History and Parts Data
   function addHistory(addHistory) {
+    console.log('addHistory = ', addHistory); // Note: this log equals the controllerJS console.log('self.newHistory: ', self.newHistory); // NOTE: Should be a filled-in object
     $http({
       method: 'POST',
-      url: 'mainPage/history/add', // NOTE: Path must match route.JS path
+      url: 'mainpage/history/add', // NOTE: Path must match route.JS path
       data: addHistory
     }).then(function(response) {
       getHistory();
@@ -121,7 +122,7 @@ soloProjectApp.factory('pagesFactory', ['$http', function($http) {
     }).then(function(response) {
       getData();
     });
-    console.log('delete history from factory.js'); // NOTE: 02: logging ok!           last one
+    console.log('delete history from factory.js'); // NOTE: 02: logging ok!
   } // NOTE: for: function deleteNameplate
 
   // NOTE: Edit System History and Parts Data

@@ -12,13 +12,14 @@ soloProjectApp.controller('mainPageController', ['pagesFactory', function(pagesF
   self.historyArrayList = [];
   self.historyArrayList = pagesFactory.factoryHistoryToController; // NOTE: says this.arrayList equals factoryJS-created-variable pointing to array with property inside of object
   self.newHistory = {};
-  console.log('self =', self);
-  console.log('self.arrayList =', self.arrayList);
-  console.log('self.arrayList.list =', typeof self.arrayList.list, 'with properties of: ', self.arrayList.list);
-  console.log('self.nameplate: ', self.nameplate); // NOTE: Should be an empty object
+  //console.log('self =', self);
+  //console.log('self.arrayList =', self.arrayList);
+  //console.log('self.arrayList.list =', typeof self.arrayList.list, 'with properties of: ', self.arrayList.list);
+  //console.log('self.nameplate: ', self.nameplate); // NOTE: Should be an empty object
   console.log('self.newNameplate: ', self.newNameplate); // NOTE: Should be an empty object
-  console.log('self.editNameplate: ', self.editNameplate); // NOTE: Should be an empty object
-
+  //console.log('self.editNameplate: ', self.editNameplate); // NOTE: Should be an empty object
+  console.log('self.newHistory: ', self.newHistory); // NOTE: Should be an empty object
+ 
 
   // NOTE: Nameplate Data //
     // NOTE: Nameplate Data //
@@ -29,7 +30,7 @@ soloProjectApp.controller('mainPageController', ['pagesFactory', function(pagesF
               // edit / .PUT
   // NOTE: _..._NameplateData is function created in factory
   self.addNameplate = function() {
-    console.log('self.newNameplate: ', self.newNameplate); // NOTE: Should be a filled-in object
+    console.log('self.newNameplate: ', self.newNameplate); // Note: this log equals the factoryJS console.log('add Nameplate = ', addNameplateData); // NOTE: Should be a filled-in object
     pagesFactory.addNameplateData(self.newNameplate);
   }; // NOTE: Working!!
   self.deleteNameplate = function(nameplateid) {
@@ -40,7 +41,6 @@ soloProjectApp.controller('mainPageController', ['pagesFactory', function(pagesF
     console.log('Edited nameplate: ', edited); // NOTE:
      pagesFactory.editNameplate(edited);
     }; // NOTE: Working!!
-    
   // NOTE: System History and Parts Data //
     // NOTE: System History and Parts Data //
       // NOTE: System History and Parts Data //
@@ -48,8 +48,9 @@ soloProjectApp.controller('mainPageController', ['pagesFactory', function(pagesF
           // add / .POST
             // delete / .DELETE
               // edit / .PUT
-  self.addHistory = function() {
-    console.log('self.newHistory: ', self.newHistory); // NOTE: Should be a filled-in object
+// QUESTION: Why do I need to call the addHistory function with the parameter 'history' but the addNameplate function (above) does not need a call paramenter?
+  self.addHistory = function(history) {
+    console.log('self.newHistory: ', self.newHistory); // Note: this log equals the controllerJS console.log('addHistory = ',); // NOTE: Should be a filled-in object
     pagesFactory.addHistoryData(self.newHistory);
   }; // NOTE: Working!!
   self.deleteHistory = function(historyid) {
