@@ -6,7 +6,7 @@ var soloProjectApp = angular.module('soloProjectAngularApp', ['ngRoute', 'xedita
 // QUESTION: How to have ng-route point to different ng-views on indexHTML with different information?
 soloProjectApp.config(['$routeProvider', function($routeProvider) {
   $routeProvider
-  // QUESTION: define again why $routeProvider 3 times?
+// NOTE: Previous line is the AngularJS Configuration Block, which should only contain configuration & provider code, and is a module being defined. The purpose is Providers registering with Dependency Injector.
 
  // NOTE: Error on bad controller: $controller:ctrlreg/A controller with this name is not registered.
 // NOTE: 01 view

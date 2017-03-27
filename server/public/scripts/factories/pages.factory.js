@@ -1,4 +1,5 @@
 soloProjectApp.factory('pagesFactory', ['$http', function($http) {
+  console.log(new Date().getFullYear() + ' pages.factory.js is run');
   // NOTE: Drop-down needed on 2 different controller.js files = good candidate for factoryJS files // TODO: Determine if factory needed
   // NOTE: Factoryis a dependency controller.JS needs requiring return (at end of this file)
   // NOTE: $http is ajax jump from F/E logic to server // QUESTION: which adds the dependency? AND catches the factory request as glue between factory & server
@@ -8,7 +9,7 @@ soloProjectApp.factory('pagesFactory', ['$http', function($http) {
 
   // NOTE: GET Nameplate Data
   function getData () {
-    console.log('getData function running before success'); // NOTE: This is logged after client.js_Line #48
+    console.log('function getData() running before success'); // NOTE: This is logged after client.js_Line #48
     $http({
       method: 'GET',
       url: 'mainPage/nameplateData' // NOTE: domain routes to app.js
@@ -66,7 +67,7 @@ soloProjectApp.factory('pagesFactory', ['$http', function($http) {
     // NOTE: mainPageFactory = set here within soloProjectApp.factory
     // NOTE: factoryAppPort = var set here connecting to controllorJS
     // NOTE: Return example = controller connection: factory connection
-    makeItUp: factoryAppPort, // NOTE: NOT factoryAppPort: mainPageFactory
+    factoryAppPortToController: factoryAppPort, // NOTE: NOT factoryAppPort: mainPageFactory
     addNameplateData: addNameplateData, // NOTE: controller connection: factory connection
     deleteNameplate: deleteNameplate,
     editNameplate: editNameplate

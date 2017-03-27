@@ -1,0 +1,26 @@
+
+<!-- saved from url=(0064)file:///Users/PC/Desktop/solo-project/Basic-AngularJS_Notes.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"></head><body><h1>AngularJS Fundemental Concepts</h1>
+<p class="define"></p><h3>Modules</h3><strong>Modules</strong> are containers allowing compartmentalizing  &amp; organizing code into concise, clean, reuseable chunks.<br>Build <strong>Modules</strong> by defining <strong>Objects</strong> it will provide.  <strong>Modules</strong> have no functionality but contain instances of other objects that do (i.e.: controllers, filters, services, animations, etc.)<br>Build a <strong>Module</strong> by defining the objects it provides &amp; then linking <strong>Modules</strong> together through <strong>Dependency Injection</strong>.<br><em>Note: Most AngJS functionality provided by a <strong>Module</strong> named <strong>ng</strong>.</em>
+<br><strong>Module</strong> Implementation occurs with two phases, <strong>Configuration Phase</strong>, and the <strong>Run Phase</strong>.<em>see further notes below</em>
+<p></p><br>
+<p class="define">
+</p><h3>Dependency Injection</h3>
+<strong>Dependency Injection</strong> defines &amp; dynamically injects a dependency <strong>Object</strong> into another <strong>Object</strong>, making available all the functionality of the dependency <strong>Object</strong>.<br><strong>Dependency Injection</strong> is provided through use of <strong>Providers</strong> and <strong>Injector Service</strong>.
+<p></p><br>
+<p class="define">
+</p><h3>Provider</h3>
+<strong>Provider</strong> defination of how to create an instance of an <strong>Object</strong> with all necessary functionality.<br><strong>Providers</strong> are defined within a <strong>Module</strong>, whichs registers a <strong>Provider</strong> with the <strong>Injector Service</strong>.<br><em>Note: Only one instance of a <strong>Provider</strong>'s <strong>Object</strong> is created.</em>
+<p></p><br>
+<p class="define">
+</p><h3>Injector Service</h3>
+<strong>Injector Service</strong> is responsible for tracking instances of <strong>Provider</strong> <strong>Objects</strong>.<br> An <strong>Injector Service</strong> is created for each <strong>Module</strong> that registers a <strong>Provider</strong>.<br><em><strong>Injector Service</strong> Process:<br>A dependency request is made for a <strong>Provider</strong>, <br><strong>Injector Service</strong> checks whether an instance exists in the injector cache; if yes, the cached injector is used.<br>If not, a new instance is created using the <strong>Provider</strong> defination, it is stored in the cache, and then returned.</em>
+<p></p><br>
+<h3>Module Objects</h3>
+<p>Module Object creation involves calling <strong>angular.module()</strong> method.<em>(client.js)</em><br><em>The <strong>angular.module()</strong> method creates an instance of a <strong>Module Object</strong>, registers it with the <strong>Injector Service</strong>, and then returns an instance of that new <strong>Module Object</strong> to be used in <strong>Provider</strong> functionality.<br>This is the general <strong>angular.module()</strong> code:<br><strong>angular.module(name, [requires], [configFn])</strong>.<br>
+<strong><em>name</em></strong> parameter is the name for the <strong>Module Injector Service</strong> registration.<br>
+<strong><em>requires</em></strong> parameter is an array of <strong>Module</strong> names of added to the <strong>Injector Service</strong> for this <strong>Module</strong> to use.
+
+</em></p><em>
+
+<strong></strong></em></body></html>

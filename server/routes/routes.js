@@ -1,4 +1,4 @@
-console.log(new Date().getFullYear() + ' routes.js reached');
+console.log(new Date().getFullYear() + ' routes.js is run');
 var router = require('express').Router();
 // var pg = require('pg'); // NOTE: relocated to database-pool.js & added next line
 var pool = require('../config/database-pool.js'); // NOTE: Creates db pool.  db info in the config folder/database-pool.js file.
@@ -32,6 +32,7 @@ router.get('/nameplateData/', function(req, res) { // NOTE: replaced by SELECT s
 // router.post('/nameplateData/add', function(req, res) {
 router.post('/add', function(req, res) { // NOTE: Path must match factory.JS path
   console.log('RouteJS/RouterPOST/Req.body = ', req.body);
+  // 
   var nameplateObject = req.body;
   pool.connect(function(err, client, done) { // NOTE: db query starts
     if(err) {
@@ -64,11 +65,11 @@ router.put('/edit/:id', function(req, res) {
       res.sendStatus(500);
     } else {
       // NOTE: from task.js = client.query('UPDATE task SET status=TRUE WHERE ID=$1;',[taskToCompleteId], function(err, result) { done();
-      client.query('UPDATE nameplate_data SET manufacturer=$1, model_number=$2, serial_number=$3, date_of_manufacturer=$4, input_voltage=$5, other_notes=$62017- WHERE id=$1, $2, $3, $4, $5, $6;',
-      [nameplateObject.manufacturer, nameplateObject.model_number, nameplateObject.serial_number, nameplateObject.date_of_manufacturer, nameplateObject.input_voltage, nameplateObject.other_notes], function(err, result) { // NOTE: [var-name-within-this-post.html-page/input-ng-model]
+      client.query('UPDATE nameplate_data SET manufacturer=$1, model_number=$2, serial_number=$3, date_of_manufacturer=$4, input_voltage=$5, other_notes=$6 WHERE id=$7;',
+      [nameplateObject.manufacturer, nameplateObject.model_number, nameplateObject.serial_number, nameplateObject.date_of_manufacturer, nameplateObject.input_voltage, nameplateObject.other_notes, nameplateToedit], function(err, result) { // NOTE: [var-name-within-this-post.html-page/input-ng-model]
         done();
         if(err) {
-          console.log('RouteJS/RouterPUT/Pool.connect/db query-post error = ', err);
+          console.log('RouteJS/RouterPUT/Pool.connect/db query-put error = ', err);
           res.sendStatus(500); // NOTE: error
         } else {
           res.sendStatus(201); // NOTE: Success

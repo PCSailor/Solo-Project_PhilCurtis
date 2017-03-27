@@ -24,5 +24,5 @@ app.use('/mainPage', routesJS);
 
 
 app.listen (5500, function() {
-console.log(new Date().getFullYear() + ' app.js loaded & server listening to port 5500');
+console.log(new Date().getFullYear() + ' app.js is run / server listening to port 5500');
 });

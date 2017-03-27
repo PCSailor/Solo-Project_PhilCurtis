@@ -1,0 +1,77 @@
+<h1>AngularJS Fundemental Concepts</h1>
+<p class="define"><h3>Modules</h3><strong>Modules</strong> are containers allowing compartmentalizing  & organizing code into concise, clean, reuseable chunks.<br>Build <strong>Modules</strong> by defining <strong>Objects</strong> it will provide.  <strong>Modules</strong> have no functionality but contain instances of other objects that do (i.e.: controllers, filters, services, animations, etc.)<br>Build a <strong>Module</strong> by defining the objects it provides & then linking <strong>Modules</strong> together through <strong>Dependency Injection</strong>.<br><em>Note: Most AngJS functionality provided by a <strong>Module</strong> named <strong>ng</strong>.</em>
+<br><strong>Module</strong> Implementation occurs with two phases, <strong>Configuration Phase</strong>, and the <strong>Run Phase</strong>.<em>see further notes below</em>
+</p><br>
+<p class="define">
+<h3>Dependency Injection</h3>
+<strong>Dependency Injection</strong> defines & dynamically injects a dependency <strong>Object</strong> into another <strong>Object</strong>, making available all the functionality of the dependency <strong>Object</strong>.<br><strong>Dependency Injection</strong> is provided through use of <strong>Providers</strong> and <strong>Injector Service</strong>.<br>Dependencies can be <strong>Modules</strong>, services,or any other <strong>Objects</strong> registered in the <strong>Injector Service</strong>.
+</p><br>
+<p class="define">
+<h3>Provider</h3>
+<strong>Provider</strong> defination of how to create an instance of an <strong>Object</strong> with all necessary functionality.<br><strong>Providers</strong> are defined within a <strong>Module</strong>, whichs registers a <strong>Provider</strong> with the <strong>Injector Service</strong>.<br><em>Note: Only one instance of a <strong>Provider</strong>'s <strong>Object</strong> is created.</em>
+</p><br>
+<p class="define">
+<h3>Injector Service</h3>
+<strong>Injector Service</strong> is responsible for tracking instances of <strong>Provider</strong> <strong>Objects</strong>.<br> An <strong>Injector Service</strong> is created for each <strong>Module</strong> that registers a <strong>Provider</strong>.<br><em><strong>Injector Service</strong> Process:<br>A dependency request is made for a <strong>Provider</strong>, <br><strong>Injector Service</strong> checks whether an instance exists in the injector cache; if yes, the cached injector is used.<br>If not, a new instance is created using the <strong>Provider</strong> defination, it is stored in the cache, and then returned.</em>
+</p><br>
+<h3>Module Objects</h3>
+<p>Module Object creation involves calling <strong>angular.module()</strong> method.<em>(client.js)</em><br><em>The <strong>angular.module()</strong> method creates an instance of a <strong>Module Object</strong>, registers it with the <strong>Injector Service</strong>, and then returns an instance of that new <strong>Module Object</strong> to be used in <strong>Provider</strong> functionality.<br>This is the general <strong>angular.module()</strong> code for creating an <strong>Object</strong> which <em>Creates, Registers, and Returns</em>:<br><strong>angular.module(name, [requires], [configFn])</strong>.<br>
+<strong><em>name</em></strong> parameter is the name for the <strong>Module Injector Service</strong> registration.<br>
+<strong><em>requires</em></strong> parameter is an array of <strong>Module</strong> names added to the <strong>Injector Service</strong> for this <strong>Module</strong> to use.<br>
+<strong><em>configFn</em></strong> parameter <strong>Module</strong>  <strong>Injector Service</strong>  <strong>Module</strong> .<br>
+Need functionality from another <strong>Module</strong>? Add it to the <strong>requires</strong> list.<em><strong>ng</strong> is added by default so not needed to require it.</em><br>
+
+</p>
+
+<strong></strong>
+
+
+
+
+<!--notes: From Jesse Smith_AngularJS Fundamental Concepts for Building Web Applications_http://www.informit.com-->
+<!--<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Example - example-example98-production</title>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.19/angular.min.js"></script>
+<style type="text/css">
+  .css-form input.ng-invalid.ng-dirty {
+    background-color: #FA787E;
+  }
+  .css-form input.ng-valid.ng-dirty {
+    background-color: #78FA89;
+  }
+</style>
+</head>
+<body ng-app="formExample">
+    <div ng-controller="ExampleController">-->
+    <!--<form novalidate  name="formx" class="css-form">
+<table>
+<tr><td align='right'>Name</td><td align='left'><input type='text' name='name' ng-model='user.name' required value=''></td></tr>
+<tr><td align='right'>Email</td><td align='left'><input type='email' name='email' ng-model='user.email' value=''></td></tr>
+<tr><td align='right'>Password</td><td align='left'><input type='text' name='password' ng-model='user.password' value=''></td></tr>
+<tr><td align='right'>Verify Password</td><td align='left'><input type='text' name='passwordx' ng-model='user.passwordx' value=''></td></tr>
+</table>
+      <button ng-click="reset()">RESET</button>
+      <button ng-click="update(user)">SAVE</button>
+    </form>
+  </div>
+  <script>
+    angular.module('formExample', [])
+      .controller('ExampleController', ['$scope', function($scope) {
+        $scope.master = {};
+        $scope.update = function(user) {
+          if ($scope.formx.$valid) {
+            $scope.master = angular.copy(user);
+            alert('Form has been validated successfully');
+          }
+        };
+        $scope.reset = function() {
+          $scope.user = angular.copy($scope.master);
+        };
+        $scope.reset();
+      }]);
+  </script>-->
+<!--</body>
+</html>-->
+

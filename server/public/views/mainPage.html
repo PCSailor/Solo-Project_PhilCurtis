@@ -1,10 +1,10 @@
+{{mpc.arrayList.list[0].manufacturer}}
 <!-- NOTE: Navigation Header Bar -->
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid"> <!-- NOTE: make nav bar full width -->
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
 
-      <!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" aria-expanded="false" data-target="#bs-example-navbar-collapse-1"> -->
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" aria-expanded="false"
       data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
 
@@ -16,8 +16,6 @@
     <a class="navbar-brand" href="#">Adaptable PM</a>
   </div>
   <!-- Collect the nav links, forms, and other content for toggling -->
-
-  <!-- <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"> -->
   <div id="navbar" class="navbar-collapse collapse">
 
     <ul class="nav navbar-nav navbar-left">
@@ -132,73 +130,14 @@
                 </div>
               </thead>
               <tbody>
-              <tr>
-                <!-- <td>{{mpc.addNameplate}}</td> -->
-              </tr>
-              <tr ng-repeat="nameplate in mpc.arrayList.list">
-                <form editable-form-name="nameplateInputForm" onaftersave="saveUser">
-                <td>
-<div><a href="#" editable-text=nameplate.manufacturer e-placeholder="Manufacturer">{{ nameplate.manufacturer || "Manufacturer" }}</a></div>
-                  </td>
-                  <td>
-                  <!-- editable username (text with validation) -->
-                  <span editable-text="manufacturer" e-name="Manufacturer" e-form="rowform" onbeforesave="checkName($data, manufacturer.id)">{{ nameplate.manufacturer || " " }}</span>
-                  </td>
-                  <td>
-                    <!-- editable group (select-remote) 
-                    <todo>need to fix this tag</todo>-->
-                    <span editable-select="manufacturer" e-name="group" onshow="loadGroups()" e-form="rowform" e-ng-options="g.id as g.text for g in groups">{{ showGroup(user) }}</span>
-                  </td>
-                </form>
+                <tr ng-repeat="nameplate in mpc.arrayList.list">
 
 
-
-
-
-
-                <!-- NOTE: 'nameplate' is a made-up-name to identify values to use in thie table for the current item to loop.-->
-                  <!--<td>{{nameplate.manufacturer}}</td>
-                  <td>{{nameplate.model_number}}</td>
-                  <td>{{nameplate.serial_number}}</td>
-                  <td>{{nameplate.date_of_manufacturer}}</td>
-                  <td>{{nameplate.input_voltage}}</td>
-                  <td>{{nameplate.other_notes}}</td>
-                  <input type="text" ng-model="nameplate.manufacturer">The Manufacturer is {{nameplate.manufacturer}} -->
-
-
-
-                <!--NOTE: IMPORT CODE WRITTEN
-                http://plnkr.co/edit/lXq1WB?p=preview-->
-                  <!--<td><div ng-hide="mpc.newNameplate[nameplate.id]">{{nameplate.model_number}}</div>
-                    <div ng-show="mpc.newNameplate[nameplate.id]"><input type="text" ng-model="nameplate.model_number"/></div></td>
-                    <td><div ng-hide="mpc.newNameplate[nameplate.id]">{{nameplate.serial_number}}</div>
-                      <div ng-show="mpc.newNameplate[nameplate.id]"><input type="text" ng-model="nameplate.serial_number"/></div></td>
-                      <td><div ng-hide="mpc.newNameplate[nameplate.id]">{{nameplate.date_of_manufacturer}}</div>
-                        <div ng-show="mpc.newNameplate[nameplate.id]"><input type="text" ng-model="nameplate.date_of_manufacturer"/></div></td>
-                        <td><div ng-hide="mpc.newNameplate[nameplate.id]">{{nameplate.input_voltage}}</div>
-                          <div ng-show="mpc.newNameplate[nameplate.id]"><input type+="text" ng-model="nameplate.input_voltage"/></div></td>
-                          <td><div ng-hide="mpc.newNameplate[nameplate.id]">{{nameplate.other_notes}}</div>
-                            <div ng-show="mpc.newNameplate[nameplate.id]"><input type="text" ng-model="nameplate.other_notes"/></div>
-                          </td>-->
-                          <!-- <td><button ng-hide="mpc.object true or false[nameplate.id]" ng-click="modify(nameplate)" class="btn btn-success">Edit</button></td> -->
-                          <!--<td><button ng-hide="mpc.newNameplate[nameplate.id]" ng-click="modify(nameplate)" class="btn btn-success">Edit</button></td>
-                          <td><button ng-show="mpc.newNameplate[nameplate.id]" ng-click="update(nameplate)" class="btn btn-success">Save</button></td>
-                          <!-- NOTE: IMPORT CODE WRITTEN-->
-                          <!--http://plnkr.co/edit/lXq1WB?p=preview-->
-
-                          <!-- (factory.js empty self.object) AND [html file madeup name after ng-repeat]
-                          newNameplate[nameplate.id] -->
-
-
-                                 <!--Angular-xeditable - WORKING CODE BUT DELETE IF EDIT FORM SUCCESS-->
-                <td>
-<div><a href="#" editable-text=nameplate.manufacturer e-placeholder="Manufacturer">{{ nameplate.manufacturer || "Manufacturer" }}</a></div>
-                  </td>
-                          <!--old edit button-->
-                          <!--<td><button ng-click="mpc.editNameplate(nameplate)" class="btn btn-success">Edit</button></td>-->
-                          <!--delete button-->
-                          <td><button ng-click="mpc.deleteNameplate(nameplate.id)" class="btn btn-danger">X</button></td>
-                          <!-- NOTE: These two buttons point to controller.js functions -->
+                <td><div> <a href="#" editable-text="nameplate.manufacturer" onaftersave="mpc.editNameplate(nameplate)" e-placeholder="Manufacturer">{{ nameplate.manufacturer || "Manufacturer" }} </a></div></td>
+                
+                
+                <td><button ng-click="mpc.deleteNameplate(nameplate.id)" class="btn btn-danger">X</button></td>
+                          <!-- NOTE: Delete button point to controller.js functions -->
                         </tr>
                       </tbody>
                     </table>
