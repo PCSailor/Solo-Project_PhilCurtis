@@ -131,11 +131,16 @@
               </thead>
               <tbody>
                 <tr ng-repeat="nameplate in mpc.arrayList.list">
-
-
+                  <!--This is the line of code Kris helped with-->
+                <!--'Submit via onaftersave'' located https://vitalets.github.io/angular-xeditable/#editable-form-->
                 <td><div> <a href="#" editable-text="nameplate.manufacturer" onaftersave="mpc.editNameplate(nameplate)" e-placeholder="Manufacturer">{{ nameplate.manufacturer || "Manufacturer" }} </a></div></td>
-                
-                
+                <td><div> <a href="#" editable-text="nameplate.model_number" onaftersave="mpc.editNameplate(nameplate)" e-placeholder="Model Number">{{ nameplate.model_number || "mt" }} </a></div></td>
+                <td><div> <a href="#" editable-text="nameplate.serial_number" onaftersave="mpc.editNameplate(nameplate)" e-placeholder="Serial Number">{{ nameplate.serial_number || "mt" }} </a></div></td>
+                <td><div> <a href="#" editable-text="nameplate.date_of_manufacturer" onaftersave="mpc.editNameplate(nameplate)" e-placeholder="Date-of-Manufacturer">{{ nameplate.date_of_manufacturer || "mt" }} </a></div></td>
+                <td><div> <a href="#" editable-text="nameplate.input_voltage" onaftersave="mpc.editNameplate(nameplate)" e-placeholder="Input Voltage">{{ nameplate.input_voltage || "mt" }} </a></div></td>
+                <td><div> <a href="#" editable-text="nameplate.other_notes" onaftersave="mpc.editNameplate(nameplate)" e-placeholder="Additional Notes">{{ nameplate.other_notes || "mt" }} </a></div></td>
+
+
                 <td><button ng-click="mpc.deleteNameplate(nameplate.id)" class="btn btn-danger">X</button></td>
                           <!-- NOTE: Delete button point to controller.js functions -->
                         </tr>
