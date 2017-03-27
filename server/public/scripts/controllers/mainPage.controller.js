@@ -1,6 +1,5 @@
 // soloProjectApp.controller('mainPageController', ['pagesFactory', function(pagesFactory) {
-soloProjectApp.controller('mainPageController', ['$http', 'pagesFactory', function($http, pagesFactory) {
-  // QUESTION: $http needed here or only factory?
+soloProjectApp.controller('mainPageController', ['pagesFactory', function(pagesFactory) {
   console.log(new Date().getFullYear() + ' mainPageController.JS is run');
   // NOTE: soloProjectApp defined in clientJS AND mainPageController matches clientJS/.when function
   // NOTE: 1st pagesFactory is dependency to factoryJS file factory name & 1st line of code AND 2nd pagesFactory used here for factoryJS data reference
@@ -8,15 +7,17 @@ soloProjectApp.controller('mainPageController', ['$http', 'pagesFactory', functi
   var self = this; // NOTE: self points to 'mpc' abbr defined in clientJS & used in html
   // NOTE: self.message = 'self.whatever always equals an object - VERIFY';
   self.arrayList = [];
-  self.arrayList = pagesFactory.factoryAppPortToController; // NOTE: says this.arrayList equals factoryJS-created-variable pointing to array with property inside of object
+  self.arrayList = pagesFactory.factoryNameplateDataToController; // NOTE: says this.arrayList equals factoryJS-created-variable pointing to array with property inside of object
   self.newNameplate = {};
+  self.historyArrayList = [];
+  self.historyArrayList = pagesFactory.factoryHistoryToController; // NOTE: says this.arrayList equals factoryJS-created-variable pointing to array with property inside of object
   self.newHistory = {};
   console.log('self =', self);
   console.log('self.arrayList =', self.arrayList);
-  console.log('self.arrayList.list =', typeof self.arrayList.list, ' with properties of: ', self.arrayList.list);
+  console.log('self.arrayList.list =', typeof self.arrayList.list, 'with properties of: ', self.arrayList.list);
+  console.log('self.nameplate: ', self.nameplate); // NOTE: Should be an empty object
   console.log('self.newNameplate: ', self.newNameplate); // NOTE: Should be an empty object
   console.log('self.editNameplate: ', self.editNameplate); // NOTE: Should be an empty object
-  console.log('self.nameplate: ', self.nameplate); // NOTE: Should be an empty object
 
 
   // NOTE: Nameplate Data //
@@ -48,14 +49,14 @@ soloProjectApp.controller('mainPageController', ['$http', 'pagesFactory', functi
             // delete / .DELETE
               // edit / .PUT
   self.addHistory = function() {
-    console.log('self.newHistory: ', self.newHistroy); // NOTE: Should be a filled-in object
-    pagesFactory.addHistoryData(self.newHistroy);
+    console.log('self.newHistory: ', self.newHistory); // NOTE: Should be a filled-in object
+    pagesFactory.addHistoryData(self.newHistory);
   }; // NOTE: Working!!
   self.deleteHistory = function(historyid) {
-  console.log('History to delete: ', historyid); // NOTE: 01: logging ok!
+  console.log('History to delete: ', historyid, deleteHistory); // NOTE: 01: logging ok!
     pagesFactory.deleteHistory(historyid);
   }; // NOTE: Working!!
- self.editHistroy = function(edited) {
+ self.editHistory = function(edited) {
     console.log('Edited history: ', edited); // NOTE:
      pagesFactory.editHistory(edited);
     }; 

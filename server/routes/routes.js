@@ -4,7 +4,7 @@ var router = require('express').Router();
 var pool = require('../config/database-pool.js'); // NOTE: Creates db pool.  db info in the config folder/database-pool.js file.
 
 
-// NOTE: GET all apps
+// NOTE: GET nameplate Data
 router.get('/nameplateData/', function(req, res) { // NOTE: replaced by SELECT statement in SQL
   console.log('routes.js/router.get-function run');
   pool.connect(function(err, client, done) {
@@ -113,11 +113,32 @@ router.put('/editnameplate/:id', function(req, res) {
           // add / .POST
             // delete / .DELETE
               // edit / .PUT
-
+// NOTE: GET History Data
+router.get('/history/', function(req, res) { // NOTE: replaced by SELECT statement in SQL
+  console.log('routeJS/router-GET/history/function is run');
+  pool.connect(function(err, client, done) {
+    if(err) {
+      console.log('routeJS/router-GET/history/pool.connect error = ', err);
+      res.sendStatus(500);
+    } else {
+      // NOTE: database query
+      client.query('SELECT * FROM system_history ORDER BY date desc;', function(err, result) {
+        done();
+        if(err) {
+          console.log('routeJS/router-GET/history/db query error = ', err);
+          res.sendStatus(500);
+        } else {
+          console.log('routeJS/router-GET/history/result.rows data is available');
+          res.status(200).send(result.rows);
+        }
+      });
+    }
+  });
+}); // NOTE: for: router.get
 
 // NOTE: add new History data
 router.post('/history/add', function(req, res) { // NOTE: Path must match factory.JS path
-  console.log('RouteJS/RouterPOST/history/add/Req.body = ', req.body);
+  console.log('routeJS/RouterPOST/history/add/Req.body = ', req.body);
   // 
   var historyObject = req.body;
   pool.connect(function(err, client, done) { // NOTE: db query starts
@@ -140,7 +161,8 @@ router.post('/history/add', function(req, res) { // NOTE: Path must match factor
 }); // NOTE: router.post
 
 // NOTE: delete History data
-router.delete('history/delete:id', function(req, res) { // NOTE: changing path resulted with this error: DELETE http://localhost:5500/mainPage/deleteMustMatch26 500 (Internal Server Error)
+// router.delete('history/delete:id', function(req, res) { // NOTE: changing path resulted with this error: DELETE http://localhost:5500/mainPage/deleteMustMatch26 500 (Internal Server Error)
+router.delete('/delete:id', function(req, res) { // NOTE: 
   var historyToDelete = req.params.id;
   console.log('routeJS/router/historyToDelete = ', historyToDelete); // NOTE: 03 - terminal
   pool.connect(function(err, client, done) { // NOTE: db query starts
