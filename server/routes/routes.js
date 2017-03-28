@@ -189,7 +189,7 @@ router.delete('/history/delete:id', function(req, res) { // NOTE:
 
 
 // NOTE: edit History data
-router.put('/edithistory/:id', function(req, res) {
+router.put('/history/edit:id', function(req, res) {
   var historyToedit = req.params.id;
   var historyObject = req.body;
   console.log('RouteJS/RouterPUT/req.body/edithistory = ', historyObject);

@@ -65,19 +65,6 @@ soloProjectApp.factory('pagesFactory', ['$http', function($http) {
     });
     console.log('editNameplate.id', editNameplate.id);
   } // NOTE: for: function editNameplate
-
-
-
-
-
-
-
-
-
-
-
-
-
   // NOTE: System History and Parts Data //
     // NOTE: System History and Parts Data //
       // NOTE: System History and Parts Data //
@@ -133,7 +120,7 @@ soloProjectApp.factory('pagesFactory', ['$http', function($http) {
       url: 'mainpage/history/edit' + editHistory.id,
       data: editHistory
     }).then(function(response) {
-      getData();
+      getHistory();
     });
     console.log('editHistory.id', editHistory.id);
   } // NOTE: for: function editHistory
@@ -165,8 +152,8 @@ soloProjectApp.factory('pagesFactory', ['$http', function($http) {
 
   return {
     // NOTE: returning $http function AND this area is the public API
-    // NOTE: Return example = controller connection: factory connection
-      // NOTE: Nameplate Data //
+    // controller connector: factory connector
+    // NOTE: Nameplate Data //
     factoryNameplateDataToController: factoryAppPort, // NOTE: NOT factoryAppPort: mainPageFactory
     addNameplateData: addNameplateData, // NOTE: controller connection: factory connection
     deleteNameplate: deleteNameplate,
@@ -174,7 +161,8 @@ soloProjectApp.factory('pagesFactory', ['$http', function($http) {
   // NOTE: System History and Parts Data //
     factoryHistoryToController: factoryHistory,
     addHistoryData: addHistory,
-    deleteHistory: deleteHistory
+    deleteHistory: deleteHistory,
+    editHistory: editHistory
       // NOTE: Businesses Data //
       // NOTE: User Notes Data //
     // NOTE: code from controllerJS: // self.arrayList = mainPageFactory.factoryAppPort; // NOTE: says this.arrayList equals factoryJS-created-variable pointing to array with property inside of object

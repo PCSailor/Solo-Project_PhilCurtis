@@ -32,14 +32,15 @@ soloProjectApp.controller('mainPageController', ['pagesFactory', function(pagesF
   self.addNameplate = function() {
     console.log('self.newNameplate: ', self.newNameplate); // Note: this log equals the factoryJS console.log('add Nameplate = ', addNameplateData); // NOTE: Should be a filled-in object
     pagesFactory.addNameplateData(self.newNameplate);
-  };
+   };
   self.deleteNameplate = function(nameplateid) {
   console.log('delete from nameplate.controller.js: ', nameplateid); // NOTE: 01: logging ok!
     pagesFactory.deleteNameplate(nameplateid);
   };
  self.editNameplate = function(edited) {
-    console.log('nameplate.controller.js sending edited data: ', edited); // NOTE:
+    console.log('nameplate.controller.js is sending edited data: ', edited); // NOTE:
      pagesFactory.editNameplate(edited);
+    console.log('nameplate.controller.js is sending edited data: ', edited); // NOTE:
     };
   // NOTE: System History and Parts Data //
     // NOTE: System History and Parts Data //
@@ -58,8 +59,10 @@ soloProjectApp.controller('mainPageController', ['pagesFactory', function(pagesF
     pagesFactory.deleteHistory(historyid);
   };
  self.editHistory = function(edited) {
-    console.log('history.controller.js sending edited data: ', edited);
+    console.log('history.controller.js is sending edited data: ', typeof self.editHistory, " and ", typeof edited, edited);
+    //  pagesFactory.editHistory(edited);
      pagesFactory.editHistory(edited);
+        console.log('history.controller.js is sending edited data: ', typeof self.editHistory, " and ", typeof edited, edited);
     }; 
 
 
