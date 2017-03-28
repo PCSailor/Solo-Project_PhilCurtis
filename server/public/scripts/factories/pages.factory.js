@@ -20,7 +20,7 @@ soloProjectApp.factory('pagesFactory', ['$http', function($http) {
     console.log('function getData() running before success'); // NOTE: This is logged after client.js_Line #48
     $http({
       method: 'GET',
-      url: 'mainPage/nameplateData' // NOTE: domain routes to app.js
+      url: 'mainpage/nameplate/' // NOTE: domain routes to app.js
       // NOTE: use same domain if all controllers/factories use same table, then can relate to same routesJS file using same domain
     }).then(function(response) {
       console.log('factory.js/function GET/nameplate data/response.data = ', typeof response.data, response.data);
@@ -35,7 +35,7 @@ soloProjectApp.factory('pagesFactory', ['$http', function($http) {
     console.log('add Nameplate = ', addNameplateData); // Note: this log equals the controllerJS console.log('self.newNameplate: ', self.newNameplate); // NOTE: Should be a filled-in object
     $http({
       method: 'POST',
-      url: 'mainpage/add', // NOTE: Path must match route.JS path
+      url: 'mainpage/nameplate/add', // NOTE: Path must match route.JS path
       data: addNameplateData
     }).then(function(response) {
       getData();
@@ -46,7 +46,7 @@ soloProjectApp.factory('pagesFactory', ['$http', function($http) {
     console.log('deleteNameplate = ', deleteNameplate);
     $http({
       method: 'DELETE',
-      url: '/mainpage/deleteMustMatch' + nameplateid // NOTE: changing path resulted with this error: DELETE http://localhost:5500/mainPage/deleteMustMatc26 404 (Not Found)
+      url: 'mainpage/nameplate/delete' + nameplateid // NOTE: changing path resulted with this error: DELETE http://localhost:5500/mainPage/deleteMustMatc26 404 (Not Found)
     }).then(function(response) {
       getData();
     });
@@ -58,7 +58,7 @@ soloProjectApp.factory('pagesFactory', ['$http', function($http) {
     console.log('editNameplate function is run');
     $http({
       method: 'PUT',
-      url: 'mainPage/nameplate/edit' + editNameplate.id,
+      url: 'mainpage/nameplate/edit' + editNameplate.id,
       data: editNameplate
     }).then(function(response) {
       getData();

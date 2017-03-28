@@ -5,7 +5,7 @@ var pool = require('../config/database-pool.js'); // NOTE: Creates db pool.  db 
 
 
 // NOTE: GET nameplate Data
-router.get('/nameplateData/', function(req, res) { // NOTE: replaced by SELECT statement in SQL
+router.get('/nameplate/', function(req, res) { // NOTE: replaced by SELECT statement in SQL
   console.log('routes.js/router.get-function run');
   pool.connect(function(err, client, done) {
     if(err) {
@@ -30,7 +30,7 @@ router.get('/nameplateData/', function(req, res) { // NOTE: replaced by SELECT s
 
 // NOTE: add new Nameplate data
 // router.post('/nameplateData/add', function(req, res) {
-router.post('/add', function(req, res) { // NOTE: Path must match factory.JS path
+router.post('/nameplate/add', function(req, res) { // NOTE: Path must match factory.JS path
   console.log('RouteJS/RouterPOST/Req.body = ', req.body);
   var nameplateObject = req.body;
   pool.connect(function(err, client, done) { // NOTE: db query starts
@@ -53,7 +53,7 @@ router.post('/add', function(req, res) { // NOTE: Path must match factory.JS pat
 }); // NOTE: router.post
 
 // NOTE: delete Nameplate data
-router.delete('/deleteMustMatch:id', function(req, res) { // NOTE: changing path resulted with this error: DELETE http://localhost:5500/mainPage/deleteMustMatch26 500 (Internal Server Error)
+router.delete('/nameplate/delete:id', function(req, res) { // NOTE: changing path resulted with this error: DELETE http://localhost:5500/mainPage/deleteMustMatch26 500 (Internal Server Error)
   var nameplateToDelete = req.params.id;
   console.log('RouteJS/RouternameplateToDelete = ', nameplateToDelete); // NOTE: 03 - terminal
   pool.connect(function(err, client, done) { // NOTE: db query starts
