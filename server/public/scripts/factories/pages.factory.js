@@ -165,14 +165,12 @@ soloProjectApp.factory('pagesFactory', ['$http', function($http) {
 
   return {
     // NOTE: returning $http function AND this area is the public API
-
-    // NOTE: mainPageFactory = set here within soloProjectApp.factory
-    // NOTE: factoryAppPort = var set here connecting to controllorJS
     // NOTE: Return example = controller connection: factory connection
       // NOTE: Nameplate Data //
     factoryNameplateDataToController: factoryAppPort, // NOTE: NOT factoryAppPort: mainPageFactory
     addNameplateData: addNameplateData, // NOTE: controller connection: factory connection
     deleteNameplate: deleteNameplate,
+    editNameplate: editNameplate,
   // NOTE: System History and Parts Data //
     factoryHistoryToController: factoryHistory,
     addHistoryData: addHistory,

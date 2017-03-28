@@ -77,11 +77,12 @@ router.delete('/deleteMustMatch:id', function(req, res) { // NOTE: changing path
 }); // NOTE: router.delete
 
 // NOTE: edit Nameplate data
-router.put('/editnameplate/:id', function(req, res) {
+// router.put('/editnameplate/:id', function(req, res) {
+router.put('/nameplate/edit:id', function(req, res) {
   var nameplateToedit = req.params.id;
   var nameplateObject = req.body;
-  console.log('RouteJS/RouterPUT/editnameplate/req.body = ', nameplateObject);
-  console.log('RouteJS/RouterPUT/editnameplate/req.params.id = ', nameplateToedit);
+  console.log('RouteJS/RouterPUT/nameplate/edit:id/req.body = ', nameplateObject);
+  console.log('RouteJS/RouterPUT/nameplate/edit:id/req.params.id = ', nameplateToedit);
   pool.connect(function(err, client, done) { // NOTE: db query starts
     if(err) {
       console.log('RouteJS/RouterPUT/Pool.connect/editnameplate error = ', err);
