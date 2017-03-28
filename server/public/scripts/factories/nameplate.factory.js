@@ -23,26 +23,26 @@ getNameplate();
     });
   } // NOTE: for: function getData
   // NOTE: After this GET, should have an array on DOM
-  // NOTE: Add new Nameplate
-//   function addNameplateData(addNameplateData) {
-//     console.log('add Nameplate = ', addNameplateData); // Note: this log equals the controllerJS console.log('self.newNameplate: ', self.newNameplate); // NOTE: Should be a filled-in object
-//     $http({
-//       method: 'POST',
-//       url: 'mainpage/nameplate/add', // NOTE: Path must match route.JS path
-//       data: addNameplateData
-//     }).then(function(response) {
-//       getData();
-//     });
-//   } // NOTE: for: function addNameplateData
+ // NOTE: Delete Nameplate
+  function deleteNameplate(nameplateid) {
+    console.log('deleteNameplate = ', deleteNameplate);
+    $http({
+      method: 'DELETE',
+      url: 'mainpage/nameplate/delete' + nameplateid // NOTE: changing path resulted with this error: DELETE http://localhost:5500/mainPage/deleteMustMatc26 404 (Not Found)
+    }).then(function(response) {
+      getNameplate();
+    });
+    console.log('delete from nameplate.factory.js'); // NOTE: 02: logging ok!
+  } // NOTE: for: function deleteNameplate
 
 
   return { // DONT FORGET THE FUCKING COMMAS!!
     // NOTE: returning $http function AND this area is the public API
     // controller connector: factory connector
     // NOTE: Nameplate Data //
-    factoryNameplateToController: factoryNameplate // NOTE: NOT factoryAppPort: mainPageFactory
+    factoryNameplateToController: factoryNameplate, // NOTE: NOT factoryAppPort: mainPageFactory
+    deleteNameplate: deleteNameplate,
    // addNameplateData: addNameplateData, // NOTE: controller connection: factory connection
-   // deleteNameplate: deleteNameplate,
    // editNameplate: editNameplate,
     // NOTE: code from controllerJS: // self.arrayList = mainPageFactory.factoryAppPort; // NOTE: says this.arrayList equals factoryJS-created-variable pointing to array with property inside of object
   }; // NOTE: needs semi-colon!

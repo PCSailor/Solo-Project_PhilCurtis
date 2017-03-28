@@ -39,10 +39,10 @@ soloProjectApp.controller('mainPageController', ['pagesFactory', function(pagesF
     console.log('self.newNameplate: ', self.newNameplate); // Note: this log equals the factoryJS console.log('add Nameplate = ', addNameplateData); // NOTE: Should be a filled-in object
     pagesFactory.addNameplateData(self.newNameplate);
    };
-  self.deleteNameplate = function(nameplateid) {
-  console.log('delete from nameplate.controller.js: ', nameplateid); // NOTE: 01: logging ok!
-    pagesFactory.deleteNameplate(nameplateid);
-  };
+  // self.deleteNameplate = function(nameplateid) {
+  // console.log('delete from nameplate.controller.js: ', nameplateid); // NOTE: 01: logging ok!
+  //   pagesFactory.deleteNameplate(nameplateid);
+  // };
  self.editNameplate = function(edited) {
     console.log('nameplate.controller.js is sending edited data: ', edited); // NOTE:
      pagesFactory.editNameplate(edited);

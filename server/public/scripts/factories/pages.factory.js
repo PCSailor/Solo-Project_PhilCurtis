@@ -15,21 +15,21 @@ soloProjectApp.factory('pagesFactory', ['$http', function($http) {
           // add / .POST
             // delete / .DELETE
               // edit / .PUT
-  // NOTE: GET Nameplate Data
-  function getData () {
-    console.log('function getData() running before success'); // NOTE: This is logged after client.js_Line #48
-    $http({
-      method: 'GET',
-      url: 'mainpage/nameplate/' // NOTE: domain routes to app.js
-      // NOTE: use same domain if all controllers/factories use same table, then can relate to same routesJS file using same domain
-    }).then(function(response) {
-      console.log('factory.js/function GET/nameplate data/response.data = ', typeof response.data, response.data);
-      factoryAppPort.list = response.data; // NOTE: THIS IS THE DATABASE RETURNED DATA
-      // NOTE: Ensure factoryAppPort points to an object property (.list)
-      // NOTE: .data pulls only results from server & not other response information
-    });
-  } // NOTE: for: function getData
-  // NOTE: After this GET, should have an array on DOM
+  // // NOTE: GET Nameplate Data
+  // function getData () {
+  //   console.log('function getData() running before success'); // NOTE: This is logged after client.js_Line #48
+  //   $http({
+  //     method: 'GET',
+  //     url: 'mainpage/nameplate/' // NOTE: domain routes to app.js
+  //     // NOTE: use same domain if all controllers/factories use same table, then can relate to same routesJS file using same domain
+  //   }).then(function(response) {
+  //     console.log('factory.js/function GET/nameplate data/response.data = ', typeof response.data, response.data);
+  //     factoryAppPort.list = response.data; // NOTE: THIS IS THE DATABASE RETURNED DATA
+  //     // NOTE: Ensure factoryAppPort points to an object property (.list)
+  //     // NOTE: .data pulls only results from server & not other response information
+  //   });
+  // } // NOTE: for: function getData
+  // // NOTE: After this GET, should have an array on DOM
   // NOTE: Add new Nameplate
   function addNameplateData(addNameplateData) {
     console.log('add Nameplate = ', addNameplateData); // Note: this log equals the controllerJS console.log('self.newNameplate: ', self.newNameplate); // NOTE: Should be a filled-in object
@@ -41,17 +41,17 @@ soloProjectApp.factory('pagesFactory', ['$http', function($http) {
       getData();
     });
   } // NOTE: for: function addNameplateData
-  // NOTE: Delete Nameplate
-  function deleteNameplate(nameplateid) {
-    console.log('deleteNameplate = ', deleteNameplate);
-    $http({
-      method: 'DELETE',
-      url: 'mainpage/nameplate/delete' + nameplateid // NOTE: changing path resulted with this error: DELETE http://localhost:5500/mainPage/deleteMustMatc26 404 (Not Found)
-    }).then(function(response) {
-      getData();
-    });
-    console.log('delete from nameplate.factory.js'); // NOTE: 02: logging ok!           last one
-  } // NOTE: for: function deleteNameplate
+  // // NOTE: Delete Nameplate
+  // function deleteNameplate(nameplateid) {
+  //   console.log('deleteNameplate = ', deleteNameplate);
+  //   $http({
+  //     method: 'DELETE',
+  //     url: 'mainpage/nameplate/delete' + nameplateid // NOTE: changing path resulted with this error: DELETE http://localhost:5500/mainPage/deleteMustMatc26 404 (Not Found)
+  //   }).then(function(response) {
+  //     getData();
+  //   });
+  //   console.log('delete from nameplate.factory.js'); // NOTE: 02: logging ok!           last one
+  // } // NOTE: for: function deleteNameplate
 
   // NOTE: Edit Nameplate
   function editNameplate (editNameplate) {

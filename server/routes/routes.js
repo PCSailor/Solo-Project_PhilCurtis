@@ -52,29 +52,29 @@ router.post('/nameplate/add', function(req, res) { // NOTE: Path must match fact
   }); // NOTE: pool.connect
 }); // NOTE: router.post
 
-// NOTE: delete Nameplate data
-router.delete('/nameplate/delete:id', function(req, res) { // NOTE: changing path resulted with this error: DELETE http://localhost:5500/mainPage/deleteMustMatch26 500 (Internal Server Error)
-  var nameplateToDelete = req.params.id;
-  console.log('RouteJS/RouternameplateToDelete = ', nameplateToDelete); // NOTE: 03 - terminal
-  pool.connect(function(err, client, done) { // NOTE: db query starts
-    if(err) {
-      console.log('RouteJS/Router.delete/Pool.connect error = ', err);
-      res.sendStatus(500);
-    } else {
-      client.query('DELETE FROM nameplate_data WHERE id=$1;',
-      [nameplateToDelete], function(err, result) { // NOTE: [var-name-within-this-post.html-page/input-ng-model]
-        done();
-        if(err) {
-          console.log('RouteJS/Router.delete/Pool.connect/db query-post error = ', err);
-          res.sendStatus(500); // NOTE: error
-        } else {
-          res.sendStatus(201); // NOTE: Success
-          console.log('item deleted!!');  // NOTE: 04 - terminal
-        } // NOTE: else
-      }); // NOTE: client.query
-    } // NOTE: else
-  }); // NOTE: pool.connect
-}); // NOTE: router.delete
+// // NOTE: delete Nameplate data
+// router.delete('/nameplate/delete:id', function(req, res) { // NOTE: changing path resulted with this error: DELETE http://localhost:5500/mainPage/deleteMustMatch26 500 (Internal Server Error)
+//   var nameplateToDelete = req.params.id;
+//   console.log('RouteJS/RouternameplateToDelete = ', nameplateToDelete); // NOTE: 03 - terminal
+//   pool.connect(function(err, client, done) { // NOTE: db query starts
+//     if(err) {
+//       console.log('RouteJS/Router.delete/Pool.connect error = ', err);
+//       res.sendStatus(500);
+//     } else {
+//       client.query('DELETE FROM nameplate_data WHERE id=$1;',
+//       [nameplateToDelete], function(err, result) { // NOTE: [var-name-within-this-post.html-page/input-ng-model]
+//         done();
+//         if(err) {
+//           console.log('RouteJS/Router.delete/Pool.connect/db query-post error = ', err);
+//           res.sendStatus(500); // NOTE: error
+//         } else {
+//           res.sendStatus(201); // NOTE: Success
+//           console.log('item deleted!!');  // NOTE: 04 - terminal
+//         } // NOTE: else
+//       }); // NOTE: client.query
+//     } // NOTE: else
+//   }); // NOTE: pool.connect
+// }); // NOTE: router.delete
 
 // NOTE: edit Nameplate data
 // router.put('/editnameplate/:id', function(req, res) {
