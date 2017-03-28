@@ -18,7 +18,7 @@ soloProjectApp.config(['$routeProvider', function($routeProvider) {
 }) // NOTE: no semi-colon
 
 // NOTE: 02 view
-.when('/login', { // NOTE: this sets the actual domain(matched with nav.html & backend files)
+.when('/login', { // NOTE: this sets the actual domain(matched with nav.htmls)
   // templateUrl: 'views/mainPage.html',
   templateUrl: '/views/login.html', // NOTE: this page puts info on the DOM
   controller: 'loginController', // NOTE: controller value must match controller.js
@@ -26,19 +26,25 @@ soloProjectApp.config(['$routeProvider', function($routeProvider) {
 }) // NOTE: no semi-colon
 
 // NOTE: 03 mainpage HTML Page
-.when('/mainpage/', { // NOTE: this sets the actual domain(matched with nav.html & backend files)
+.when('/mainpage/', { // NOTE: this sets the actual domain(matched with nav.html)
   templateUrl: '/views/mainpage.html', // NOTE: this puts info on the DOM
-  controller: 'mainPageController', // NOTE: controller value must match controller.js
-  controllerAs: 'mpc' // NOTE: controller abbr
+  // controller: 'mainPageController', // NOTE: controller value must match controller.js
+  // controllerAs: 'mpc' // NOTE: controller abbr
 }) // NOTE: no semi-colon
 
-// QUESTION:  DO I NEED A SEPERATE CONTROLLER?
-// NOTE: 03c mainpage HTML / Businesses view
-// .when('/mainpage/', { // NOTE: this sets the actual domain(matched with nav.html & backend files)
-//   templateUrl: '/views/mainpage.html', // NOTE: this puts info on the DOM
-//   controller: 'mainPageController', // NOTE: controller value must match controller.js
-//   controllerAs: 'mpc' // NOTE: controller abbr
-// }) // NOTE: no semi-colon
+// NOTE: 03 mainpage HTML Page
+.when('/mainpage/', { // NOTE: this sets the actual domain(matched with nav.html)
+  templateUrl: '/views/nameplate.html', // NOTE: this puts info on the DOM
+  controller: 'NameplateController', // NOTE: controller value must match controller.js
+  controllerAs: 'nc' // NOTE: controller abbr
+}) // NOTE: no semi-colon
+
+
+.when('/mainpage/', { // NOTE: this sets the actual domain(matched with nav.html)
+  templateUrl: '/views/business.html', // NOTE: this puts info on the DOM
+  controller: 'BusinessController', // NOTE: controller value must match controller.js
+  controllerAs: 'bc' // NOTE: controller abbr
+}) // NOTE: no semi-colon
 
 
 // NOTE: 04 view

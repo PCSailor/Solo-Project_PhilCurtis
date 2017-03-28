@@ -1,8 +1,20 @@
+<div ng-controller="NameplateController as nc"><!-- Need when using multiple controllers on 1 html page -->
+<!--<p>nc is: {{nc}}</p>
+      <p>bc.firstExampleVariable: {{bc.firstExampleVariable}}</p>
+      <input ng-model="bc.business_name">
 
-
-<div ng-controller="NameplateController as nc"<!-- Need when using multiple controllers on 1 html page -->
-
-nc.
+      <p>bc.thirdExampleVariable: {{bc.thirdExampleVariable}}</p>
+      <input ng-model="bc.thirdExampleVariable.propertyOne">
+      <input ng-model="bc.thirdExampleVariable.propertyTwo">
+      <button ng-click="bc.addThirdExampleVariable()">Add New Object</button>
+      <ul>
+        <li ng-repeat="thing in bc.arrayVariable">-->
+          <!-- thing is an object like { propertyOne: 'valueOne', propertyTwo: 1.2 } -->
+          
+          <!--{{thing.propertyOne}} is worth {{thing.propertyTwo}}-->
+          <!-- {{thing}} now replaces bc -->
+    
+    
 
 
    <!-- NOTE: mainPage/nameplateData START -->
@@ -24,14 +36,14 @@ nc.
               <tr>
                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                   <form id="nameplateForm" class="form-inline">
-                    <td><input ng-model="mpc.newNameplate.manufacturer" class="form-control" placeholder="Manufacturer"></td>
-                    <td><input ng-model="mpc.newNameplate.model_number" class="form-control" placeholder="Model Number"></td>
-                    <td><input ng-model="mpc.newNameplate.serial_number" class="form-control" placeholder="Serial Number"></td>
-                    <td><input ng-model="mpc.newNameplate.date_of_manufacturer" placeholder="Date-of-Manufacturer"></td>
-                    <td><input ng-model="mpc.newNameplate.input_voltage" class="form-control" placeholder="Volts"></td>
-                    <td><input ng-model="mpc.newNameplate.other_notes" class="form-control" placeholder="Other Data"></td>
+                    <td><input ng-model="nc.newNameplate.manufacturer" class="form-control" placeholder="Manufacturer"></td>
+                    <td><input ng-model="nc.newNameplate.model_number" class="form-control" placeholder="Model Number"></td>
+                    <td><input ng-model="nc.newNameplate.serial_number" class="form-control" placeholder="Serial Number"></td>
+                    <td><input ng-model="nc.newNameplate.date_of_manufacturer" placeholder="Date-of-Manufacturer"></td>
+                    <td><input ng-model="nc.newNameplate.input_voltage" class="form-control" placeholder="Volts"></td>
+                    <td><input ng-model="nc.newNameplate.other_notes" class="form-control" placeholder="Other Data"></td>
                     <tr>
-                      <td><button ng-click="mpc.addNameplate()" type="submit" class="btn btn-primary">Add a New Nameplate</button></td>
+                      <td><button ng-click="nc.addNameplate()" type="submit" class="btn btn-primary">Add a New Nameplate</button></td>
                     </tr>
                     <!-- NOTE: .addNameplate tied with controller.js AND factory.js -->
                     <!-- NOTE: .nameplateData tied with routes.js -->
@@ -40,28 +52,28 @@ nc.
             </thead>
             <tbody>
               <!--REPEAT-->
-              <tr ng-repeat="nameplate in mpc.arrayList.list">
+              <tr ng-repeat="nameplate in nc.arrayList.list">
                 <!--This is the line of code Kris helped with-->
                 <!--'Submit via onaftersave'' located https://vitalets.github.io/angular-xeditable/#editable-form-->
                 <td>
-                  <div> <a href="#" editable-text="nameplate.manufacturer" onaftersave="mpc.editNameplate(nameplate)" e-placeholder="Manufacturer">{{ nameplate.manufacturer || "Manufacturer" }} </a></div>
+                  <div> <a href="#" editable-text="nameplate.manufacturer" onaftersave="nc.editNameplate(nameplate)" e-placeholder="Manufacturer">{{ nameplate.manufacturer || "Manufacturer" }} </a></div>
                 </td>
                 <td>
-                  <div> <a href="#" editable-text="nameplate.model_number" onaftersave="mpc.editNameplate(nameplate)" e-placeholder="Model Number">{{ nameplate.model_number || "mt" }} </a></div>
+                  <div> <a href="#" editable-text="nameplate.model_number" onaftersave="nc.editNameplate(nameplate)" e-placeholder="Model Number">{{ nameplate.model_number || "mt" }} </a></div>
                 </td>
                 <td>
-                  <div> <a href="#" editable-text="nameplate.serial_number" onaftersave="mpc.editNameplate(nameplate)" e-placeholder="Serial Number">{{ nameplate.serial_number || "mt" }} </a></div>
+                  <div> <a href="#" editable-text="nameplate.serial_number" onaftersave="nc.editNameplate(nameplate)" e-placeholder="Serial Number">{{ nameplate.serial_number || "mt" }} </a></div>
                 </td>
                 <td>
-                  <div> <a href="#" editable-text="nameplate.date_of_manufacturer" onaftersave="mpc.editNameplate(nameplate)" e-placeholder="Date-of-Manufacturer">{{ nameplate.date_of_manufacturer || "mt" }} </a></div>
+                  <div> <a href="#" editable-text="nameplate.date_of_manufacturer" onaftersave="nc.editNameplate(nameplate)" e-placeholder="Date-of-Manufacturer">{{ nameplate.date_of_manufacturer || "mt" }} </a></div>
                 </td>
                 <td>
-                  <div> <a href="#" editable-text="nameplate.input_voltage" onaftersave="mpc.editNameplate(nameplate)" e-placeholder="Input Voltage">{{ nameplate.input_voltage || "mt" }} </a></div>
+                  <div> <a href="#" editable-text="nameplate.input_voltage" onaftersave="nc.editNameplate(nameplate)" e-placeholder="Input Voltage">{{ nameplate.input_voltage || "mt" }} </a></div>
                 </td>
                 <td>
-                  <div> <a href="#" editable-text="nameplate.other_notes" onaftersave="mpc.editNameplate(nameplate)" e-placeholder="Additional Notes">{{ nameplate.other_notes || "mt" }} </a></div>
+                  <div> <a href="#" editable-text="nameplate.other_notes" onaftersave="nc.editNameplate(nameplate)" e-placeholder="Additional Notes">{{ nameplate.other_notes || "mt" }} </a></div>
                 </td>
-                <td><button ng-click="mpc.deleteNameplate(nameplate.id)" class="btn btn-danger">X</button></td>
+                <td><button ng-click="nc.deleteNameplate(nameplate.id)" class="btn btn-danger">X</button></td>
                 <!-- NOTE: Delete button point to controller.js functions -->
               </tr>
             </tbody>

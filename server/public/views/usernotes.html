@@ -1,0 +1,18 @@
+<div ng-controller="BusinessController as bc">
+      <p>bc is: {{bc}}</p>
+      <p>bc.firstExampleVariable: {{bc.firstExampleVariable}}</p>
+      <input ng-model="bc.business_name">
+
+      <p>bc.thirdExampleVariable: {{bc.thirdExampleVariable}}</p>
+      <input ng-model="bc.thirdExampleVariable.propertyOne">
+      <input ng-model="bc.thirdExampleVariable.propertyTwo">
+      <button ng-click="bc.addThirdExampleVariable()">Add New Object</button>
+      <ul>
+        <li ng-repeat="thing in bc.arrayVariable">
+          <!-- thing is an object like { propertyOne: 'valueOne', propertyTwo: 1.2 } -->
+          
+          {{thing.propertyOne}} is worth {{thing.propertyTwo}}
+          <!-- {{thing}} now replaces bc -->
+        </li>
+      </ul>
+    </div>
