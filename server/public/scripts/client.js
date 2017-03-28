@@ -25,12 +25,20 @@ soloProjectApp.config(['$routeProvider', function($routeProvider) {
   controllerAs: 'lc' // NOTE: controller abbr
 }) // NOTE: no semi-colon
 
-// NOTE: 03 mainPage HTML Page
+// NOTE: 03 mainpage HTML Page
 .when('/mainpage/', { // NOTE: this sets the actual domain(matched with nav.html & backend files)
   templateUrl: '/views/mainpage.html', // NOTE: this puts info on the DOM
   controller: 'mainPageController', // NOTE: controller value must match controller.js
   controllerAs: 'mpc' // NOTE: controller abbr
 }) // NOTE: no semi-colon
+
+// QUESTION:  DO I NEED A SEPERATE CONTROLLER?
+// NOTE: 03c mainpage HTML / Businesses view
+// .when('/mainpage/', { // NOTE: this sets the actual domain(matched with nav.html & backend files)
+//   templateUrl: '/views/mainpage.html', // NOTE: this puts info on the DOM
+//   controller: 'mainPageController', // NOTE: controller value must match controller.js
+//   controllerAs: 'mpc' // NOTE: controller abbr
+// }) // NOTE: no semi-colon
 
 
 // NOTE: 04 view

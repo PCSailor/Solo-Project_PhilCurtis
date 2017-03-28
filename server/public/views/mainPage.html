@@ -1,55 +1,60 @@
-{{mpc.arrayList.list[0].manufacturer}}<br>
-{{mpc.historyArrayList.list[2].services_and_repairs}}<br>
+{{mpc.arrayList.list[0].manufacturer}}<br> {{mpc.historyArrayList.list[2].services_and_repairs}}
+<br> need 4 ng-include bring in the html page
+
+<div ng-include="nameplate.html"></div>
+
+
 <!-- NOTE: Navigation Header Bar -->
 <nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container-fluid"> <!-- NOTE: make nav bar full width -->
+  <div class="container-fluid">
+    <!-- NOTE: make nav bar full width -->
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
 
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" aria-expanded="false"
-      data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" aria-expanded="false" data-toggle="collapse"
+        data-target="#navbar" aria-expanded="false" aria-controls="navbar">
 
       <span class="sr-only">Toggle navigation</span>
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="#">Adaptable PM</a>
-  </div>
-  <!-- Collect the nav links, forms, and other content for toggling -->
-  <div id="navbar" class="navbar-collapse collapse">
+      <a class="navbar-brand" href="#">Adaptable PM</a>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div id="navbar" class="navbar-collapse collapse">
 
-    <ul class="nav navbar-nav navbar-left">
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Residential<span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Residence_Vacation</a></td>
-            <li><a href="#">Residence_03</a></li>
-            <li><a href="#">Residence_04</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Residence_Main</a></li>
-          </ul>
-        </li>
+      <ul class="nav navbar-nav navbar-left">
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Vehicles<span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Residential<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Auto number01</a></li>
-            <li><a href="#">Auto number02</a></li>
-            <li><a href="#">Auto number03</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Motorcycle</a></li>
+            <li><a href="#">Residence_Vacation</a></td>
+              <li><a href="#">Residence_03</a></li>
+              <li><a href="#">Residence_04</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Residence_Main</a></li>
           </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Professional<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Professional_01</a></li>
-            <li><a href="#">Professional_Rental_Residential</a></li>
-            <li><a href="#">Professional_Rental_Commercial</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Professional_Office</a></li>
-          </ul>
-        </li>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Vehicles<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Auto number01</a></li>
+              <li><a href="#">Auto number02</a></li>
+              <li><a href="#">Auto number03</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Motorcycle</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Professional<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Professional_01</a></li>
+              <li><a href="#">Professional_Rental_Residential</a></li>
+              <li><a href="#">Professional_Rental_Commercial</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Professional_Office</a></li>
+            </ul>
+          </li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
@@ -64,8 +69,10 @@
           </ul>
         </li>
       </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container-fluid -->
 </nav>
 <div class="container">
   <div class="row">
@@ -98,8 +105,26 @@
       </div>
     </div>
     <div class="col-lg-9 col-sm-9 col-xs-9 mainBody">
-<!-- NOTE: mainPage/nameplateData START -->
-      <div class="panel panel-info">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+       <!--NOTE: mainPage/nameplateData START -->
+      <!--<div class="panel panel-info">
         <div class="panel-heading">
           <h3 class="panel-title">Nameplate Data</h3>
         </div>
@@ -117,78 +142,122 @@
               <tr>
                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                   <form id="nameplateForm" class="form-inline">
-                    <td><input ng-model="mpc.newNameplate.manufacturer" class="form-control"  placeholder="Manufacturer"></td>
+                    <td><input ng-model="mpc.newNameplate.manufacturer" class="form-control" placeholder="Manufacturer"></td>
                     <td><input ng-model="mpc.newNameplate.model_number" class="form-control" placeholder="Model Number"></td>
                     <td><input ng-model="mpc.newNameplate.serial_number" class="form-control" placeholder="Serial Number"></td>
                     <td><input ng-model="mpc.newNameplate.date_of_manufacturer" placeholder="Date-of-Manufacturer"></td>
                     <td><input ng-model="mpc.newNameplate.input_voltage" class="form-control" placeholder="Volts"></td>
                     <td><input ng-model="mpc.newNameplate.other_notes" class="form-control" placeholder="Other Data"></td>
-                    <tr><td><button ng-click="mpc.addNameplate()" type="submit" class="btn btn-primary">Add a New Nameplate</button></td></tr>
+                    <tr>
+                      <td><button ng-click="mpc.addNameplate()" type="submit" class="btn btn-primary">Add a New Nameplate</button></td>
+                    </tr>-->
                     <!-- NOTE: .addNameplate tied with controller.js AND factory.js -->
                     <!-- NOTE: .nameplateData tied with routes.js -->
-                  </form>
+                  <!--</form>
                 </div>
-              </thead>
-              <tbody>
-<!--REPEAT-->   <tr ng-repeat="nameplate in mpc.arrayList.list">
-                  <!--This is the line of code Kris helped with-->
+            </thead>
+            <tbody>-->
+              <!--REPEAT-->
+              <!--<tr ng-repeat="nameplate in mpc.arrayList.list">-->
+                <!--This is the line of code Kris helped with-->
                 <!--'Submit via onaftersave'' located https://vitalets.github.io/angular-xeditable/#editable-form-->
-                <td><div> <a href="#" editable-text="nameplate.manufacturer" onaftersave="mpc.editNameplate(nameplate)" e-placeholder="Manufacturer">{{ nameplate.manufacturer || "Manufacturer" }} </a></div></td>
-                <td><div> <a href="#" editable-text="nameplate.model_number" onaftersave="mpc.editNameplate(nameplate)" e-placeholder="Model Number">{{ nameplate.model_number || "mt" }} </a></div></td>
-                <td><div> <a href="#" editable-text="nameplate.serial_number" onaftersave="mpc.editNameplate(nameplate)" e-placeholder="Serial Number">{{ nameplate.serial_number || "mt" }} </a></div></td>
-                <td><div> <a href="#" editable-text="nameplate.date_of_manufacturer" onaftersave="mpc.editNameplate(nameplate)" e-placeholder="Date-of-Manufacturer">{{ nameplate.date_of_manufacturer || "mt" }} </a></div></td>
-                <td><div> <a href="#" editable-text="nameplate.input_voltage" onaftersave="mpc.editNameplate(nameplate)" e-placeholder="Input Voltage">{{ nameplate.input_voltage || "mt" }} </a></div></td>
-                <td><div> <a href="#" editable-text="nameplate.other_notes" onaftersave="mpc.editNameplate(nameplate)" e-placeholder="Additional Notes">{{ nameplate.other_notes || "mt" }} </a></div></td>
+                <!--<td>
+                  <div> <a href="#" editable-text="nameplate.manufacturer" onaftersave="mpc.editNameplate(nameplate)" e-placeholder="Manufacturer">{{ nameplate.manufacturer || "Manufacturer" }} </a></div>
+                </td>
+                <td>
+                  <div> <a href="#" editable-text="nameplate.model_number" onaftersave="mpc.editNameplate(nameplate)" e-placeholder="Model Number">{{ nameplate.model_number || "mt" }} </a></div>
+                </td>
+                <td>
+                  <div> <a href="#" editable-text="nameplate.serial_number" onaftersave="mpc.editNameplate(nameplate)" e-placeholder="Serial Number">{{ nameplate.serial_number || "mt" }} </a></div>
+                </td>
+                <td>
+                  <div> <a href="#" editable-text="nameplate.date_of_manufacturer" onaftersave="mpc.editNameplate(nameplate)" e-placeholder="Date-of-Manufacturer">{{ nameplate.date_of_manufacturer || "mt" }} </a></div>
+                </td>
+                <td>
+                  <div> <a href="#" editable-text="nameplate.input_voltage" onaftersave="mpc.editNameplate(nameplate)" e-placeholder="Input Voltage">{{ nameplate.input_voltage || "mt" }} </a></div>
+                </td>
+                <td>
+                  <div> <a href="#" editable-text="nameplate.other_notes" onaftersave="mpc.editNameplate(nameplate)" e-placeholder="Additional Notes">{{ nameplate.other_notes || "mt" }} </a></div>
+                </td>
                 <td><button ng-click="mpc.deleteNameplate(nameplate.id)" class="btn btn-danger">X</button></td>
-                          <!-- NOTE: Delete button point to controller.js functions -->
-                        </tr>
-                      </tbody>
-                    </table>
+                 NOTE: Delete button point to controller.js functions -->
+              <!--</tr>
+            </tbody>
+          </table>
+        </div>-->
+        <!-- NOTE: mainPage/nameplateData END -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- NOTE: mainPage/System History and Parts START -->
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <h3 class="panel-title">System History and Parts</h3>
+          </div>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Services and Repairs</th>
+                  <th>Vendors</th>
+                  <th>Parts Used</th>
+                </tr>
+                <tr>
+                  <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                    <form id="historyForm" class="form-inline">
+                      <td><input ng-model="mpc.newHistory.date" class="form-control" placeholder="Date"></td>
+                      <td><input ng-model="mpc.newHistory.services_repairs" class="form-control" placeholder="Services and Repairs"></td>
+                      <td><input ng-model="mpc.newHistory.vendors" class="form-control" placeholder="Vendors"></td>
+                      <td><input ng-model="mpc.newHistory.parts_used" placeholder="Parts Used"></td>
+                      <tr>
+                        <td><button ng-click="mpc.addHistory(history)" type="submit" class="btn btn-primary">Add New System History</button></td>
+                      </tr>
+                      <!-- NOTE: .addNameplate tied with controller.js AND factory.js -->
+                      <!-- NOTE: .nameplateData tied with routes.js -->
+                    </form>
                   </div>
-                <!-- NOTE: mainPage/nameplateData END -->            
-                <!-- NOTE: mainPage/System History and Parts START -->
-      <div class="panel panel-info">
-        <div class="panel-heading">
-          <h3 class="panel-title">System History and Parts</h3>
-        </div>
-        <div class="table-responsive">
-          <table class="table table-striped">
-            <thead>
-              <tr>
-                <th>Date</th>
-                <th>Services and Repairs</th>
-                <th>Vendors</th>
-                <th>Parts Used</th>
-              </tr>
-              <tr>
-                <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                  <form id="historyForm" class="form-inline">
-                    <td><input ng-model="mpc.newHistory.date" class="form-control"  placeholder="Date"></td>
-                    <td><input ng-model="mpc.newHistory.services_repairs" class="form-control" placeholder="Services and Repairs"></td>
-                    <td><input ng-model="mpc.newHistory.vendors" class="form-control" placeholder="Vendors"></td>
-                    <td><input ng-model="mpc.newHistory.parts_used" placeholder="Parts Used"></td>
-                    <tr><td><button ng-click="mpc.addHistory(history)" type="submit" class="btn btn-primary">Add New System History</button></td></tr>
-                    <!-- NOTE: .addNameplate tied with controller.js AND factory.js -->
-                    <!-- NOTE: .nameplateData tied with routes.js -->
-                  </form>
-                </div>
               </thead>
               <tbody>
-<!--REPEAT-->   <tr ng-repeat="history in mpc.historyArrayList.list">
+                <!--REPEAT-->
+                <tr ng-repeat="history in mpc.historyArrayList.list">
                   <!--This is the line of code Kris helped with-->
-                <!--'Submit via onaftersave'' located https://vitalets.github.io/angular-xeditable/#editable-form-->
-                <td><div> <a href="#" editable-text="history.date" onaftersave="mpc.editHistory(history)" e-placeholder="Date_Year-Month-Day">{{ history.date || "mt" }} </a></div></td>
-                <td><div> <a href="#" editable-text="history.services_and_repairs" onaftersave="mpc.editHistory(history)" e-placeholder="Services and Repairs">{{ history.services_and_repairs || "mt" }} </a></div></td>
-                <td><div> <a href="#" editable-text="history.vendors" onaftersave="mpc.editHistory(history)" e-placeholder="Vendors">{{ history.vendors || "mt" }} </a></div></td>
-                <td><div> <a href="#" editable-text="history.parts_used" onaftersave="mpc.editHistory(history)" e-placeholder="Parts Used">{{ history.parts_used || "mt" }} </a></div></td>
-                <td><button ng-click="mpc.deleteHistory(history.id)" class="btn btn-danger">X</button></td>
-                          <!-- NOTE: Delete button point to controller.js functions -->
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
+                  <!--'Submit via onaftersave'' located https://vitalets.github.io/angular-xeditable/#editable-form-->
+                  <td>
+                    <div> <a href="#" editable-text="history.date" onaftersave="mpc.editHistory(history)" e-placeholder="Date_Year-Month-Day">{{ history.date || "mt" }} </a></div>
+                  </td>
+                  <td>
+                    <div> <a href="#" editable-text="history.services_and_repairs" onaftersave="mpc.editHistory(history)" e-placeholder="Services and Repairs">{{ history.services_and_repairs || "mt" }} </a></div>
+                  </td>
+                  <td>
+                    <div> <a href="#" editable-text="history.vendors" onaftersave="mpc.editHistory(history)" e-placeholder="Vendors">{{ history.vendors || "mt" }} </a></div>
+                  </td>
+                  <td>
+                    <div> <a href="#" editable-text="history.parts_used" onaftersave="mpc.editHistory(history)" e-placeholder="Parts Used">{{ history.parts_used || "mt" }} </a></div>
+                  </td>
+                  <td><button ng-click="mpc.deleteHistory(history.id)" class="btn btn-danger">X</button></td>
+                  <!-- NOTE: Delete button point to controller.js functions -->
+                </tr>
+              </tbody>
+            </table>
+          </div>
 
-                <!-- NOTE: mainPage/System History and Parts END -->
+          <!-- NOTE: mainPage/System History and Parts END -->
+          <!-- NOTE: mainPage/Businesses START -->
 
 
 
@@ -198,280 +267,66 @@
 
 
 
-
-
-
-
-
-
-
-
-
-                  
-                  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                  
-                  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                  
-                  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                  
-                  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                  
-                  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                  
-                  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                  
-                  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                  
-                  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                  <!--<div class="panel panel-info">
-                    <div class="panel-heading">
-                      <h3 class="panel-title">System History and Parts</h3>
-                    </div>
-                    <div class="panel-body">
-                      Enter all history
-                    </div>
-                    <table class="table">
-                      <thead>
-                        <tr>
-                          <th>Date</th>
-                          <th>Services and Repairs</th>
-                          <th>Vendors</th>
-                          <th>Parts Used</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <th>#</th>
-                          <th>#</th>
-                          <th>#</th>
-                          <th>#</th>
-                        </tr>
-                        <tr>
-                          <th>#</th>
-                          <th>#</th>
-                          <th>#</th>
-                          <th>#</th>
-                        </tr>
-                        <tr>
-                          <th>#</th>
-                          <th>#</th>
-                          <th>#</th>
-                          <th>#</th>
-                        </tr>
-                        <tr>
-                          <th>#</th>
-                          <th>#</th>
-                          <th>#</th>
-                          <th>#</th>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>-->
-
-                  <div class="panel panel-info">
-                    <div class="panel-heading">
-                      <h3 class="panel-title">Businesses</h3>
-                    </div>
-                    <div class="panel-body">
-                      Enter businesses used
-                    </div>
-                    <table class="table">
-                      <thead>
-                        <tr>
-                          <th>Name</th>
-                          <th>Address No.1</th>
-                          <!-- <th>address#2</th> -->
-                          <th>City</th>
-                          <!-- <th>state</th> -->
-                          <!-- <th>country</th> -->
-                          <!-- <th>zip</th> -->
-                          <th>Phone No.1</th>
-                          <!-- <th>Phoe#2</th> -->
-                          <th>Email</th>
-                          <th>Website</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <th>#</th>
-                          <th>#</th>
-                          <th>#</th>
-                          <th>#</th>
-                          <th>#</th>
-                          <th>#</th>
-                        </tr>
-                        <tr>
-                          <th>#</th>
-                          <th>#</th>
-                          <th>#</th>
-                          <th>#</th>
-                          <th>#</th>
-                          <th>#</th>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-
-                  <div class="panel panel-info">
-                    <div class="panel-heading">
-                      <h3 class="panel-title">User Notes</h3>
-                    </div>
-                    <div class="panel-body">
-                      Current user notes to enter
-                    </div>
-                    <ul style="list-style-type: none">
-                      <li>Previous User Notes 01</li>
-                      <li>Previous User Notes 02</li>
-                      <li>Previous User Notes 03</li>
-                      <li>Previous User Notes 04</li>
-                      <li>Previous User Notes 05</li>
-                      <li>Previous User Notes 06</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h3 class="panel-title">Businesses</h3>
             </div>
+            <div class="panel-body">
+              Enter businesses used
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Address No.1</th>
+                  <!-- <th>address#2</th> -->
+                  <th>City</th>
+                  <!-- <th>state</th> -->
+                  <!-- <th>country</th> -->
+                  <!-- <th>zip</th> -->
+                  <th>Phone No.1</th>
+                  <!-- <th>Phoe#2</th> -->
+                  <th>Email</th>
+                  <th>Website</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>#</th>
+                  <th>#</th>
+                  <th>#</th>
+                  <th>#</th>
+                  <th>#</th>
+                  <th>#</th>
+                </tr>
+                <tr>
+                  <th>#</th>
+                  <th>#</th>
+                  <th>#</th>
+                  <th>#</th>
+                  <th>#</th>
+                  <th>#</th>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- NOTE: mainPage/Businesses END -->
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h3 class="panel-title">User Notes</h3>
+            </div>
+            <div class="panel-body">
+              Current user notes to enter
+            </div>
+            <ul style="list-style-type: none">
+              <li>Previous User Notes 01</li>
+              <li>Previous User Notes 02</li>
+              <li>Previous User Notes 03</li>
+              <li>Previous User Notes 04</li>
+              <li>Previous User Notes 05</li>
+              <li>Previous User Notes 06</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>

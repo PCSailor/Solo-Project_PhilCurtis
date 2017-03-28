@@ -15,10 +15,13 @@
   <script src="/vendors/bootstrap.min.js" charset="utf-8"></script>
   <script src="/scripts/client.js" charset="utf-8"></script>
 
+  <script src="/scripts/controllers/mainpage.controller.js" charset="utf-8"></script>
+  <script src="/scripts/controllers/business.controller.js" charset="utf-8"></script>
   <script src="/scripts/controllers/login.controller.js" charset="utf-8"></script>
-  <script src="/scripts/controllers/history.controller.js" charset="utf-8"></script> 
-  <script src="/scripts/controllers/mainPage.controller.js" charset="utf-8"></script>
+  <script src="/scripts/controllers/history.controller.js" charset="utf-8"></script>
+
   <script src="/scripts/factories/pages.factory.js" charset="utf-8"></script>
+  <script src="/scripts/factories/business.factory.js" charset="utf-8"></script>
   <script src="/scripts/factories/history.factory.js" charset="utf-8"></script>
 
   <link rel="stylesheet" href="../vendors/angular-xeditable.min.css">
@@ -28,11 +31,11 @@
 </head>
 
 <body>
+    <!-- TODO: undo delete - dont delete from db, only delte from html -->
     <!-- NOTE: angular code to add in -->
-  <header class="jumbotron text-center" ng-include="'../views/header.html'"></header>
+  <!--<header class="jumbotron text-center" ng-include="'../views/header.html'"></header>-->
   <!-- <nav ng-include="'/views/nav.html'"></nav> <!- NOTE: double/single quotes because AngJS expects a variable with a string so when hardcoding a string give extra quotes -->
   <main ng-view></main>
-  <!-- TODO: Need to add an ng-view for three areas -->
 <!-- NOTE: ng-view matched to ng-route in clientJS AND is dependency of angular-route.js -->
 <!-- NOTE: clientJS/config function placed into ng-view area -->
     </body>

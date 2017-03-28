@@ -154,7 +154,7 @@ soloProjectApp.factory('pagesFactory', ['$http', function($http) {
     // NOTE: returning $http function AND this area is the public API
     // controller connector: factory connector
     // NOTE: Nameplate Data //
-    factoryNameplateDataToController: factoryAppPort, // NOTE: NOT factoryAppPort: mainPageFactory
+    factoryNameplateToController: factoryAppPort, // NOTE: NOT factoryAppPort: mainPageFactory
     addNameplateData: addNameplateData, // NOTE: controller connection: factory connection
     deleteNameplate: deleteNameplate,
     editNameplate: editNameplate,
@@ -168,5 +168,4 @@ soloProjectApp.factory('pagesFactory', ['$http', function($http) {
     // NOTE: code from controllerJS: // self.arrayList = mainPageFactory.factoryAppPort; // NOTE: says this.arrayList equals factoryJS-created-variable pointing to array with property inside of object
 
   }; // NOTE: needs semi-colon!
-  console.log(new Date().getFullYear() + ' soloProjectApp.factory is run');
 }]); // NOTE: from soloProjectApp.factory function

@@ -1,4 +1,3 @@
-// soloProjectApp.controller('mainPageController', ['pagesFactory', function(pagesFactory) {
 soloProjectApp.controller('mainPageController', ['pagesFactory', function(pagesFactory) {
   console.log(new Date().getFullYear() + ' mainPageController.JS is run');
   // NOTE: soloProjectApp defined in clientJS AND mainPageController matches clientJS/.when function
@@ -7,11 +6,18 @@ soloProjectApp.controller('mainPageController', ['pagesFactory', function(pagesF
   var self = this; // NOTE: self points to 'mpc' abbr defined in clientJS & used in html
   // NOTE: self.message = 'self.whatever always equals an object - VERIFY';
   self.arrayList = [];
-  self.arrayList = pagesFactory.factoryNameplateDataToController; // NOTE: says this.arrayList equals factoryJS-created-variable pointing to array with property inside of object
+  self.arrayList = pagesFactory.factoryNameplateToController; // NOTE: says this.arrayList equals factoryJS-created-variable pointing to array with property inside of object
   self.newNameplate = {};
+
   self.historyArrayList = [];
   self.historyArrayList = pagesFactory.factoryHistoryToController; // NOTE: says this.arrayList equals factoryJS-created-variable pointing to array with property inside of object
   self.newHistory = {};
+
+  self.businessArrayList = [];
+  self.businessArrayList = businessFactory.factorybusinessToController; // NOTE: says this.arrayList equals factoryJS-created-variable pointing to array with property inside of object
+  self.newbusiness = {};
+
+  // NOTE: TESTING
   //console.log('self =', self);
   //console.log('self.arrayList =', self.arrayList);
   //console.log('self.arrayList.list =', typeof self.arrayList.list, 'with properties of: ', self.arrayList.list);
@@ -64,8 +70,6 @@ soloProjectApp.controller('mainPageController', ['pagesFactory', function(pagesF
      pagesFactory.editHistory(edited);
         console.log('history.controller.js is sending edited data: ', typeof self.editHistory, " and ", typeof edited, edited);
     }; 
-
-
   // NOTE: Businesses Data //
     // NOTE: Businesses Data //
       // NOTE: Businesses Data //
@@ -73,7 +77,20 @@ soloProjectApp.controller('mainPageController', ['pagesFactory', function(pagesF
           // add / .POST
             // delete / .DELETE
               // edit / .PUT
-
+  self.addBusiness = function(business) {
+    console.log('self.newBusiness: ', self.newBusiness); // Note: this log equals the controllerJS console.log('addBusiness = ',); // NOTE: Should be a filled-in object
+    businessFactory.addBusinessData(self.newBusiness);
+  };
+  self.deleteBusiness = function(businessid) {
+ console.log('delete from business.controller.js: ', businessid); // NOTE: 01: logging ok!
+    businessFactory.deleteBusiness(businessid);
+  };
+ self.editBusiness = function(edited) {
+    console.log('business.controller.js is sending edited data: ', typeof self.editBusiness, " and ", typeof edited, edited);
+    //  businessFactory.editBusiness(edited);
+     businessFactory.editBusiness(edited);
+        console.log('business.controller.js is sending edited data: ', typeof self.editBusiness, " and ", typeof edited, edited);
+    }; 
 
 
 

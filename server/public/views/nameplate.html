@@ -1,0 +1,71 @@
+
+
+<div ng-controller="NameplateController as nc"<!-- Need when using multiple controllers on 1 html page -->
+
+nc.
+
+
+   <!-- NOTE: mainPage/nameplateData START -->
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h3 class="panel-title">Nameplate Data</h3>
+        </div>
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Manufacturer</th>
+                <th>Model Number</th>
+                <th>Serial Number</th>
+                <th>Date-of-Manufacture</th>
+                <th>Voltage</th>
+                <th>Notes</th>
+              </tr>
+              <tr>
+                <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                  <form id="nameplateForm" class="form-inline">
+                    <td><input ng-model="mpc.newNameplate.manufacturer" class="form-control" placeholder="Manufacturer"></td>
+                    <td><input ng-model="mpc.newNameplate.model_number" class="form-control" placeholder="Model Number"></td>
+                    <td><input ng-model="mpc.newNameplate.serial_number" class="form-control" placeholder="Serial Number"></td>
+                    <td><input ng-model="mpc.newNameplate.date_of_manufacturer" placeholder="Date-of-Manufacturer"></td>
+                    <td><input ng-model="mpc.newNameplate.input_voltage" class="form-control" placeholder="Volts"></td>
+                    <td><input ng-model="mpc.newNameplate.other_notes" class="form-control" placeholder="Other Data"></td>
+                    <tr>
+                      <td><button ng-click="mpc.addNameplate()" type="submit" class="btn btn-primary">Add a New Nameplate</button></td>
+                    </tr>
+                    <!-- NOTE: .addNameplate tied with controller.js AND factory.js -->
+                    <!-- NOTE: .nameplateData tied with routes.js -->
+                  </form>
+                </div>
+            </thead>
+            <tbody>
+              <!--REPEAT-->
+              <tr ng-repeat="nameplate in mpc.arrayList.list">
+                <!--This is the line of code Kris helped with-->
+                <!--'Submit via onaftersave'' located https://vitalets.github.io/angular-xeditable/#editable-form-->
+                <td>
+                  <div> <a href="#" editable-text="nameplate.manufacturer" onaftersave="mpc.editNameplate(nameplate)" e-placeholder="Manufacturer">{{ nameplate.manufacturer || "Manufacturer" }} </a></div>
+                </td>
+                <td>
+                  <div> <a href="#" editable-text="nameplate.model_number" onaftersave="mpc.editNameplate(nameplate)" e-placeholder="Model Number">{{ nameplate.model_number || "mt" }} </a></div>
+                </td>
+                <td>
+                  <div> <a href="#" editable-text="nameplate.serial_number" onaftersave="mpc.editNameplate(nameplate)" e-placeholder="Serial Number">{{ nameplate.serial_number || "mt" }} </a></div>
+                </td>
+                <td>
+                  <div> <a href="#" editable-text="nameplate.date_of_manufacturer" onaftersave="mpc.editNameplate(nameplate)" e-placeholder="Date-of-Manufacturer">{{ nameplate.date_of_manufacturer || "mt" }} </a></div>
+                </td>
+                <td>
+                  <div> <a href="#" editable-text="nameplate.input_voltage" onaftersave="mpc.editNameplate(nameplate)" e-placeholder="Input Voltage">{{ nameplate.input_voltage || "mt" }} </a></div>
+                </td>
+                <td>
+                  <div> <a href="#" editable-text="nameplate.other_notes" onaftersave="mpc.editNameplate(nameplate)" e-placeholder="Additional Notes">{{ nameplate.other_notes || "mt" }} </a></div>
+                </td>
+                <td><button ng-click="mpc.deleteNameplate(nameplate.id)" class="btn btn-danger">X</button></td>
+                <!-- NOTE: Delete button point to controller.js functions -->
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- NOTE: mainPage/nameplateData END -->
+</div>
