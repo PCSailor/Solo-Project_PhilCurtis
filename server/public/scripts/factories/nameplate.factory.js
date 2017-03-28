@@ -1,5 +1,5 @@
-soloProjectApp.factory('nameplateFactory', ['$http', function($http) {
-  console.log(new Date().getFullYear() + ' nameplate.factory.js is run');
+soloProjectApp.factory('NameplateFactory', ['$http', function($http) {
+  console.log(new Date().getFullYear() + ' Nameplate.factory.js is run');
   // NOTE: Drop-down needed on 2 different controller.js files = good candidate for factoryJS files // TODO: Determine if factory needed
   // NOTE: Factoryis a dependency controller.JS needs requiring return (at end of this file)
   // NOTE: $http is ajax jump from F/E logic to server // QUESTION: which adds the dependency? AND catches the factory request as glue between factory & server
@@ -13,7 +13,7 @@ getNameplate();
     console.log('function getNameplate() running before success'); // NOTE: 
     $http({
       method: 'GET',
-      url: 'mainpage/nameplate/' // NOTE: domain routes to app.js
+      url: '/mainpage/nameplate/' // NOTE: domain routes to app.js
       // NOTE: use same domain if all controllers/factories use same table, then can relate to same routesJS file using same domain
     }).then(function(response) {
       console.log('factory.js/function GET/nameplate data/response.data = ', typeof response.data, response.data);

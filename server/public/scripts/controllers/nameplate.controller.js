@@ -1,5 +1,5 @@
-soloProjectApp.controller('nameController', ['nameplateFactory', function(nameplateFactory) {
-  console.log(new Date().getFullYear() + ' nameController.js is run');
+soloProjectApp.controller('NameplateController', ['NameplateFactory', function(nameplateFactory) {
+  console.log(new Date().getFullYear() + ' NameplateController.js is run');
   // NOTE: soloProjectApp defined in clientJS AND mainPageController matches clientJS/.when function
   // NOTE: 1st pagesFactory is dependency to factoryJS file factory name & 1st line of code AND 2nd pagesFactory used here for factoryJS data reference
   // NOTE: self.sumthing is 'glue' between DOM & controller, "if it's tied to DOM, start with self"
@@ -7,13 +7,13 @@ soloProjectApp.controller('nameController', ['nameplateFactory', function(namepl
   // NOTE: self.message = 'self.whatever always equals an object - VERIFY';
   self.arrayList = [];
   self.arrayList = nameplateFactory.factoryNameplateToController; // NOTE: says this.arrayList equals factoryJS-created-variable pointing to array with property inside of object
-  self.newNameplate = {};
+ // self.newNameplate = {};
 
     // NOTE: TESTING
-  console.log('self =', self);
-  console.log('self.arrayList =', self.arrayList);
-  console.log('self.arrayList.list =', typeof self.arrayList.list, 'with properties of: ', self.arrayList.list);
-  console.log('self.nameplate: ', self.nameplate); // NOTE: Should be an empty object
+  //console.log('self =', self);
+  // console.log('self.arrayList =', self.arrayList);
+ // console.log('self.arrayList.list =', typeof self.arrayList.list, 'with properties of: ', self.arrayList.list);
+  //console.log('self.nameplate: ', self.nameplate); // NOTE: Should be an empty object
  // console.log('self.newNameplate: ', self.newNameplate); // NOTE: Should be an empty object
   //console.log('self.editNameplate: ', self.editNameplate); // NOTE: Should be an empty object
 

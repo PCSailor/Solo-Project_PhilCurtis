@@ -26,11 +26,11 @@ soloProjectApp.config(['$routeProvider', function($routeProvider) {
 }) // NOTE: no semi-colon
 
 // NOTE: 03 mainpage HTML Page
-.when('/mainpage/', { // NOTE: this sets the actual domain(matched with nav.html)
-  templateUrl: '/views/mainpage.html', // NOTE: this puts info on the DOM
-  // controller: 'mainPageController', // NOTE: controller value must match controller.js
-  // controllerAs: 'mpc' // NOTE: controller abbr
-}) // NOTE: no semi-colon
+// .when('/mainpage/', { // NOTE: this sets the actual domain(matched with nav.html)
+//   templateUrl: '/views/mainpage.html', // NOTE: this puts info on the DOM
+//   controller: 'mainPageController', // NOTE: controller value must match controller.js
+//   controllerAs: 'mpc' // NOTE: controller abbr
+// }) // NOTE: no semi-colon
 
 // NOTE: 03 mainpage HTML Page
 .when('/mainpage/', { // NOTE: this sets the actual domain(matched with nav.html)
@@ -40,11 +40,11 @@ soloProjectApp.config(['$routeProvider', function($routeProvider) {
 }) // NOTE: no semi-colon
 
 
-.when('/mainpage/', { // NOTE: this sets the actual domain(matched with nav.html)
-  templateUrl: '/views/business.html', // NOTE: this puts info on the DOM
-  controller: 'BusinessController', // NOTE: controller value must match controller.js
-  controllerAs: 'bc' // NOTE: controller abbr
-}) // NOTE: no semi-colon
+// .when('/mainpage/', { // NOTE: this sets the actual domain(matched with nav.html)
+//   templateUrl: '/views/business.html', // NOTE: this puts info on the DOM
+//   controller: 'BusinessController', // NOTE: controller value must match controller.js
+//   controllerAs: 'bc' // NOTE: controller abbr
+// }) // NOTE: no semi-colon
 
 
 // NOTE: 04 view
