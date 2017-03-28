@@ -1,11 +1,10 @@
 soloProjectApp.factory('NameplateFactory', ['$http', function($http) {
   console.log(new Date().getFullYear() + ' Nameplate.factory.js is run');
-  // NOTE: Drop-down needed on 2 different controller.js files = good candidate for factoryJS files // TODO: Determine if factory needed
+  // NOTE: Drop-down needed on 2 different controller.js files = good candidate for factoryJS files
   // NOTE: Factoryis a dependency controller.JS needs requiring return (at end of this file)
-  // NOTE: $http is ajax jump from F/E logic to server // QUESTION: which adds the dependency? AND catches the factory request as glue between factory & server
+  // NOTE: $http is ajax jump from F/E logic to server AND catches the factory request as glue between factory & server
   // in ang like ajax requests server
   var factoryNameplate = { list: [] }; // NOTE: data to controller AND must be property inside of object // NOTE: Will this code work inside controller, client.js also? YES
-
 getNameplate();
 
   // NOTE: GET Nameplate Data
@@ -23,6 +22,7 @@ getNameplate();
     });
   } // NOTE: for: function getData
   // NOTE: After this GET, should have an array on DOM
+
  // NOTE: Delete Nameplate
   function deleteNameplate(nameplateid) {
     console.log('deleteNameplate = ', deleteNameplate);
@@ -45,6 +45,7 @@ getNameplate();
       getNameplate();
     });
   } // NOTE: for: function addNameplateData
+
     // NOTE: Edit Nameplate
   function editNameplate (editNameplate) {
     console.log('editNameplate function is run');
@@ -58,7 +59,7 @@ getNameplate();
     console.log('editNameplate.id', editNameplate.id);
   } // NOTE: for: function editNameplate
 
-  return { // DONT FORGET THE FUCKING COMMAS!!
+  return { // DONT FORGET THE COMMAS!!
     // NOTE: returning $http function AND this area is the public API
     // controller connector: factory connector
     // NOTE: Nameplate Data //

@@ -19,13 +19,13 @@
   <!--<script src="/scripts/controllers/login.controller.js" charset="utf-8"></script>-->
   <script src="/scripts/controllers/mainpage.controller.js" charset="utf-8"></script>
   <script src="/scripts/controllers/nameplate.controller.js" charset="utf-8"></script>
-  <!--<script src="/scripts/controllers/systemhistory.controller.js" charset="utf-8"></script>-->
+  <script src="/scripts/controllers/systemhistory.controller.js" charset="utf-8"></script>
   <!--<script src="/scripts/controllers/usernotes.controller.js" charset="utf-8"></script>-->
 
   <!--<script src="/scripts/factories/business.factory.js" charset="utf-8"></script>-->
   <script src="/scripts/factories/nameplate.factory.js" charset="utf-8"></script>
   <script src="/scripts/factories/pages.factory.js" charset="utf-8"></script>
-  <!--<script src="/scripts/factories/systemhistory.factory.js" charset="utf-8"></script>-->
+  <script src="/scripts/factories/systemhistory.factory.js" charset="utf-8"></script>
   <!--<script src="/scripts/factories/usernotes.factory.js" charset="utf-8"></script>-->
 
   <link rel="stylesheet" href="../vendors/angular-xeditable.min.css">
@@ -38,8 +38,8 @@
     <!-- TODO: undo delete - dont delete from db, only delte from html -->
     <!-- NOTE: angular code to add in -->
   <!--<header class="jumbotron text-center" ng-include="'../views/header.html'"></header>-->
-  <!-- <nav ng-include="'/views/nav.html'"></nav> <!- NOTE: double/single quotes because AngJS expects a variable with a string so when hardcoding a string give extra quotes -->
-  <main ng-view></main>
+   <nav ng-include="'/views/nav.html'"></nav>  <!--NOTE: double/single quotes because AngJS expects a variable with a string so when hardcoding a string give extra quotes -->
+<!--<main ng-view></main>-->
 <!-- NOTE: ng-view matched to ng-route in clientJS AND is dependency of angular-route.js -->
 <!-- NOTE: clientJS/config function placed into ng-view area -->
     </body>

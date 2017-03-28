@@ -27,3 +27,13 @@ router.get('/', function(req, res) { // NOTE: replaced by SELECT statement in SQ
     }
   });
 }); // NOTE: for: router.get
+
+module.exports = router; // NOTE: missing module.exports causes a "TypeError: Router.use() requires middleware function but got a Object"
+//--------------------------------------------------------------------------------
+// NOTE: Default ....routes.js code
+// console.log(new Date().getFullYear() + ' nameplate.routes.js is run');
+// var router = require('express').Router();
+// // var pg = require('pg'); // NOTE: relocated to database-pool.js & added next line
+// var pool = require('../config/database-pool.js'); // NOTE: Creates db pool.  db info in the config folder/database-pool.js file.
+
+// module.exports = router; // NOTE: missing module.exports causes a "TypeError: Router.use() requires middleware function but got a Object"

@@ -1,0 +1,62 @@
+<div ng-controller="SystemHistoryController as shc">
+      <!-- NOTE: mainPage/System History and Parts START -->
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <h3 class="panel-title">System History and Parts</h3>
+          </div>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Services and Repairs</th>
+                  <th>Vendors</th>
+                  <th>Parts Used</th>
+                </tr>
+                <tr>
+                  <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                    <form id="historyForm" class="form-inline">
+                      <td><input ng-model="shc.newHistory.date" class="form-control" placeholder="Date"></td>
+                      <td><input ng-model="shc.newHistory.services_repairs" class="form-control" placeholder="Services and Repairs"></td>
+                      <td><input ng-model="shc.newHistory.vendors" class="form-control" placeholder="Vendors"></td>
+                      <td><input ng-model="shc.newHistory.parts_used" placeholder="Parts Used"></td>
+                      <tr>
+                        <td><button ng-click="shc.addHistory(history)" type="submit" class="btn btn-primary">Add New System History</button></td>
+                      </tr>
+                      <!-- NOTE: .addNameplate tied with controller.js AND factory.js -->
+                      <!-- NOTE: .nameplateData tied with routes.js -->
+                    </form>
+                  </div>
+              </thead>
+              <tbody>
+                <!--REPEAT-->
+                <tr ng-repeat="history in shc.historyArrayList.list">
+                  <!--This is the line of code Kris helped with-->
+                  <!--'Submit via onaftersave'' located https://vitalets.github.io/angular-xeditable/#editable-form-->
+                  <td>
+                    <div> <a href="#" editable-text="history.date" onaftersave="shc.editHistory(history)" e-placeholder="Date_Year-Month-Day">{{ history.date || "mt" }} </a></div>
+                  </td>
+                  <td>
+                    <div> <a href="#" editable-text="history.services_and_repairs" onaftersave="shc.editHistory(history)" e-placeholder="Services and Repairs">{{ history.services_and_repairs || "mt" }} </a></div>
+                  </td>
+                  <td>
+                    <div> <a href="#" editable-text="history.vendors" onaftersave="shc.editHistory(history)" e-placeholder="Vendors">{{ history.vendors || "mt" }} </a></div>
+                  </td>
+                  <td>
+                    <div> <a href="#" editable-text="history.parts_used" onaftersave="shc.editHistory(history)" e-placeholder="Parts Used">{{ history.parts_used || "mt" }} </a></div>
+                  </td>
+                  <td><button ng-click="shc.deleteHistory(history.id)" class="btn btn-danger">X</button></td>
+                  <!-- NOTE: Delete button point to controller.js functions -->
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- NOTE: mainPage/System History and Parts END -->
+
+
+
+
+
+
+</div>

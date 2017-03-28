@@ -4,7 +4,9 @@ var router = require('express').Router();
 var pool = require('../config/database-pool.js'); // NOTE: Creates db pool.  db info in the config folder/database-pool.js file.
 
 // NOTE: GET Nameplate data
-router.get('/nameplate/', function(req, res) { // NOTE: replaced by SELECT statement in SQL
+router.get('/', function(req, res) { // NOTE: replaced by SELECT statement in SQL
+
+
   console.log('routes.js/router.get/nameplate function run');
   pool.connect(function(err, client, done) {
     if(err) {
@@ -26,6 +28,7 @@ router.get('/nameplate/', function(req, res) { // NOTE: replaced by SELECT state
     }
   });
 }); // NOTE: for: router.get
+
 // NOTE: delete Nameplate data
 router.delete('/nameplate/delete:id', function(req, res) { // NOTE: changing path resulted with this error: DELETE http://localhost:5500/mainPage/deleteMustMatch26 500 (Internal Server Error)
   var nameplateToDelete = req.params.id;
@@ -49,6 +52,7 @@ router.delete('/nameplate/delete:id', function(req, res) { // NOTE: changing pat
     } // NOTE: else
   }); // NOTE: pool.connect
 }); // NOTE: router.delete
+
 // NOTE: add new Nameplate data
 router.post('/nameplate/add', function(req, res) { // NOTE: Path must match factory.JS path
   console.log('routes.js/router.POST/nameplate/Req.body = ', req.body);
@@ -71,8 +75,6 @@ router.post('/nameplate/add', function(req, res) { // NOTE: Path must match fact
     } // NOTE: else
   }); // NOTE: pool.connect
 }); // NOTE: router.post
-
-
 
 // NOTE: edit Nameplate data
 router.put('/nameplate/edit:id', function(req, res) {

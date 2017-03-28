@@ -76,32 +76,32 @@ var pool = require('../config/database-pool.js'); // NOTE: Creates db pool.  db 
 //   }); // NOTE: pool.connect
 // }); // NOTE: router.delete
 
-// NOTE: edit Nameplate data
-// router.put('/editnameplate/:id', function(req, res) {
-router.put('/nameplate/edit:id', function(req, res) {
-  var nameplateToedit = req.params.id;
-  var nameplateObject = req.body;
-  console.log('RouteJS/RouterPUT/nameplate/edit:id/req.body = ', nameplateObject);
-  console.log('RouteJS/RouterPUT/nameplate/edit:id/req.params.id = ', nameplateToedit);
-  pool.connect(function(err, client, done) { // NOTE: db query starts
-    if(err) {
-      console.log('RouteJS/RouterPUT/Pool.connect/editnameplate error = ', err);
-      res.sendStatus(500);
-    } else {
-      // NOTE: from task.js = client.query('UPDATE task SET status=TRUE WHERE ID=$1;',[taskToCompleteId], function(err, result) { done();
-      client.query('UPDATE nameplate_data SET manufacturer=$1, model_number=$2, serial_number=$3, date_of_manufacturer=$4, input_voltage=$5, other_notes=$6 WHERE id=$7;',
-      [nameplateObject.manufacturer, nameplateObject.model_number, nameplateObject.serial_number, nameplateObject.date_of_manufacturer, nameplateObject.input_voltage, nameplateObject.other_notes, nameplateToedit], function(err, result) { // NOTE: [var-name-within-this-post.html-page/input-ng-model]
-        done();
-        if(err) {
-          console.log('RouteJS/RouterPUT/Pool.connect/db query-put/editnameplate error = ', err);
-          res.sendStatus(500); // NOTE: error
-        } else {
-          res.sendStatus(201); // NOTE: Success
-        } // NOTE: else
-      }); // NOTE: client.query
-    } // NOTE: else
-  }); // NOTE: pool.connect
-}); // NOTE: router.put
+// // NOTE: edit Nameplate data
+// // router.put('/editnameplate/:id', function(req, res) {
+// router.put('/nameplate/edit:id', function(req, res) {
+//   var nameplateToedit = req.params.id;
+//   var nameplateObject = req.body;
+//   console.log('RouteJS/RouterPUT/nameplate/edit:id/req.body = ', nameplateObject);
+//   console.log('RouteJS/RouterPUT/nameplate/edit:id/req.params.id = ', nameplateToedit);
+//   pool.connect(function(err, client, done) { // NOTE: db query starts
+//     if(err) {
+//       console.log('RouteJS/RouterPUT/Pool.connect/editnameplate error = ', err);
+//       res.sendStatus(500);
+//     } else {
+//       // NOTE: from task.js = client.query('UPDATE task SET status=TRUE WHERE ID=$1;',[taskToCompleteId], function(err, result) { done();
+//       client.query('UPDATE nameplate_data SET manufacturer=$1, model_number=$2, serial_number=$3, date_of_manufacturer=$4, input_voltage=$5, other_notes=$6 WHERE id=$7;',
+//       [nameplateObject.manufacturer, nameplateObject.model_number, nameplateObject.serial_number, nameplateObject.date_of_manufacturer, nameplateObject.input_voltage, nameplateObject.other_notes, nameplateToedit], function(err, result) { // NOTE: [var-name-within-this-post.html-page/input-ng-model]
+//         done();
+//         if(err) {
+//           console.log('RouteJS/RouterPUT/Pool.connect/db query-put/editnameplate error = ', err);
+//           res.sendStatus(500); // NOTE: error
+//         } else {
+//           res.sendStatus(201); // NOTE: Success
+//         } // NOTE: else
+//       }); // NOTE: client.query
+//     } // NOTE: else
+//   }); // NOTE: pool.connect
+// }); // NOTE: router.put
 
 
 
@@ -114,28 +114,28 @@ router.put('/nameplate/edit:id', function(req, res) {
           // add / .POST
             // delete / .DELETE
               // edit / .PUT
-// NOTE: GET History Data
-router.get('/history/', function(req, res) { // NOTE: replaced by SELECT statement in SQL
-  console.log('routeJS/router-GET/history/function is run');
-  pool.connect(function(err, client, done) {
-    if(err) {
-      console.log('routeJS/router-GET/history/pool.connect error = ', err);
-      res.sendStatus(500);
-    } else {
-      // NOTE: database query
-      client.query('SELECT * FROM system_history ORDER BY date desc;', function(err, result) {
-        done();
-        if(err) {
-          console.log('routeJS/router-GET/history/db query error = ', err);
-          res.sendStatus(500);
-        } else {
-          console.log('routeJS/router-GET/history/result.rows data is available');
-          res.status(200).send(result.rows);
-        }
-      });
-    }
-  });
-}); // NOTE: for: router.get
+// // NOTE: GET History Data
+// router.get('/history/', function(req, res) { // NOTE: replaced by SELECT statement in SQL
+//   console.log('routeJS/router-GET/history/function is run');
+//   pool.connect(function(err, client, done) {
+//     if(err) {
+//       console.log('routeJS/router-GET/history/pool.connect error = ', err);
+//       res.sendStatus(500);
+//     } else {
+//       // NOTE: database query
+//       client.query('SELECT * FROM system_history ORDER BY date desc;', function(err, result) {
+//         done();
+//         if(err) {
+//           console.log('routeJS/router-GET/history/db query error = ', err);
+//           res.sendStatus(500);
+//         } else {
+//           console.log('routeJS/router-GET/history/result.rows data is available');
+//           res.status(200).send(result.rows);
+//         }
+//       });
+//     }
+//   });
+// }); // NOTE: for: router.get
 
 // NOTE: add new History data
 router.post('/history/add', function(req, res) { // NOTE: Path must match factory.JS path
