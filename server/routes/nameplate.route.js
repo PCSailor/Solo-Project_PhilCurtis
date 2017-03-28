@@ -72,6 +72,34 @@ router.post('/nameplate/add', function(req, res) { // NOTE: Path must match fact
   }); // NOTE: pool.connect
 }); // NOTE: router.post
 
+
+
+// NOTE: edit Nameplate data
+router.put('/nameplate/edit:id', function(req, res) {
+  var nameplateToedit = req.params.id;
+  var nameplateObject = req.body;
+  console.log('routes.js/router.PUT/nameplate/edit:id/req.body = ', nameplateObject);
+  console.log('routes.js/router.PUT/nameplate/edit:id/req.params.id = ', nameplateToedit);
+  pool.connect(function(err, client, done) { // NOTE: db query starts
+    if(err) {
+      console.log('routes.js/router.PUT/nameplate/Pool.connect/editnameplate error = ', err);
+      res.sendStatus(500);
+    } else {
+      client.query('UPDATE nameplate_data SET manufacturer=$1, model_number=$2, serial_number=$3, date_of_manufacturer=$4, input_voltage=$5, other_notes=$6 WHERE id=$7;',
+      [nameplateObject.manufacturer, nameplateObject.model_number, nameplateObject.serial_number, nameplateObject.date_of_manufacturer, nameplateObject.input_voltage, nameplateObject.other_notes, nameplateToedit], function(err, result) { // NOTE: [var-name-within-this-post.html-page/input-ng-model]
+        done();
+        if(err) {
+          console.log('routes.js/router.PUT/nameplate/Pool.connect/db query-put/editnameplate error = ', err);
+          res.sendStatus(500); // NOTE: error
+        } else {
+          res.sendStatus(201); // NOTE: Success
+        } // NOTE: else
+      }); // NOTE: client.query
+    } // NOTE: else
+  }); // NOTE: pool.connect
+}); // NOTE: router.put
+
+
 module.exports = router; // NOTE: missing module.exports causes a "TypeError: Router.use() requires middleware function but got a Object"
 //--------------------------------------------------------------------------------
 // NOTE: Default ....routes.js code

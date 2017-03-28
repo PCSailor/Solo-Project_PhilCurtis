@@ -45,6 +45,18 @@ getNameplate();
       getNameplate();
     });
   } // NOTE: for: function addNameplateData
+    // NOTE: Edit Nameplate
+  function editNameplate (editNameplate) {
+    console.log('editNameplate function is run');
+    $http({
+      method: 'PUT',
+      url: 'mainpage/nameplate/edit' + editNameplate.id,
+      data: editNameplate
+    }).then(function(response) {
+      getNameplate();
+    });
+    console.log('editNameplate.id', editNameplate.id);
+  } // NOTE: for: function editNameplate
 
   return { // DONT FORGET THE FUCKING COMMAS!!
     // NOTE: returning $http function AND this area is the public API
@@ -53,7 +65,7 @@ getNameplate();
     factoryNameplateToController: factoryNameplate,
     deleteNameplate: deleteNameplate,
     addNameplateData: addNameplateData,
-   // editNameplate: editNameplate,
+    editNameplate: editNameplate
     // NOTE: code from controllerJS: // self.arrayList = mainPageFactory.factoryAppPort; // NOTE: says this.arrayList equals factoryJS-created-variable pointing to array with property inside of object
   }; // NOTE: needs semi-colon!
 }]); // NOTE: from soloProjectApp.factory function

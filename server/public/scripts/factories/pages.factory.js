@@ -53,18 +53,18 @@ soloProjectApp.factory('pagesFactory', ['$http', function($http) {
   //   console.log('delete from nameplate.factory.js'); // NOTE: 02: logging ok!           last one
   // } // NOTE: for: function deleteNameplate
 
-  // NOTE: Edit Nameplate
-  function editNameplate (editNameplate) {
-    console.log('editNameplate function is run');
-    $http({
-      method: 'PUT',
-      url: 'mainpage/nameplate/edit' + editNameplate.id,
-      data: editNameplate
-    }).then(function(response) {
-      getData();
-    });
-    console.log('editNameplate.id', editNameplate.id);
-  } // NOTE: for: function editNameplate
+  // // NOTE: Edit Nameplate
+  // function editNameplate (editNameplate) {
+  //   console.log('editNameplate function is run');
+  //   $http({
+  //     method: 'PUT',
+  //     url: 'mainpage/nameplate/edit' + editNameplate.id,
+  //     data: editNameplate
+  //   }).then(function(response) {
+  //     getData();
+  //   });
+  //   console.log('editNameplate.id', editNameplate.id);
+  // } // NOTE: for: function editNameplate
   // NOTE: System History and Parts Data //
     // NOTE: System History and Parts Data //
       // NOTE: System History and Parts Data //

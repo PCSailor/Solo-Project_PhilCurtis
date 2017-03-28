@@ -43,11 +43,11 @@ soloProjectApp.controller('mainPageController', ['pagesFactory', function(pagesF
   // console.log('delete from nameplate.controller.js: ', nameplateid); // NOTE: 01: logging ok!
   //   pagesFactory.deleteNameplate(nameplateid);
   // };
- self.editNameplate = function(edited) {
-    console.log('nameplate.controller.js is sending edited data: ', edited); // NOTE:
-     pagesFactory.editNameplate(edited);
-    console.log('nameplate.controller.js is sending edited data: ', edited); // NOTE:
-    };
+//  self.editNameplate = function(edited) {
+//     console.log('nameplate.controller.js is sending edited data: ', edited); // NOTE:
+//      pagesFactory.editNameplate(edited);
+//     console.log('nameplate.controller.js is sending edited data: ', edited); // NOTE:
+//     };
   // NOTE: System History and Parts Data //
     // NOTE: System History and Parts Data //
       // NOTE: System History and Parts Data //

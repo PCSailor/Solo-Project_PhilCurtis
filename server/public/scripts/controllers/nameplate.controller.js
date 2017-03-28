@@ -25,6 +25,10 @@ soloProjectApp.controller('NameplateController', ['NameplateFactory', function(N
     console.log('self.newNameplate: ', self.newNameplate); // Note: this log equals the factoryJS console.log('add Nameplate = ', addNameplateData); // NOTE: Should be a filled-in object
     NameplateFactory.addNameplateData(self.newNameplate);
   };
-
+ self.editNameplate = function(edited) {
+    console.log('nameplate.controller.js is sending edited data: ', edited); // NOTE:
+     NameplateFactory.editNameplate(edited);
+    console.log('nameplate.controller.js is sending edited data: ', edited); // NOTE:
+    };
 
   }]);

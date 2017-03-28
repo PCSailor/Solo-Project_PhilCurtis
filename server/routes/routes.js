@@ -28,29 +28,29 @@ var pool = require('../config/database-pool.js'); // NOTE: Creates db pool.  db 
 //   });
 // }); // NOTE: for: router.get
 
-// NOTE: add new Nameplate data
-// router.post('/nameplateData/add', function(req, res) {
-router.post('/nameplate/add', function(req, res) { // NOTE: Path must match factory.JS path
-  console.log('RouteJS/RouterPOST/Req.body = ', req.body);
-  var nameplateObject = req.body;
-  pool.connect(function(err, client, done) { // NOTE: db query starts
-    if(err) {
-      console.log('RouteJS/RouterPOST/Pool.connect error = ', err);
-      res.sendStatus(500);
-    } else {
-      client.query('INSERT INTO nameplate_data (manufacturer, model_number, serial_number, date_of_manufacturer, input_voltage, other_notes) VALUES ($1, $2, $3, $4, $5, $6);',
-      [nameplateObject.manufacturer, nameplateObject.model_number, nameplateObject.serial_number, nameplateObject.date_of_manufacturer, nameplateObject.input_voltage, nameplateObject.other_notes], function(err, result) { // NOTE: [var-name-within-this-post.html-page/input-ng-model]
-        done();
-        if(err) {
-          console.log('RouteJS/RouterPOST/Pool.connect/db query-post error = ', err);
-          res.sendStatus(500); // NOTE: error
-        } else {
-          res.sendStatus(201); // NOTE: Success
-        } // NOTE: else
-      }); // NOTE: client.query
-    } // NOTE: else
-  }); // NOTE: pool.connect
-}); // NOTE: router.post
+// // NOTE: add new Nameplate data
+// // router.post('/nameplateData/add', function(req, res) {
+// router.post('/nameplate/add', function(req, res) { // NOTE: Path must match factory.JS path
+//   console.log('RouteJS/RouterPOST/Req.body = ', req.body);
+//   var nameplateObject = req.body;
+//   pool.connect(function(err, client, done) { // NOTE: db query starts
+//     if(err) {
+//       console.log('RouteJS/RouterPOST/Pool.connect error = ', err);
+//       res.sendStatus(500);
+//     } else {
+//       client.query('INSERT INTO nameplate_data (manufacturer, model_number, serial_number, date_of_manufacturer, input_voltage, other_notes) VALUES ($1, $2, $3, $4, $5, $6);',
+//       [nameplateObject.manufacturer, nameplateObject.model_number, nameplateObject.serial_number, nameplateObject.date_of_manufacturer, nameplateObject.input_voltage, nameplateObject.other_notes], function(err, result) { // NOTE: [var-name-within-this-post.html-page/input-ng-model]
+//         done();
+//         if(err) {
+//           console.log('RouteJS/RouterPOST/Pool.connect/db query-post error = ', err);
+//           res.sendStatus(500); // NOTE: error
+//         } else {
+//           res.sendStatus(201); // NOTE: Success
+//         } // NOTE: else
+//       }); // NOTE: client.query
+//     } // NOTE: else
+//   }); // NOTE: pool.connect
+// }); // NOTE: router.post
 
 // // NOTE: delete Nameplate data
 // router.delete('/nameplate/delete:id', function(req, res) { // NOTE: changing path resulted with this error: DELETE http://localhost:5500/mainPage/deleteMustMatch26 500 (Internal Server Error)
