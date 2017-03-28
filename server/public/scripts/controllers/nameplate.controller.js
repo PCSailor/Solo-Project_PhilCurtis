@@ -7,7 +7,7 @@ soloProjectApp.controller('NameplateController', ['NameplateFactory', function(N
   // NOTE: self.message = 'self.whatever always equals an object - VERIFY';
   self.arrayList = [];
   self.arrayList = NameplateFactory.factoryNameplateToController; // NOTE: says this.arrayList equals factoryJS-created-variable pointing to array with property inside of object
- // self.newNameplate = {};
+  self.newNameplate = {};
 
     // NOTE: TESTING
   //console.log('self =', self);
@@ -18,10 +18,13 @@ soloProjectApp.controller('NameplateController', ['NameplateFactory', function(N
   //console.log('self.editNameplate: ', self.editNameplate); // NOTE: Should be an empty object
 
   self.deleteNameplate = function(nameplateid) {
-  console.log('delete from nameplate.controller.js: ', nameplateid); // NOTE: 01: logging ok!
-  NameplateFactory.deleteNameplate(nameplateid);
+    console.log('delete from nameplate.controller.js: ', nameplateid); // NOTE: 01: logging ok!
+    NameplateFactory.deleteNameplate(nameplateid);
   };
-
+  self.addNameplate = function() {
+    console.log('self.newNameplate: ', self.newNameplate); // Note: this log equals the factoryJS console.log('add Nameplate = ', addNameplateData); // NOTE: Should be a filled-in object
+    NameplateFactory.addNameplateData(self.newNameplate);
+  };
 
 
   }]);

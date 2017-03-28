@@ -5,9 +5,9 @@ soloProjectApp.controller('mainPageController', ['pagesFactory', function(pagesF
   // NOTE: self.sumthing is 'glue' between DOM & controller, "if it's tied to DOM, start with self"
   var self = this; // NOTE: self points to 'mpc' abbr defined in clientJS & used in html
   // NOTE: self.message = 'self.whatever always equals an object - VERIFY';
-  self.arrayList = [];
-  self.arrayList = pagesFactory.factoryNameplateToController; // NOTE: says this.arrayList equals factoryJS-created-variable pointing to array with property inside of object
-  self.newNameplate = {};
+  // self.arrayList = [];
+  // self.arrayList = pagesFactory.factoryNameplateToController; // NOTE: says this.arrayList equals factoryJS-created-variable pointing to array with property inside of object
+  // self.newNameplate = {};
 
   self.historyArrayList = [];
   self.historyArrayList = pagesFactory.factoryHistoryToController; // NOTE: says this.arrayList equals factoryJS-created-variable pointing to array with property inside of object
@@ -22,9 +22,9 @@ soloProjectApp.controller('mainPageController', ['pagesFactory', function(pagesF
   //console.log('self.arrayList =', self.arrayList);
   //console.log('self.arrayList.list =', typeof self.arrayList.list, 'with properties of: ', self.arrayList.list);
   //console.log('self.nameplate: ', self.nameplate); // NOTE: Should be an empty object
-  console.log('self.newNameplate: ', self.newNameplate); // NOTE: Should be an empty object
+  //console.log('self.newNameplate: ', self.newNameplate); // NOTE: Should be an empty object
   //console.log('self.editNameplate: ', self.editNameplate); // NOTE: Should be an empty object
-  console.log('self.newHistory: ', self.newHistory); // NOTE: Should be an empty object
+ // console.log('self.newHistory: ', self.newHistory); // NOTE: Should be an empty object
  
 
   // NOTE: Nameplate Data //
@@ -35,10 +35,10 @@ soloProjectApp.controller('mainPageController', ['pagesFactory', function(pagesF
             // delete / .DELETE
               // edit / .PUT
   // NOTE: _..._NameplateData is function created in factory
-  self.addNameplate = function() {
-    console.log('self.newNameplate: ', self.newNameplate); // Note: this log equals the factoryJS console.log('add Nameplate = ', addNameplateData); // NOTE: Should be a filled-in object
-    pagesFactory.addNameplateData(self.newNameplate);
-   };
+  // self.addNameplate = function() {
+  //   console.log('self.newNameplate: ', self.newNameplate); // Note: this log equals the factoryJS console.log('add Nameplate = ', addNameplateData); // NOTE: Should be a filled-in object
+  //   pagesFactory.addNameplateData(self.newNameplate);
+  //  };
   // self.deleteNameplate = function(nameplateid) {
   // console.log('delete from nameplate.controller.js: ', nameplateid); // NOTE: 01: logging ok!
   //   pagesFactory.deleteNameplate(nameplateid);

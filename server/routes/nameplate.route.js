@@ -49,6 +49,28 @@ router.delete('/nameplate/delete:id', function(req, res) { // NOTE: changing pat
     } // NOTE: else
   }); // NOTE: pool.connect
 }); // NOTE: router.delete
+// NOTE: add new Nameplate data
+router.post('/nameplate/add', function(req, res) { // NOTE: Path must match factory.JS path
+  console.log('routes.js/router.POST/nameplate/Req.body = ', req.body);
+  var nameplateObject = req.body;
+  pool.connect(function(err, client, done) { // NOTE: db query starts
+    if(err) {
+      console.log('routes.js/router.POST/nameplate/Pool.connect error = ', err);
+      res.sendStatus(500);
+    } else {
+      client.query('INSERT INTO nameplate_data (manufacturer, model_number, serial_number, date_of_manufacturer, input_voltage, other_notes) VALUES ($1, $2, $3, $4, $5, $6);',
+      [nameplateObject.manufacturer, nameplateObject.model_number, nameplateObject.serial_number, nameplateObject.date_of_manufacturer, nameplateObject.input_voltage, nameplateObject.other_notes], function(err, result) { // NOTE: [var-name-within-this-post.html-page/input-ng-model]
+        done();
+        if(err) {
+          console.log('routes.js/router.POST/nameplate/Pool.connect/db query-post error = ', err);
+          res.sendStatus(500); // NOTE: error
+        } else {
+          res.sendStatus(201); // NOTE: Success
+        } // NOTE: else
+      }); // NOTE: client.query
+    } // NOTE: else
+  }); // NOTE: pool.connect
+}); // NOTE: router.post
 
 module.exports = router; // NOTE: missing module.exports causes a "TypeError: Router.use() requires middleware function but got a Object"
 //--------------------------------------------------------------------------------

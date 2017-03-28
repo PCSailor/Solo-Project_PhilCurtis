@@ -34,15 +34,25 @@ getNameplate();
     });
     console.log('delete from nameplate.factory.js'); // NOTE: 02: logging ok!
   } // NOTE: for: function deleteNameplate
-
+  // NOTE: Add new Nameplate
+  function addNameplateData(addNameplateData) {
+    console.log('add Nameplate = ', addNameplateData); // Note: this log equals the controllerJS console.log('self.newNameplate: ', self.newNameplate); // NOTE: Should be a filled-in object
+    $http({
+      method: 'POST',
+      url: 'mainpage/nameplate/add', // NOTE: Path must match route.JS path
+      data: addNameplateData
+    }).then(function(response) {
+      getNameplate();
+    });
+  } // NOTE: for: function addNameplateData
 
   return { // DONT FORGET THE FUCKING COMMAS!!
     // NOTE: returning $http function AND this area is the public API
     // controller connector: factory connector
     // NOTE: Nameplate Data //
-    factoryNameplateToController: factoryNameplate, // NOTE: NOT factoryAppPort: mainPageFactory
+    factoryNameplateToController: factoryNameplate,
     deleteNameplate: deleteNameplate,
-   // addNameplateData: addNameplateData, // NOTE: controller connection: factory connection
+    addNameplateData: addNameplateData,
    // editNameplate: editNameplate,
     // NOTE: code from controllerJS: // self.arrayList = mainPageFactory.factoryAppPort; // NOTE: says this.arrayList equals factoryJS-created-variable pointing to array with property inside of object
   }; // NOTE: needs semi-colon!

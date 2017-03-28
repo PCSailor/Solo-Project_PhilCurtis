@@ -4,9 +4,9 @@ soloProjectApp.factory('pagesFactory', ['$http', function($http) {
   // NOTE: Factoryis a dependency controller.JS needs requiring return (at end of this file)
   // NOTE: $http is ajax jump from F/E logic to server // QUESTION: which adds the dependency? AND catches the factory request as glue between factory & server
   // in ang like ajax requests server
-  var factoryAppPort = { list: [] }; // NOTE: data to controller AND must be property inside of object // NOTE: Will this code work inside controller, client.js also? YES
+  // var factoryAppPort = { list: [] }; // NOTE: data to controller AND must be property inside of object // NOTE: Will this code work inside controller, client.js also? YES
   var factoryHistory = { list: [] }; // NOTE: data to controller AND must be property inside of object // NOTE: Will this code work inside controller, client.js also? YES
-  getData();
+  // getData();
   getHistory();
   // NOTE: Nameplate Data //
     // NOTE: Nameplate Data //
@@ -30,17 +30,17 @@ soloProjectApp.factory('pagesFactory', ['$http', function($http) {
   //   });
   // } // NOTE: for: function getData
   // // NOTE: After this GET, should have an array on DOM
-  // NOTE: Add new Nameplate
-  function addNameplateData(addNameplateData) {
-    console.log('add Nameplate = ', addNameplateData); // Note: this log equals the controllerJS console.log('self.newNameplate: ', self.newNameplate); // NOTE: Should be a filled-in object
-    $http({
-      method: 'POST',
-      url: 'mainpage/nameplate/add', // NOTE: Path must match route.JS path
-      data: addNameplateData
-    }).then(function(response) {
-      getData();
-    });
-  } // NOTE: for: function addNameplateData
+  // // NOTE: Add new Nameplate
+  // function addNameplateData(addNameplateData) {
+  //   console.log('add Nameplate = ', addNameplateData); // Note: this log equals the controllerJS console.log('self.newNameplate: ', self.newNameplate); // NOTE: Should be a filled-in object
+  //   $http({
+  //     method: 'POST',
+  //     url: 'mainpage/nameplate/add', // NOTE: Path must match route.JS path
+  //     data: addNameplateData
+  //   }).then(function(response) {
+  //     getData();
+  //   });
+  // } // NOTE: for: function addNameplateData
   // // NOTE: Delete Nameplate
   // function deleteNameplate(nameplateid) {
   //   console.log('deleteNameplate = ', deleteNameplate);
