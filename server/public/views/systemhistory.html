@@ -34,16 +34,16 @@
                   <!--This is the line of code Kris helped with-->
                   <!--'Submit via onaftersave'' located https://vitalets.github.io/angular-xeditable/#editable-form-->
                   <td>
-                    <div> <a href="#" editable-text="history.date" onaftersave="shc.editHistory(history)" e-placeholder="Date_Year-Month-Day">{{ history.date || "mt" }} </a></div>
+                    <div> <a href="#" editable-text="history.date" onaftersave="shc.editHistory(history)" e-placeholder="Date_Year-Month-Day">{{ history.date || " " }} </a></div>
                   </td>
                   <td>
-                    <div> <a href="#" editable-text="history.services_and_repairs" onaftersave="shc.editHistory(history)" e-placeholder="Services and Repairs">{{ history.services_and_repairs || "mt" }} </a></div>
+                    <div> <a href="#" editable-text="history.services_and_repairs" onaftersave="shc.editHistory(history)" e-placeholder="Services and Repairs">{{ history.services_and_repairs || " " }} </a></div>
                   </td>
                   <td>
-                    <div> <a href="#" editable-text="history.vendors" onaftersave="shc.editHistory(history)" e-placeholder="Vendors">{{ history.vendors || "mt" }} </a></div>
+                    <div> <a href="#" editable-text="history.vendors" onaftersave="shc.editHistory(history)" e-placeholder="Vendors">{{ history.vendors || " " }} </a></div>
                   </td>
                   <td>
-                    <div> <a href="#" editable-text="history.parts_used" onaftersave="shc.editHistory(history)" e-placeholder="Parts Used">{{ history.parts_used || "mt" }} </a></div>
+                    <div> <a href="#" editable-text="history.parts_used" onaftersave="shc.editHistory(history)" e-placeholder="Parts Used">{{ history.parts_used || " " }} </a></div>
                   </td>
                   <td><button ng-click="shc.deleteHistory(history.id)" class="btn btn-danger">X</button></td>
                   <!-- NOTE: Delete button point to controller.js functions -->

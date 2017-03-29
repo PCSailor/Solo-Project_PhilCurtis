@@ -16,6 +16,7 @@ soloProjectApp.controller('BusinessController', ['BusinessFactory', function(Bus
   self.addBusiness = function(newBusiness) {
     console.log('self.newBusiness: ', self.newBusiness); // Note: this log equals the factoryJS console.log('add Business = ', addBusinessData); // NOTE: Should be a filled-in object
     BusinessFactory.addBusiness(self.newBusiness);
+    self.newBusiness = {};
   };
  self.editBusiness = function(edited) {
     // console.log('business.controller.js is sending edited data: ', edited); // NOTE:

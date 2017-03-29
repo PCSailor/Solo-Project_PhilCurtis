@@ -11,6 +11,7 @@ soloProjectApp.controller('UserNotesController', ['UserNotesFactory', function(U
   self.addUsernotes = function() {
     console.log('self.newUsernotes: ', self.newUsernotes); // Note: this log equals the controllerJS console.log('addHistory = ',); // NOTE: Should be a filled-in object
     UserNotesFactory.addUsernotes(self.newUsernotes);
+    self.newUsernotes = {};
   };
   self.deleteUsernotes = function(usernotesid) {
  console.log('usernotes.controller.js delete: ', usernotesid); // NOTE: 01: logging ok!

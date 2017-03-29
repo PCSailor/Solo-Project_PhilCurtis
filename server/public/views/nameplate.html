@@ -52,7 +52,9 @@
                 <td>
                   <div> <a href="#" editable-text="nameplate.other_notes" onaftersave="nc.editNameplate(nameplate)" e-placeholder="Additional Notes">{{ nameplate.other_notes || " " }} </a></div>
                 </td>
+                <div class="alert alert-danger" role="alert">
                 <td><button ng-click="nc.deleteNameplate(nameplate.id)" class="btn btn-danger">X</button></td>
+                </div>
               </tr>
             </tbody>
           </table>

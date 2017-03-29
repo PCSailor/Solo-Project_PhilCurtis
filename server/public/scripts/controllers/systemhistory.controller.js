@@ -11,6 +11,7 @@ soloProjectApp.controller('SystemHistoryController', ['SystemHistoryFactory', fu
   self.addHistory = function(history) {
     console.log('self.newHistory: ', self.newHistory); // Note: this log equals the controllerJS console.log('addHistory = ',); // NOTE: Should be a filled-in object
     SystemHistoryFactory.addHistoryData(self.newHistory);
+    self.newHistory = {};
   };
   self.deleteHistory = function(historyid) {
  console.log('systemhistory.controller.js delete: ', historyid); // NOTE: 01: logging ok!

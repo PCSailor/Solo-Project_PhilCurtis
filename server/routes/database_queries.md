@@ -51,29 +51,25 @@ VALUES
 ('MTU-Detroit Diesel', '4000 series', '123321', '2017-03-20',  '480', 'Imported from Germany'
 );
 INSERT INTO system_history (date, services_and_repairs, vendors, parts_used)
-VALUES 
-('2017-03-27', 'replaced hot water heater', 'Clueless Joe Jackson', 'complete unit'),
-('2017-03-31', 'replaced exterior light fixture', 'Light-my-Fire Electrical', 'added motion detection'),
-('2017-04-12', 'repaired back concrete stairs', 'myself', 'mixed concrete')
-;
+VALUES ('2017-03-27', 'replaced hot water heater', 'Clueless Joe Jackson', 'complete unit'),
+('2017-03-31', 'replaced exterior light fixture', 'Light-my-Fire Electrical', 'added motion detection'), ('2017-04-12', 'repaired back concrete stairs', 'myself', 'mixed concrete'
+);
 INSERT INTO business (business_name, contact, telephone, website, email, address01, address02, city, state, country, postal_code, notes)
-VALUES 
-('Acme', 'Fred Durst', '555-555-5555', 'www.www.com',  'www@www.com', '101 Address01 Way', 'Address02', 'Minneapolis', 'Minnesota', 'USA', '55407', 'notes');
+VALUES ('Acme', 'Fred Durst', '555-555-5555', 'www.www.com',  'www@www.com', '101 Address01 Way', 'Address02', 'Minneapolis', 'Minnesota', 'USA', '55407', 'notes'
+);
 INSERT INTO usernotes (date, usernotes)
-VALUES 
-('2017-03-27', 'The quick brown fox jumps over the lazy dog, The quick brown fox jumps over the lazy dog, The quick brown fox jumps over the lazy dog, The quick brown fox jumps over the lazy dog, The quick brown fox jumps over the lazy dog, The quick brown fox jumps over the lazy dog, The quick brown fox jumps over the lazy dog, The quick brown fox jumps over the lazy dog, The quick brown fox jumps over the lazy dog, The quick brown fox jumps over the lazy dog, The quick brown fox jumps over the lazy dog, The quick brown fox jumps over the lazy dog, The quick brown fox jumps over the lazy dog, The quick brown fox jumps over the lazy dog, The quick brown fox jumps over the lazy dog, The quick brown fox jumps over the lazy dog, The quick brown fox jumps over the lazy dog, The quick brown fox jumps over the lazy dog');
-
-
-INSERT INTO nameplate_data (manufacturer, model_number, serial_number, date_of_manufacturer, input_voltage, other_notes) VALUES ($1, $2, $3, $4, $5, $6);
-
-UPDATE nameplate_data SET manufacturer=$1, model_number=$2, serial_number=$3, date_of_manufacturer=$4, input_voltage=$5, other_notes=$6 WHERE id=$1, $2, $3, $4, $5, $6;
-
-INSERT INTO system_history (date, services_and_repairs, vendors, parts_used) WHERE id=$5;
-
-UPDATE system_history SET date=$1, services_and_repairs=$2, vendors=$3, parts_used=$4 WHERE id=$5;
-
-DELETE FROM nameplate_data WHERE id=4;
-
+VALUES ('2017-03-27', 'The quick brown fox jumps over the lazy dog'
+);
+INSERT INTO nameplate_data (manufacturer, model_number, serial_number, date_of_manufacturer, input_voltage, other_notes) VALUES ($1, $2, $3, $4, $5, $6
+);
+UPDATE nameplate_data SET manufacturer=$1, model_number=$2, serial_number=$3, date_of_manufacturer=$4, input_voltage=$5, other_notes=$6 WHERE id=$1, $2, $3, $4, $5, $6
+;
+INSERT INTO system_history (date, services_and_repairs, vendors, parts_used) WHERE id=$5
+;
+UPDATE system_history SET date=$1, services_and_repairs=$2, vendors=$3, parts_used=$4 WHERE id=$5
+;
+DELETE FROM nameplate_data WHERE id=4
+;
 ALTER TABLE "business" ADD "contact" VARCHAR(120);
 ALTER TABLE "business" DROP COLUMN "Contact";
 DROP TABLE "business";
