@@ -13,12 +13,12 @@
                 <tr>
                   <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                     <form id="userNotesForm" class="form-inline">
-                      <td><input ng-model="unc.newUserNotes.date" class="form-control" placeholder="Date"></td>
-                      <td><input ng-model="unc.newUserNotes.usernotes" class="form-control" placeholder="User Notes"></td>
-                        <td><button ng-click="unc.addusernotes(usernotes)" type="submit" class="btn btn-primary">Add your own user notes</button></td>
+                      <td><input ng-model="unc.newUsernotes.date" class="form-control" placeholder="Date"></td>
+                      <td><input ng-model="unc.newUsernotes.usernotes" class="form-control" placeholder="User Notes"></td>
+                        <td><button ng-click="unc.addUsernotes()" type="submit" class="btn btn-primary">Add your own user notes</button></td>
                       </tr>
-                      <!-- NOTE: .addNameplate tied with controller.js AND factory.js -->
-                      <!-- NOTE: .nameplateData tied with routes.js -->
+
+                      <!-- NOTE: .addUsernotes tied with controller.js AND factory.js -->
                     </form>
                   </div>
 

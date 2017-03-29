@@ -34,7 +34,7 @@ getUsernotes();
       url: '/usernotes/add', // NOTE: Path must match route.JS path
       data: addUsernotes
     }).then(function(response) {
-      getUsernotes();ßßßß
+      getUsernotes();
     });
   }
     // NOTE: Edit Usernotes
