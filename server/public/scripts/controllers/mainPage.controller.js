@@ -1,5 +1,7 @@
-soloProjectApp.controller('mainPageController', ['pagesFactory', function(pagesFactory) {
+soloProjectApp.controller('mainPageController', function() {
   console.log(new Date().getFullYear() + ' mainPageController.JS is run');
+
+
   // NOTE: soloProjectApp defined in clientJS AND mainPageController matches clientJS/.when function
   // NOTE: 1st pagesFactory is dependency to factoryJS file factory name & 1st line of code AND 2nd pagesFactory used here for factoryJS data reference
   // NOTE: self.sumthing is 'glue' between DOM & controller, "if it's tied to DOM, start with self"
@@ -10,9 +12,9 @@ soloProjectApp.controller('mainPageController', ['pagesFactory', function(pagesF
   // self.historyArrayList = pagesFactory.factoryHistoryToController; // NOTE: says this.arrayList equals factoryJS-created-variable pointing to array with property inside of object
   // self.newHistory = {};
 
-  self.businessArrayList = [];
-  self.businessArrayList = businessFactory.factorybusinessToController; // NOTE: says this.arrayList equals factoryJS-created-variable pointing to array with property inside of object
-  self.newbusiness = {};
+  // self.businessArrayList = [];
+  // self.businessArrayList = businessFactory.factorybusinessToController; // NOTE: says this.arrayList equals factoryJS-created-variable pointing to array with property inside of object
+  // self.newbusiness = {};
 
 //   self.addBusiness = function(business) {
 //     console.log('self.newBusiness: ', self.newBusiness); // Note: this log equals the controllerJS console.log('addBusiness = ',); // NOTE: Should be a filled-in object
@@ -29,5 +31,5 @@ soloProjectApp.controller('mainPageController', ['pagesFactory', function(pagesF
 //         console.log('business.controller.js is sending edited data: ', typeof self.editBusiness, " and ", typeof edited, edited);
 //     }; 
 
-}]);
+});
 

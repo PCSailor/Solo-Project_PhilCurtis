@@ -1,5 +1,5 @@
-console.log(new Date().getFullYear() + ' client.js run');
 console.log('  ');
+console.log(new Date().getFullYear() + ' client.js run');
 var soloProjectApp = angular.module('soloProjectAngularApp', ['ngRoute', 'xeditable']);
 // NOTE: soloProjectAngularApp on clientJS, Index.html
 // NOTE: ngRoute matched to indexHTML/ng-view AND is a dependency of script Angular-route.js AND the .config function below places content within the ng-view area of indexHTML.
@@ -11,17 +11,16 @@ soloProjectApp.config(['$routeProvider', function($routeProvider) {
  // NOTE: Error on bad controller: $controller:ctrlreg/A controller with this name is not registered.
 // NOTE: 01 view
 .when('/home', { // NOTE: this sets the actual domain(matched with nav.html & backend files)
-  // templateUrl: 'views/mainPage.html',
-  templateUrl: 'views/nav.html', // NOTE: this page puts info on the DOM
-  // controller: 'mainPageController', // NOTE: controller value must match controller.js
-  // controllerAs: 'mpc' // NOTE: controller abbr
+  templateUrl: 'views/home.html', // NOTE: this page puts info on the DOM
+  controller: 'mainPageController', // NOTE: controller value must match controller.js
+  controllerAs: 'mpc' // NOTE: controller abbr
 }) // NOTE: no semi-colon
 
 // NOTE: 03 mainpage HTML Page
  .when('/mainpage/', { // NOTE: this sets the actual domain(matched with nav.html)
    templateUrl: '/views/mainpage.html', // NOTE: this puts info on the DOM
-//   controller: 'mainPageController', // NOTE: controller value must match controller.js
-//   controllerAs: 'mpc' // NOTE: controller abbr
+  controller: 'mainPageController', // NOTE: controller value must match controller.js
+  controllerAs: 'mpc' // NOTE: controller abbr
  }) // NOTE: no semi-colon
 
 // NOTE: 03 mainpage HTML Page
@@ -49,8 +48,8 @@ soloProjectApp.config(['$routeProvider', function($routeProvider) {
 
 
 // NOTE: 05 view
-//.otherwise({
- // redirectTo: 'index'
-//}); // NOTE: semi-colon needed here
+.otherwise({
+ redirectTo: 'home'
+}); // NOTE: semi-colon needed here
 // console.log('clientJs/.when functions run');
 }]); // NOTE: for .config function
