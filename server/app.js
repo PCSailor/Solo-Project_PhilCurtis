@@ -3,7 +3,7 @@ var bodyParser = require('body-parser');
 var app = express();
 var nameplateRoute = require('./routes/nameplate.route.js');
 var systemHistoryRoute = require('./routes/systemhistory.route.js');
-// var businessRoute = require('./routes/business.route.js');
+var businessRoute = require('./routes/business.route.js');
 // var userNotesRoute = require('./routes/usernotes.route.js');
 
 // NOTE: Middleware
@@ -16,7 +16,7 @@ app.use(bodyParser.json()); // NOTE: use with factories
  // This path does not come from the client side.  It is catching requests from whereever the $http is.
 app.use('/nameplate/', nameplateRoute);
 app.use('/systemhistory/', systemHistoryRoute);
-// app.use('/businesspage/', businessRoute);
+app.use('/business/', businessRoute);
 // app.use('/usernotespage', userNotesRoute);
 
 // NOTE: PacMan = app.use drops to a '/' within routes.js AND app.post still uses /mainPage

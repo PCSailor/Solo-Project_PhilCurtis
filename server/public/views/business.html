@@ -1,0 +1,86 @@
+<div ng-controller="BusinessController as bc"><!-- Need when using multiple controllers on 1 html page -->
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h3 class="panel-title">Businesses and Contractors</h3>
+        </div>
+        <div class="table-responsive">
+          <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Business Name</th>
+                <th>Contact</th>
+                <th>Telephone</th>
+                <th>Website</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Address</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Country</th>
+                <th>Postal Code</th>
+                <th>Notes</th>
+            </tr>
+             <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                  <form id="businessForm" class="form-inline">
+                    <td><input ng-model="bc.newBusiness.business_name" class="form-control" placeholder="Name of Business"></td>
+                    <td><input ng-model="bc.newBusiness.contact" class="form-control" placeholder="Contact Name"></td>
+                    <td><input ng-model="bc.newBusiness.telephone" class="form-control" placeholder="Telephone"></td>
+                    <td><input ng-model="bc.newBusiness.website" placeholder="Website"></td>
+                    <td><input ng-model="bc.newBusiness.email" class="form-control" placeholder="Email"></td>
+                    <td><input ng-model="bc.newBusiness.address01" class="form-control" placeholder="Address"></td>
+                    <td><input ng-model="bc.newBusiness.address02" class="form-control" placeholder="Address"></td>
+                    <td><input ng-model="bc.newBusiness.city" class="form-control" placeholder="City"></td>
+                    <td><input ng-model="bc.newBusiness.state" class="form-control" placeholder="State/Province"></td>
+                    <td><input ng-model="bc.newBusiness.country" class="form-control" placeholder="Country"></td>
+                    <td><input ng-model="bc.newBusiness.postal_code" class="form-control" placeholder="Postal Code"></td>
+                    <td><input ng-model="bc.newBusiness.notes" class="form-control" placeholder="Notes"></td>
+                    <tr>
+                      <td><button ng-click="bc.addBusiness()" type="submit" class="btn btn-primary">Add a New Business</button></td>
+                    </tr>
+                     </form>
+                </div>
+        </thead>
+        <tbody>
+            <tr ng-repeat="business in bc.arrayList.list">
+                 <td>
+                  <div> <a href="#" editable-text="business.business_name" onaftersave="bc.editBusiness(business)" e-placeholder="Name of Business">{{ business.business_name || " " }} </a></div>
+                </td>
+                 <td>
+                  <div> <a href="#" editable-text="business.contact" onaftersave="bc.editBusiness(business)" e-placeholder="Contact Name">{{ business.contact || " " }} </a></div>
+                </td>
+                 <td>
+                  <div> <a href="#" editable-text="business.telephone" onaftersave="bc.editBusiness(business)" e-placeholder="Telephonee">{{ business.telephone || " " }} </a></div>
+                </td>
+                 <td>
+                  <div> <a href="#" editable-text="business.website" onaftersave="bc.editBusiness(business)" e-placeholder="Website">{{ business.website || " " }} </a></div>
+                </td>
+                 <td>
+                  <div> <a href="#" editable-text="business.email" onaftersave="bc.editBusiness(business)" e-placeholder="Email">{{ business.email || " " }} </a></div>
+                </td>
+                 <td>
+                  <div> <a href="#" editable-text="business.address01" onaftersave="bc.editBusiness(business)" e-placeholder="Address">{{ business.address01 || " " }} </a></div>
+                </td>
+                 <td>
+                  <div> <a href="#" editable-text="business.address02" onaftersave="bc.editBusiness(business)" e-placeholder="Address">{{ business.address02 || " " }} </a></div>
+                </td>
+                 <td>
+                  <div> <a href="#" editable-text="business.city" onaftersave="bc.editBusiness(business)" e-placeholder="City">{{ business.city || " " }} </a></div>
+                </td>
+                 <td>
+                  <div> <a href="#" editable-text="business.state" onaftersave="bc.editBusiness(business)" e-placeholder="State">{{ business.state || " " }} </a></div>
+                </td>
+                 <td>
+                  <div> <a href="#" editable-text="business.country" onaftersave="bc.editBusiness(business)" e-placeholder="Country">{{ business.country || " " }} </a></div>
+                </td>
+                 <td>
+                  <div> <a href="#" editable-text="business.postal_code" onaftersave="bc.editBusiness(business)" e-placeholder="Postal Code">{{ business.postal_code || " " }} </a></div>
+                </td>
+                 <td>
+                  <div> <a href="#" editable-text="business.notes" onaftersave="bc.editBusiness(business)" e-placeholder="Notes">{{ business.notes || " " }} </a></div>
+                </td>
+                <td><button ng-click="bc.deleteBusiness(business.id)" class="btn btn-danger">X</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>

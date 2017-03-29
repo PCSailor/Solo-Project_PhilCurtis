@@ -1,5 +1,4 @@
 <div ng-controller="NameplateController as nc"><!-- Need when using multiple controllers on 1 html page -->
-   <!-- NOTE: mainPage/nameplateData START -->
       <div class="panel panel-info">
         <div class="panel-heading">
           <h3 class="panel-title">Nameplate Data</h3>
@@ -27,8 +26,6 @@
                     <tr>
                       <td><button ng-click="nc.addNameplate()" type="submit" class="btn btn-primary">Add a New Nameplate</button></td>
                     </tr>
-                    <!-- NOTE: .addNameplate tied with controller.js AND factory.js -->
-                    <!-- NOTE: .nameplateData tied with routes.js -->
                   </form>
                 </div>
             </thead>
@@ -38,28 +35,26 @@
                 <!--This is the line of code Kris helped with-->
                 <!--'Submit via onaftersave'' located https://vitalets.github.io/angular-xeditable/#editable-form-->
                 <td>
-                  <div> <a href="#" editable-text="nameplate.manufacturer" onaftersave="nc.editNameplate(nameplate)" e-placeholder="Manufacturer">{{ nameplate.manufacturer || "Manufacturer" }} </a></div>
+                  <div> <a href="#" editable-text="nameplate.manufacturer" onaftersave="nc.editNameplate(nameplate)" e-placeholder="Manufacturer">{{ nameplate.manufacturer || " " }} </a></div>
                 </td>
                 <td>
-                  <div> <a href="#" editable-text="nameplate.model_number" onaftersave="nc.editNameplate(nameplate)" e-placeholder="Model Number">{{ nameplate.model_number || "mt" }} </a></div>
+                  <div> <a href="#" editable-text="nameplate.model_number" onaftersave="nc.editNameplate(nameplate)" e-placeholder="Model Number">{{ nameplate.model_number || " " }} </a></div>
                 </td>
                 <td>
-                  <div> <a href="#" editable-text="nameplate.serial_number" onaftersave="nc.editNameplate(nameplate)" e-placeholder="Serial Number">{{ nameplate.serial_number || "mt" }} </a></div>
+                  <div> <a href="#" editable-text="nameplate.serial_number" onaftersave="nc.editNameplate(nameplate)" e-placeholder="Serial Number">{{ nameplate.serial_number || " " }} </a></div>
                 </td>
                 <td>
-                  <div> <a href="#" editable-text="nameplate.date_of_manufacturer" onaftersave="nc.editNameplate(nameplate)" e-placeholder="Date-of-Manufacturer">{{ nameplate.date_of_manufacturer || "mt" }} </a></div>
+                  <div> <a href="#" editable-text="nameplate.date_of_manufacturer" onaftersave="nc.editNameplate(nameplate)" e-placeholder="Date-of-Manufacturer">{{ nameplate.date_of_manufacturer || " " }} </a></div>
                 </td>
                 <td>
-                  <div> <a href="#" editable-text="nameplate.input_voltage" onaftersave="nc.editNameplate(nameplate)" e-placeholder="Input Voltage">{{ nameplate.input_voltage || "mt" }} </a></div>
+                  <div> <a href="#" editable-text="nameplate.input_voltage" onaftersave="nc.editNameplate(nameplate)" e-placeholder="Input Voltage">{{ nameplate.input_voltage || " " }} </a></div>
                 </td>
                 <td>
-                  <div> <a href="#" editable-text="nameplate.other_notes" onaftersave="nc.editNameplate(nameplate)" e-placeholder="Additional Notes">{{ nameplate.other_notes || "mt" }} </a></div>
+                  <div> <a href="#" editable-text="nameplate.other_notes" onaftersave="nc.editNameplate(nameplate)" e-placeholder="Additional Notes">{{ nameplate.other_notes || " " }} </a></div>
                 </td>
                 <td><button ng-click="nc.deleteNameplate(nameplate.id)" class="btn btn-danger">X</button></td>
-                <!-- NOTE: Delete button point to controller.js functions -->
               </tr>
             </tbody>
           </table>
         </div>
-        <!-- NOTE: mainPage/nameplateData END -->
 </div>

@@ -53,7 +53,6 @@ router.delete('/delete:id', function(req, res) { // NOTE:
 // NOTE: add new History data
 router.post('/add/', function(req, res) { // NOTE: Path must match factory.JS path
   console.log('routeJS/RouterPOST/history/add/Req.body = ', req.body);
-  // 
   var historyObject = req.body;
   pool.connect(function(err, client, done) { // NOTE: db query starts
     if(err) {

@@ -34,6 +34,7 @@ getNameplate();
     });
     console.log('delete from nameplate.factory.js'); // NOTE: 02: logging ok!
   } // NOTE: for: function deleteNameplate
+  
   // NOTE: Add new Nameplate
   function addNameplateData(addNameplateData) {
     console.log('add Nameplate = ', addNameplateData); // Note: this log equals the controllerJS console.log('self.newNameplate: ', self.newNameplate); // NOTE: Should be a filled-in object
