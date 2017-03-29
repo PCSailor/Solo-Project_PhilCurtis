@@ -75,6 +75,31 @@ router.post('/add/', function(req, res) { // NOTE: Path must match factory.JS pa
 }); // NOTE: router.post
 
 
+// NOTE: edit Business data
+router.put('/edit:id', function(req, res) {
+  var businessToedit = req.params.id;
+  var businessObject = req.body;
+  console.log('RouteJS/RouterPUT/req.body/editbusiness = ', businessObject);
+  console.log('RouteJS/RouterPUT/req.params.id/editbusiness = ', businessToedit);
+  pool.connect(function(err, client, done) { // NOTE: db query starts
+    if(err) {
+      console.log('RouteJS/RouterPUT/Pool.connect/editbusiness error = ', err);
+      res.sendStatus(500);
+    } else {
+      // NOTE: from task.js = client.query('UPDATE task SET status=TRUE WHERE ID=$1;',[taskToCompleteId], function(err, result) { done();
+      client.query('UPDATE business SET business_name=$1, contact=$2, telephone=$3, website=$4, email=$5, address01=$6, address02=$7, city=$8, state=$9, country=$10, postal_code=$11, notes=$12 WHERE id=$13;',
+      [businessObject.business_name, businessObject.contact, businessObject.telephone, businessObject.website, businessObject.email, businessObject.address01, businessObject.address02, businessObject.city, businessObject.state, businessObject.country, businessObject.postal_code, businessObject.notes, businessToedit], function(err, result) { // NOTE: [var-name-within-this-post.html-page/input-ng-model]
+        done();
+        if(err) {
+          console.log('RouteJS/RouterPUT/Pool.connect/db query-put error/editbusiness = ', err);
+          res.sendStatus(500); // NOTE: error
+        } else {
+          res.sendStatus(201); // NOTE: Success
+        } // NOTE: else
+      }); // NOTE: client.query
+    } // NOTE: else
+  }); // NOTE: pool.connect
+}); // NOTE: router.put
 
 
 

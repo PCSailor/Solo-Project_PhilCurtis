@@ -43,7 +43,18 @@ getBusiness();
     });
   } // NOTE: for: function addBusiness
 
-
+    // NOTE: Edit a Business
+  function editBusiness (editBusiness) {
+    console.log('editBusiness function is run');
+    $http({
+      method: 'PUT',
+      url: '/business/edit' + editBusiness.id,
+      data: editBusiness
+    }).then(function(response) {
+      getBusiness();
+    });
+    console.log('editBusiness.id', editBusiness.id);
+  } // NOTE: for: function editBusiness
 
 return {
 // NOTE: returning $http function AND this area is the public API
@@ -51,7 +62,7 @@ return {
    factoryBusinessToController: factoryBusiness,
     deleteBusiness: deleteBusiness,
     addBusiness: addBusiness,
-  //   editBusiness: editBusiness
+    editBusiness: editBusiness
 
   }; // NOTE: needs semi-colon!
 }]); // NOTE: from soloProjectApp.factory function

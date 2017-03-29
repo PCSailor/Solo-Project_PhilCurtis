@@ -17,11 +17,11 @@ soloProjectApp.controller('BusinessController', ['BusinessFactory', function(Bus
     console.log('self.newBusiness: ', self.newBusiness); // Note: this log equals the factoryJS console.log('add Business = ', addBusinessData); // NOTE: Should be a filled-in object
     BusinessFactory.addBusiness(self.newBusiness);
   };
-//  self.editBusiness = function(edited) {
-//     // onsole.log('business.controller.js is sending edited data: ', edited); // NOTE:
-//      BusinessFactory.editBusiness(edited);
-//     console.log('business.controller.js is sending edited data: ', edited); // NOTE:
-//     };
+ self.editBusiness = function(edited) {
+    // console.log('business.controller.js is sending edited data: ', edited); // NOTE:
+     BusinessFactory.editBusiness(edited);
+    console.log('business.controller.js is sending edited data: ', edited); // NOTE:
+    };
 
 // NOTE: TESTING
   console.log('self =', self);
