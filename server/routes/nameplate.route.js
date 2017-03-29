@@ -19,7 +19,7 @@ router.get('/', function(req, res) { // NOTE: replaced by SELECT statement in SQ
           res.sendStatus(500);
         } else {
           //console.log('routesJS/router.GET/nameplate/db Query/result.rows data is available');
-          console.log('routesJS/router.GET/nameplate/db query/result.rows data shown below:', result.rows);
+          // console.log('routesJS/router.GET/nameplate/db query/result.rows data shown below:', result.rows);
           res.status(200).send(result.rows);
         }
       });

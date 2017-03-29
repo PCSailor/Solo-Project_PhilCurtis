@@ -4,7 +4,7 @@ soloProjectApp.controller('UserNotesController', ['UserNotesFactory', function(U
   // NOTE: self.message = 'self.whatever always equals an object - VERIFY';
 
   self.usernotesArrayList = [];
-  self.usernotesyList = UserNotesFactory.factoryUsernotesToController; // NOTE: says this.arrayList equals factoryJS-created-variable pointing to array with property inside of object
+  self.usernotesArrayList = UserNotesFactory.factoryUsernotesToController; // NOTE: says this.arrayList equals factoryJS-created-variable pointing to array with property inside of object
   self.newUsernotes = {};
 
 // QUESTION: Why do I need to call the addHistory function with the parameter 'history' but the addNameplate function (above) does not need a call paramenter?

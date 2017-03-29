@@ -26,7 +26,7 @@
                 <!--REPEAT-->
                 <tr ng-repeat="usernotes in unc.usernotesArrayList.list">
                   <!--This is the line of code Kris helped with-->
-                  <!--'Submit via onaftersave'' located https://vitalets.github.io/angular-xeditable/#editable-form-->
+                  <!--'Submit via onaftersave located https://vitalets.github.io/angular-xeditable/#editable-form-->
                   <td>
                     <div> <a href="#" editable-text="usernotes.date" onaftersave="unc.editUsernotes(usernotes)" e-placeholder="Date_Year-Month-Day">{{ usernotes.date || " " }} </a></div>
                   </td>
