@@ -15,8 +15,7 @@ app.use(bodyParser.json()); // NOTE: use with factories
 
  // This path does not come from the client side.  It is catching requests from whereever the $http is.
 app.use('/nameplate/', nameplateRoute);
-
-app.use('/mainpage/systemhistory/', systemHistoryRoute);
+app.use('/systemhistory/', systemHistoryRoute);
 // app.use('/businesspage/', businessRoute);
 // app.use('/usernotespage', userNotesRoute);
 

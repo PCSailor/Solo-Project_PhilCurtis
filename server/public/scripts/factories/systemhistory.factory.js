@@ -13,7 +13,7 @@ getHistory();
     console.log('function getHistory() running before success'); // NOTE: 
     $http({
       method: 'GET',
-      url: '/mainpage/systemhistory/' // NOTE: domain routes to app.js
+      url: '/systemhistory/' // NOTE: domain routes to app.js
       // NOTE: use same domain if all controllers/factories use same table, then can relate to same routesJS file using same domain
     }).then(function(response) {
       console.log('factory.js/function-GET/history/response.data = ', typeof response.data, response.data);
@@ -28,7 +28,7 @@ getHistory();
   function deleteHistory(historyid) {
     $http({
       method: 'DELETE',
-      url: '/mainpage/systemhistory/delete' + historyid // NOTE: changing path resulted with this error: DELETE http://localhost:5500/mainpage/deleteMustMatc26 404 (Not Found)
+      url: '/systemhistory/delete' + historyid // NOTE: changing path resulted with this error: DELETE http://localhost:5500/mainpage/deleteMustMatc26 404 (Not Found)
     }).then(function(response) {
       getHistory();
     });
@@ -37,10 +37,10 @@ getHistory();
 
   // NOTE: Add new System History and Parts Data
   function addHistory(addHistory) {
-    console.log('addHistory = ', addHistory); // Note: this log equals the controllerJS console.log('self.newHistory: ', self.newHistory); // NOTE: Should be a filled-in object
+    console.log('addHistory before $http = ', addHistory); // Note: this log equals the controllerJS console.log('self.newHistory: ', self.newHistory); // NOTE: Should be a filled-in object
     $http({
       method: 'POST',
-      url: '/mainpage/systemhistory/add', // NOTE: Path must match route.JS path
+      url: '/systemhistory/add', // NOTE: Path must match route.JS path
       data: addHistory
     }).then(function(response) {
       getHistory();
@@ -52,16 +52,13 @@ getHistory();
     console.log('editHistory function is run');
     $http({
       method: 'PUT',
-      url: '/mainpage/systemhistory/edit' + editHistory.id,
+      url: '/systemhistory/edit' + editHistory.id,
       data: editHistory
     }).then(function(response) {
       getHistory();
     });
     console.log('editHistory.id', editHistory.id);
   } // NOTE: for: function editHistory
-
-
-
 
   return {
     // NOTE: returning $http function AND this area is the public API

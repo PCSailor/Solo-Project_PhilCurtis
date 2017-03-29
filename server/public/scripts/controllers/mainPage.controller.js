@@ -4,13 +4,8 @@ soloProjectApp.controller('MainPageController', function() {
   // NOTE: 1st pagesFactory is dependency to factoryJS file factory name & 1st line of code AND 2nd pagesFactory used here for factoryJS data reference
   // NOTE: self.sumthing is 'glue' between DOM & controller, "if it's tied to DOM, start with self"
   var self = this; // NOTE: self points to 'mpc' abbr defined in clientJS & used in html
-  
 
-  // self.historyArrayList = [];
-  // self.historyArrayList = pagesFactory.factoryHistoryToController; // NOTE: says this.arrayList equals factoryJS-created-variable pointing to array with property inside of object
-  // self.newHistory = {};
-
-  // self.businessArrayList = [];
+ // self.businessArrayList = [];
   // self.businessArrayList = businessFactory.factorybusinessToController; // NOTE: says this.arrayList equals factoryJS-created-variable pointing to array with property inside of object
   // self.newbusiness = {};
 

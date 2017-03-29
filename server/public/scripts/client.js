@@ -23,3 +23,7 @@ soloProjectApp.config(['$routeProvider', function($routeProvider) { $routeProvid
 }); // NOTE: semi-colon needed here
     // console.log('clientJs/.when functions run');
 }]); // NOTE: for .config function
+        // get / .GET
+          // add / .POST
+            // delete / .DELETE
+              // edit / .PUT
