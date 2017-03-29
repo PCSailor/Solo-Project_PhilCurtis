@@ -11,7 +11,7 @@ soloProjectApp.controller('NameplateController', ['NameplateFactory', function(N
   self.newNameplate = {};
 
   self.deleteNameplate = function(nameplateid) {
-    console.log('delete from nameplate.controller.js: ', nameplateid); // NOTE: 01: logging ok!
+    console.log('nameplate.controller.js deleted number: ', nameplateid); // NOTE: 01: logging ok!
     NameplateFactory.deleteNameplate(nameplateid);
   };
   self.addNameplate = function() {

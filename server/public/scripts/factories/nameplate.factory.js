@@ -28,7 +28,7 @@ getNameplate();
     console.log('deleteNameplate = ', deleteNameplate);
     $http({
       method: 'DELETE',
-      url: 'mainpage/nameplate/delete' + nameplateid // NOTE: changing path resulted with this error: DELETE http://localhost:5500/mainPage/deleteMustMatc26 404 (Not Found)
+      url: '/nameplate/delete' + nameplateid // NOTE: changing path resulted with this error: DELETE http://localhost:5500/mainPage/deleteMustMatc26 404 (Not Found)
     }).then(function(response) {
       getNameplate();
     });
@@ -39,7 +39,7 @@ getNameplate();
     console.log('add Nameplate = ', addNameplateData); // Note: this log equals the controllerJS console.log('self.newNameplate: ', self.newNameplate); // NOTE: Should be a filled-in object
     $http({
       method: 'POST',
-      url: 'mainpage/nameplate/add', // NOTE: Path must match route.JS path
+      url: '/nameplate/add', // NOTE: Path must match route.JS path
       data: addNameplateData
     }).then(function(response) {
       getNameplate();
@@ -51,7 +51,7 @@ getNameplate();
     console.log('editNameplate function is run');
     $http({
       method: 'PUT',
-      url: 'mainpage/nameplate/edit' + editNameplate.id,
+      url: '/nameplate/edit' + editNameplate.id,
       data: editNameplate
     }).then(function(response) {
       getNameplate();
