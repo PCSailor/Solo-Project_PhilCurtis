@@ -8,18 +8,17 @@ soloProjectApp.controller('UserNotesController', ['UserNotesFactory', function(U
   self.newUsernotes = {};
 
 // QUESTION: Why do I need to call the addHistory function with the parameter 'history' but the addNameplate function (above) does not need a call paramenter?
+    self.deleteUsernotes = function(usernotesid) {
+ console.log('usernotes.controller.js delete: ', usernotesid); // NOTE: 01: logging ok!
+    UserNotesFactory.deleteUsernotes(usernotesid);
+  };
   self.addUsernotes = function() {
     console.log('self.newUsernotes: ', self.newUsernotes); // Note: this log equals the controllerJS console.log('addHistory = ',); // NOTE: Should be a filled-in object
     UserNotesFactory.addUsernotes(self.newUsernotes);
     self.newUsernotes = {};
   };
-  self.deleteUsernotes = function(usernotesid) {
- console.log('usernotes.controller.js delete: ', usernotesid); // NOTE: 01: logging ok!
-    UserNotesFactory.deleteUsernotes(usernotesid);
-  };
  self.editUsernotes = function(edited) {
+    UserNotesFactory.editUsernotes(edited);
     console.log('Usernotes.controller.js is sending edited data: ', typeof self.editUsernotes, " and ", typeof edited, edited);
-     UserNotesFactory.editUsernotes(edited);
-        console.log('Usernotes.controller.js is sending edited data: ', typeof self.editUsernotes, " and ", typeof edited, edited);
     };
     }]);

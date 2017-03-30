@@ -11,7 +11,9 @@
       <div ng-repeat="systemlist in slc.systemListArrayList.list">
         <div><a href="#" editable-text="systemlist.system" onaftersave="slc.editSystemList(systemlist)" e-placeholder=" New System List Title">{{ systemlist.system || " " }}</a></div>
         <div><a href="#" editable-text="systemlist.parent_system" onaftersave="slc.editSystemList(systemlist)" e-placeholder=" New Parent System ">{{ systemlist.parent_system || " " }}</a></div>
-        <button ng-click="slc.deleteSystemList(systemlist.id)" class="btn btn-danger">x</button>
+        <!--<a href="#" class="btn btn-sm btn-info"><span class="glyphicon glyphicon-list-alt"></span> Edit System</a>-->
+        <!--<a href="#" class="btn btn-s btn-info"><span class="glyphicon glyphicon-list-alt"></span> Edit</a>-->
+        <button ng-click="slc.deleteSystemList(systemlist.id)" class="btn-s btn-danger">x</button>
       </div>
         <!--<h3 class="list-group-item-info">System List H3</h3>
         <a href="#" class="list-group-item active">Air Conditioning</a>

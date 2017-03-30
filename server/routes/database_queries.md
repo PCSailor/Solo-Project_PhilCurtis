@@ -80,6 +80,8 @@ INSERT INTO system_history (date, services_and_repairs, vendors, parts_used) WHE
 ;
 UPDATE system_history SET date=$1, services_and_repairs=$2, vendors=$3, parts_used=$4 WHERE id=$5
 ;
+UPDATE systems SET system='Heating & Ventilation' WHERE id=12;
+
 DELETE FROM nameplate_data WHERE id=4
 ;
 ALTER TABLE "business" ADD "contact" VARCHAR(120);
