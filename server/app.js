@@ -5,6 +5,7 @@ var nameplateRoute = require('./routes/nameplate.route.js');
 var systemHistoryRoute = require('./routes/systemhistory.route.js');
 var businessRoute = require('./routes/business.route.js');
 var userNotesRoute = require('./routes/usernotes.route.js');
+var systemListRoute = require('./routes/systemlist.route.js');
 
 // NOTE: Middleware
 app.use(express.static('server/public'));
@@ -17,7 +18,9 @@ app.use(bodyParser.json()); // NOTE: use with factories
 app.use('/nameplate/', nameplateRoute);
 app.use('/systemhistory/', systemHistoryRoute);
 app.use('/business/', businessRoute);
-app.use('/usernotes', userNotesRoute);
+app.use('/usernotes/', userNotesRoute);
+app.use('/systemlist/', systemListRoute);
+
 
 // NOTE: PacMan = app.use drops to a '/' within routes.js AND app.post still uses /mainPage
 

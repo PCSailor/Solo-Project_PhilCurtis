@@ -1,4 +1,4 @@
-soloProjectApp.factory('UserNotesFactory', ['$http', function($http) {
+ soloProjectApp.factory('UserNotesFactory', ['$http', function($http) {
     console.log(new Date().getFullYear() + ' usernotes.factory.js is run');
 var factoryUsernotes = { list: [] };
 getUsernotes();

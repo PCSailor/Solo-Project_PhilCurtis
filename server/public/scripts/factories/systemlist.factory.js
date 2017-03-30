@@ -1,6 +1,6 @@
 soloProjectApp.factory('SystemListFactory', ['$http', function($http){
 console.log(new Date().getFullYear() + ' systemlist.factory.js is run');
-var systemlistFactory = { list: [] };
+var systemListFactory = { list: [] };
 getSystemList();
 
 // GET System List
@@ -11,7 +11,7 @@ $http({
     url: '/systemlist/'
 }).then(function(response) {
     console.log('factory.js/function-GET/systemlist/response.data = ', typeof response.data, response.data);
-    factorySystemList.list = response.data;
+    systemListFactory.list = response.data;
 });
 }
 return { factorySystemListToController: systemListFactory }

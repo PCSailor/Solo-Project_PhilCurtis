@@ -25,7 +25,6 @@ router.get('/', function(req, res) { // NOTE: replaced by SELECT statement in SQ
     }
   });
 }); // NOTE: for: router.get
-// NOTE: router.put
 
 // NOTE: delete Usernotes
 router.delete('/delete:id', function(req, res) { // NOTE: 
