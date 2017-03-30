@@ -1,12 +1,22 @@
+<div ng-controller="SystemsListController as slc">
 <div class="container">
   <div class="row">
     <div class="col-lg-3 col-sm-3 col-xs-3">
-      <div class="list-group">
-        <!-- <a href="#" class="list-group-item"><h2>System List</h2></a> -->
-        <h3 class="list-group-item-info">System List</h3>
-        <a href="#" class="list-group-item">Air Conditioning</a>
-        <a href="#" class="list-group-item">Audio / Visual</a>
-        <a href="#" class="list-group-item">Communication</a>
+      <div class="list-group"><h2>System List H2</h2>
+      <form id="systemListForm" class="form-inline">
+          <input ng-model="slc.newSystemList.system" class="form-control" placeholder="New System">
+          <input ng-model="slc.newSystemList.parent_system" class="form-control" placeholder="Parent System">
+          <button ng-click+"slc.addSystemList()" type="submit" class="btn btn-info">Add a New System</button>
+      </form>
+      <div ng-repeat="systemlist in slc.systemListArrayList.list">
+        <div><a href="#" editable-text="systemlist.system" onaftersave="slc.editSystemList(systemlist)" e-placeholder=" New System List Title">{{ systemlist.system || " " }}</a></div>
+        <div><a href="#" editable-text="systemlist.parent_system" onaftersave="slc.editSystemList(systemlist)" e-placeholder=" New Parent System ">{{ systemlist.parent_system || " " }}</a></div>
+        <button ng-click="slc.deleteSystemList(systemlist.id)" class="btn btn-danger">x</button>
+      </div>
+        <!--<h3 class="list-group-item-info">System List H3</h3>
+        <a href="#" class="list-group-item active">Air Conditioning</a>
+        <a href="#" class="list-group-item-action">Audio / Visual</a>
+        <a href="#" class="list-group-item disabled">Communication</a>
         <a href="#" class="list-group-item">Computer-Networking</a>
         <a href="#" class="list-group-item">Doors / Windows</a>
         <a href="#" class="list-group-item">Electrical</a>
@@ -26,8 +36,9 @@
         <a href="#" class="list-group-item">Plumbing</a>
         <a href="#" class="list-group-item">Roof</a>
         <a href="#" class="list-group-item">Sewage</a>
-        <a href="#" class="list-group-item">...Add a New System</a>
+        <a href="#" class="list-group-item">...Add a New System</a>-->
       </div>
     </div>
   </div>
+</div>
 </div>
