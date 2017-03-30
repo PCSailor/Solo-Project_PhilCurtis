@@ -43,6 +43,11 @@ CREATE TABLE usernotes (
 	date VARCHAR(25),
 	usernotes VARCHAR(8000)
 );
+CREATE TABLE systems (
+	id SERIAL PRIMARY KEY,
+	system VARCHAR(120),
+	parent_system VARCHAR(120)
+);
 
 INSERT INTO nameplate_data (manufacturer, model_number, serial_number, date_of_manufacturer, input_voltage, other_notes)
 VALUES 
@@ -62,6 +67,13 @@ VALUES ('2017-03-27', 'The quick brown fox jumps over the lazy dog'
 );
 INSERT INTO nameplate_data (manufacturer, model_number, serial_number, date_of_manufacturer, input_voltage, other_notes) VALUES ($1, $2, $3, $4, $5, $6
 );
+INSERT INTO systems (system, parent_system)
+VALUES ('Lighting', 'Electrical'
+);
+INSERT INTO systems (system)
+VALUES ('Air Compressors'),('Audio / Visual'),('Communication'),('Computer-Networking'),('Doors / Windows'),('Electrical'),('Emergency'),('Foundation'),('Furnace'),('Furniture'),('Hot Water Heater'),('Heating, Ventilation, & Air Conditioning (HVAC)'),('Insulation'),('Kitchen Appliances'),('Lighting'),('Mechanical_Misc'),('Monitoring & Safety'),('Paint'),('Plumbing'),('Potable Water'),('Roof'),('Sewage'),('Add New System'
+);
+
 UPDATE nameplate_data SET manufacturer=$1, model_number=$2, serial_number=$3, date_of_manufacturer=$4, input_voltage=$5, other_notes=$6 WHERE id=$1, $2, $3, $4, $5, $6
 ;
 INSERT INTO system_history (date, services_and_repairs, vendors, parts_used) WHERE id=$5

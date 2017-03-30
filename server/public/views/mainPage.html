@@ -69,12 +69,12 @@
   </div>
   <!-- /.container-fluid -->
 </nav>
-<div class="container">
+<!--<div class="container">
   <div class="row">
     <div class="col-lg-3 col-sm-3 col-xs-3">
-      <div class="list-group">
+      <div class="list-group">-->
         <!-- <a href="#" class="list-group-item"><h2>System List</h2></a> -->
-        <h3 class="list-group-item-info">System List</h3>
+        <!--<h3 class="list-group-item-info">System List</h3>
         <a href="https://www.google.com" class="list-group-item">Air Conditioning</a>
         <a href="#" class="list-group-item">Audio / Visual</a>
         <a href="#" class="list-group-item">Communication</a>
@@ -99,11 +99,14 @@
         <a href="#" class="list-group-item">...add new system</a>
       </div>
     </div>
-    <div class="col-lg-9 col-sm-9 col-xs-9 mainBody">
+  </div>
+</div>-->
 
-      
-<!--AngularJS HTML Pages brought in-->
-<div ng-include="'/views/nameplate.html'"></div>
-<div ng-include="'/views/systemhistory.html'"></div>
-<div ng-include="'/views/business.html'"></div>
-<div ng-include="'/views/usernotes.html'"></div>
+<div class="col-lg-9 col-sm-9 col-xs-9 mainBody">
+  <!--AngularJS HTML Pages brought in-->
+  <div ng-include="'/views/nameplate.html'"></div>
+  <div ng-include="'/views/systemhistory.html'"></div>
+  <div ng-include="'/views/business.html'"></div>
+  <div ng-include="'/views/usernotes.html'"></div>
+  <div ng-include="'/views/systemslist.html'"></div>
+</div>
