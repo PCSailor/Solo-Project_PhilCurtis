@@ -26,35 +26,35 @@ $http({
     console.log('systemlist.factory.js delete ', systemlistid); // NOTE: 02: logging ok!
   }
 
-   // Add new SystemList
-  function addSystemList(addSystemList) {
-    console.log('addSystemList before $http = ', addSystemList); // Note: this log equals the controllerJS console.log('self.newSystemList: ', self.newSystemList); // NOTE: Should be a filled-in object
-    $http({
-      method: 'POST',
-      url: '/systemlist/add', // NOTE: Path must match route.JS path
-      data: addSystemList
-    }).then(function(response) {
-      getSystemList();
-    });
-  }
+//    // Add new SystemList
+//   function addSystemList(addSystemList) {
+//     console.log('addSystemList before $http = ', addSystemList); // Note: this log equals the controllerJS console.log('self.newSystemList: ', self.newSystemList); // NOTE: Should be a filled-in object
+//     $http({
+//       method: 'POST',
+//       url: '/systemlist/add', // NOTE: Path must match route.JS path
+//       data: addSystemList
+//     }).then(function(response) {
+//       getSystemList();
+//     });
+//   }
 
-    // Edit SystemList
-  function editSystemList (editSystemList) {
-    console.log('editSystemList function is run');
-    $http({
-      method: 'PUT',
-      url: '/systemlist/edit' + editSystemList.id,
-      data: editSystemList
-    }).then(function(response) {
-      getSystemList();
-    });
-    console.log('editSystemList.id', editSystemList.id);
-  }
+//     // Edit SystemList
+//   function editSystemList (editSystemList) {
+//     console.log('editSystemList function is run');
+//     $http({
+//       method: 'PUT',
+//       url: '/systemlist/edit' + editSystemList.id,
+//       data: editSystemList
+//     }).then(function(response) {
+//       getSystemList();
+//     });
+//     console.log('editSystemList.id', editSystemList.id);
+//   }
 
 return { 
     factorySystemListToController: systemListFactory,
     deleteSystemList: deleteSystemList,
-    addSystemList: addSystemList,
-    editSystemList: editSystemList
+    // addSystemList: addSystemList,
+    // editSystemList: editSystemList
 }
 }]);
