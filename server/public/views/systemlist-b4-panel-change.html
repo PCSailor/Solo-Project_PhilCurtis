@@ -1,0 +1,45 @@
+
+          <!--<div class="row">
+            <div class="col-2">-->
+              <div ng-controller="SystemListController as slc">
+  <!--<div class="panel panel-info">-->
+        <!--<div class="panel-heading">
+          <h3 class="panel-title">System List</h3>
+        </div>-->
+        <!--<div class="table-responsive">-->
+              <!--<input type="text" class="form-control" placeholder="Default input">-->
+          <table class="table table-responsive table-striped">
+            <thead>
+              <tr><th><h3>System List</h3></th></tr>
+<!--<div class="container">-->
+  <!--<div class="row">-->
+      <!--<div class=".col-xs-6 .col-sm-4"> <div class="col-lg-3 col-sm-3 col-xs-3">-->
+      <!--<div class="list-group"><h2>System List H2</h2>-->
+      <tr>
+    <!--<div class="input-group mb-2 mr-sm-2 mb-sm-0">-->
+      <form id="systemListForm" class="form-inline">
+        <td><input ng-model="slc.newSystemList.system" class="form-control" placeholder="New System"></td>
+         <td><input ng-model="slc.newSystemList.parent_system" class="form-control" placeholder="Parent System"></td>
+           <td><button ng-click="slc.addSystemList()" type="submit" class="btn btn-info">Add a New System</button></td>
+      </form>
+</tr>
+</thead>
+<tbody>
+      <!--<div ng-repeat="systemlist in slc.systemListArrayList.list">-->
+      <tr ng-repeat="systemlist in slc.systemListArrayList.list">
+        <!--<tr>-->
+        <td><div><a href="#" editable-text="systemlist.system" onaftersave="slc.editSystemList(systemlist)" e-placeholder="New System List Title">{{ systemlist.system || " " }}</a></div></td>
+        <td><div><a href="#" editable-text="systemlist.parent_system" onaftersave="slc.editSystemList(systemlist)" e-placeholder=" New Parent System ">{{ systemlist.parent_system || " " }}</a></div></td>
+        <td><a href="#" class="btn btn-sm btn-info"><span class="list-alt"></span>Edit</a></td>
+        <td><button ng-click="slc.deleteSystemList(systemlist.id)" class="btn-s btn-danger">x</button></td>
+        </tr>
+      <!--</div>-->
+</tbody>
+</table>
+</div>
+<!--</div>
+</div>-->
+    <!--</div>-->
+   <!--</div>-->
+ <!--</div>-->
+
