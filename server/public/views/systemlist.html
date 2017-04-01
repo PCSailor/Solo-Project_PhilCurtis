@@ -24,7 +24,10 @@
           <td>
             <!--<div><a href="#" editable-text="systemlist.parent_system" onaftersave="slc.editSystemList(systemlist)" e-placeholder=" New Parent System ">{{ systemlist.parent_system || " " }}</a></div>-->
           </td>
-          <td><a href="#" class="btn btn-sm btn-info"><span class="list-alt"></span>Edit</a><button ng-click="slc.deleteSystemList(systemlist.id)" class="btn-s btn-danger">x</button></td>
+          <td>
+            <!--<a href="#" class="btn btn-sm btn-info"><span class="list-alt"></span>Edit</a>-->
+            <button ng-click="slc.deleteSystemList(systemlist.id)" class="btn-s btn-danger">x</button>
+          </td>
           <!--<td><button ng-click="slc.deleteSystemList(systemlist.id)" class="btn-s btn-danger">x</button></td>-->
         </tr>
       </tbody>
