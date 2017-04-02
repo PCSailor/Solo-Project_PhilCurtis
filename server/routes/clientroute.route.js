@@ -7,10 +7,7 @@ router.get('/', function(req, res) {
   console.log('route.js/router.GET/clientroute/function is run');
   var clientId = req.query.clientId;
   pool.connect().then(function(client) {
-    client
-      .query(
-        'SELECT systems.*, nameplate_data.manufacturer FROM systems JOIN nameplate_data ON systems.nameplate_id = nameplate_data..id WHERE system.id=$1',
-        [systemId])
+    client.query('SELECT systems.*, nameplate_data.manufacturer FROM systems JOIN nameplate_data ON systems.nameplate_id = nameplate_data..id WHERE system.id=$1', [systemId])
       .then(function(result) {
         client.release();
         res.send(result.rows[0]);

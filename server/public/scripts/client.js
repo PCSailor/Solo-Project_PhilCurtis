@@ -6,7 +6,7 @@ var soloProjectApp = angular.module('soloProjectAngularApp', ['ngRoute', 'xedita
 soloProjectApp.config(['$routeProvider', function($routeProvider) { $routeProvider
 // NOTE: Previous line is the AngularJS Configuration Block, which should only contain configuration & provider code, and is a module being defined. The purpose is Providers registering with Dependency Injector.
 
-.when('/home', { // NOTE: this sets the actual domain(matched with nav.html & backend files)
+.when('/', { // NOTE: this sets the actual domain(matched with nav.html & backend files)
   templateUrl: 'views/home.html', // NOTE: this page puts info on the DOM
   controller: 'MainPageController', // NOTE: controller value must match controller.js
   controllerAs: 'mpc' // NOTE: controller abbr
