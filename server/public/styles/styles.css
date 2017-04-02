@@ -1,27 +1,24 @@
 body {
-  margin: 1px;
-  padding: 3px;
   background-color: lightblue;
   color: black;
 }
-
 .sideBody {
-  border: 1px darkblue;
-  background-color: lightblue;
-  float: left;
   margin-top: 50px;
-  padding: 15px;
+  padding: 10px;
+  display: flex-block;
 }
 .mainBody {
-  border: 1px darkblue;
-  background-color: lightblue;
-  float: right;
-  padding: 15px;
   margin-top: 50px;
+  padding: 10px;
+  display: flex-block;
+  align-content: left;
 }
 .table {
-  background-color: lightgrey;
-  display: block;
-  width: 98% !important;
-  padding: 5px;
+  width: 100% !important;
 }
+
+#tableSystemList {
+  width: 100% !important;
+  font-size: 16px;
+}
+
