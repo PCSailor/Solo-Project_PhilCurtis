@@ -30,11 +30,10 @@ body {
   top: 50%;
   left:50%;
   transform: translate(-50%,-50%);*/
-  
   }
 
   #homeScreen .btn {
-  border: solid #37a4d6 3px;
+  /*border: solid #37a4d6 3px;*/
   background: #4267b2;
   background-image: -webkit-linear-gradient(top, #4267b2, #2980b9);
   background-image: -moz-linear-gradient(top, #4267b2, #2980b9);
@@ -73,8 +72,5 @@ body {
   background-image: linear-gradient(to bottom, #4268b2, #37a4d6);
   text-decoration: none;
 }
-/*
-.btn-sq-lg {
-    width: 150px !important;
-    height: 150px !important;
-}*/
+
+

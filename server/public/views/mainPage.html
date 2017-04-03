@@ -1,75 +1,87 @@
 <!--<h3>mainpage.html</h3>-->
-<!-- NOTE: Navigation Header Bar -->
-<nav class="navbar navbar-inverse navbar-fixed-top">
+
+<!--Responsive Navbar-->
+<nav class="navbar navbar-inverse navbar-fixed-top"> <!--navbar-default-->
   <div class="container-fluid">
-    <!-- NOTE: make nav bar full width -->
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" aria-expanded="false" data-toggle="collapse"
-        data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-      <!--<a class="navbar-brand" href="#">Adaptable PM</a>-->
-      <a class="navbar-brand nav-link" href="#">Adaptable PM<span class="sr-only">(current)</span></a>
-      
-    </div>
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> 
+        <span class="sr-only">Toggle navigation</span> 
+        <span class="icon-bar"></span> 
+        <span class="icon-bar"></span> 
+        <span class="icon-bar"></span> 
+        </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav navbar-left">
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
 
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Residential<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="http://localhost:5500/#!/mainpage/#">Residence_Vacation</a></td>
-              <li><a href="http://localhost:5500/#!/mainpage/">Residence_03</a></li>
-              <li><a href="http://localhost:5500/#!/mainpage/">Residence_04</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="http://localhost:5500/#!/mainpage/">Residence_Main</a></li>
-          </ul>
-          </li>
-          <!--<li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Vehicles<span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="www.google.com">Auto number01</a></li>
-              <li><a href="#">Auto number02</a></li>
-              <li><a href="#">Auto number03</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="#">Motorcycle</a></li>
-            </ul>
-          </li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Professional<span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="www.google.com">Professional_01</a></li>
-              <li><a href="#">Professional_Rental_Residential</a></li>
-              <li><a href="#">Professional_Rental_Commercial</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="#">Professional_Office</a></li>
-            </ul>
-          </li>
-      </ul>-->
+        <li class="active">
+          <a href="#">Adaptable PM<span class="sr-only">(current)</span></a></li>
 
-      <ul class="nav navbar-nav navbar-right">
+            <!--User Details  -->
+    <ul class="nav navbar-nav navbar-left">
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">User Name<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="www.google.com">Profile</a></li>
-            <li><a href="#">Switch User</a></li>
-            <li><a href="#">Add a User</a></li>
+          <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">User Details<span class="caret"></span></a>
+          <ul class="dropdown-menu dropdown-menu-right" role="menu">
+            <li><a href="http://localhost:5500/#!/mainpage/">Settings</a></li>
+            <li><a href="http://localhost:5500/#!/mainpage/">My Profile</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">Settings</a></li>
+            <li><a href="http://localhost:5500/#!/mainpage/">Switch User</a></li>
+            <li><a href="http://localhost:5500/#!/mainpage/">Add a User</a></li>
           </ul>
         </li>
       </ul>
-    </div>
-    <!-- /.navbar-collapse -->
-  </div>
-  <!-- /.container-fluid -->
+        
+        <!--Residences-->
+        <li class="dropdown">
+          <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Residences<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="http://localhost:5500/#!/mainpage/">My House</a></li>
+            <li class="divider"></li>
+            <li><a href="http://localhost:5500/#!/mainpage/">Residence_Vacation</a></li>
+            <li><a href="http://localhost:5500/#!/mainpage/">Residence_03</a></li>
+            <li><a href="http://localhost:5500/#!/mainpage/">Residence_04</a></li>
+              <li role="separator" class="divider"></li>
+          </ul>
+
+          <!--Vehicles-->
+        <li class="dropdown">
+          <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Vehicles<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="http://localhost:5500/#!/mainpage/">My Car</a></li>
+            <li><a href="http://localhost:5500/#!/mainpage/">Partners Car</a></li>
+            <li><a href="http://localhost:5500/#!/mainpage/">Kids Car</a></li>
+            <li class="divider"></li>
+            <li><a href="http://localhost:5500/#!/mainpage/">Motorcycle</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="http://localhost:5500/#!/mainpage/">Boat</a></li>
+            <li><a href="http://localhost:5500/#!/mainpage/">Airplane</a></li>
+          </ul>
+        </li>
+
+     <!--Professional / Investments-->
+        <li class="dropdown">
+          <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Professional / Investments<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="http://localhost:5500/#!/mainpage/">My Office</a></li>
+            <li class="divider"></li>
+            <li><a href="http://localhost:5500/#!/mainpage/">Business</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="http://localhost:5500/#!/mainpage/">Rental_Residential</a></li>
+            <li><a href="http://localhost:5500/#!/mainpage/">Rental_Commercial</a></li>
+          </ul>
+        </li>
+
+   
+
+
+
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div> <!-- /.container-fluid -->
 </nav>
-<!--<div class="container">-->
+
+
 
 
 
@@ -86,5 +98,5 @@
       <div ng-include="'/views/business.html'"></div>
       <div ng-include="'/views/usernotes.html'"></div>
     </div>
-  <!--</div>-->
-</div>
+    <!--</div>-->
+  </div>
