@@ -21,14 +21,27 @@ getBusiness();
 
 // NOTE: Delete Business
   function deleteBusiness(businessid) {
-    console.log('deleteBusiness = ', deleteBusiness);
+swal({
+  title: "Are you sure?",
+  text: "You will not be able to recover this business contact!",
+  type: "warning",
+  showCancelButton: true,
+  confirmButtonColor: "#DD6B55",
+  confirmButtonText: "Yes, delete it!",
+  closeOnConfirm: false
+},
+function(){
+
+
     $http({
       method: 'DELETE',
       url: '/business/delete' + businessid // NOTE: changing path resulted with this error: DELETE http://localhost:5500/mainPage/deleteMustMatc26 404 (Not Found)
     }).then(function(response) {
       getBusiness();
     });
-    console.log('delete from business.factory.js'); // NOTE: 02: logging ok!
+    
+  swal("Deleted!", "Your file has been deleted.", "success");
+});
   } // NOTE: for: function deleteBusiness
 
   // NOTE: Add new Business

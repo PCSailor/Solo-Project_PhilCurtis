@@ -17,13 +17,26 @@ getUsernotes();
 
 // NOTE: Delete System Usernotes
   function deleteUsernotes(usernotesid) {
-    $http({
+swal({
+  title: "Are you sure?",
+  text: "You will not be able to recover this user note!",
+  type: "warning",
+  showCancelButton: true,
+  confirmButtonColor: "#DD6B55",
+  confirmButtonText: "Yes, delete it!",
+  closeOnConfirm: false
+},
+function(){
+     $http({
       method: 'DELETE',
       url: '/usernotes/delete' + usernotesid
     }).then(function(response) {
       getUsernotes();
     });
-  }
+  swal("Deleted!", "Your file has been deleted.", "success");
+});
+ }
+
 
    // NOTE: Add new Usernotes
   function addUsernotes(addUsernotes) {

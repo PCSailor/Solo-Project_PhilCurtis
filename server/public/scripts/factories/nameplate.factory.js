@@ -25,14 +25,24 @@ getNameplate();
 
  // NOTE: Delete Nameplate
   function deleteNameplate(nameplateid) {
-    console.log('deleteNameplate = ', deleteNameplate);
+    swal({
+  title: "Are you sure?",
+  text: "You will not be able to recover this nameplate data!",
+  type: "warning",
+  showCancelButton: true,
+  confirmButtonColor: "#DD6B55",
+  confirmButtonText: "Yes, delete it!",
+  closeOnConfirm: false
+},
+function(){
     $http({
       method: 'DELETE',
       url: '/nameplate/delete' + nameplateid // NOTE: changing path resulted with this error: DELETE http://localhost:5500/mainPage/deleteMustMatc26 404 (Not Found)
     }).then(function(response) {
       getNameplate();
     });
-    console.log('delete from nameplate.factory.js'); // NOTE: 02: logging ok!
+  swal("Deleted!", "Your file has been deleted.", "success");
+});
   } // NOTE: for: function deleteNameplate
   
   // NOTE: Add new Nameplate

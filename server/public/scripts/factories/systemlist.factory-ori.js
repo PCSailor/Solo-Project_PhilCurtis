@@ -17,27 +17,14 @@ $http({
 
 // Delete System List
   function deleteSystemList(systemlistid) {
-swal({
-  title: "Are you sure?",
-  text: "You will not be able to recover this system!",
-  type: "warning",
-  showCancelButton: true,
-  confirmButtonColor: "#DD6B55",
-  confirmButtonText: "Yes, delete it!",
-  closeOnConfirm: false
-},
-function(){
- $http({
+    $http({
       method: 'DELETE',
       url: '/systemlist/delete' + systemlistid // NOTE: changing path resulted with this error: DELETE http://localhost:5500/mainpage/deleteMustMatc26 404 (Not Found)
     }).then(function(response) {
       getSystemList();
     });
-  swal("Deleted!", "Your file has been deleted.", "success");
-});
- }
-
-
+    console.log('systemlist.factory.js delete ', systemlistid); // NOTE: 02: logging ok!
+  }
 
 //    // Add new SystemList
 //   function addSystemList(addSystemList) {
