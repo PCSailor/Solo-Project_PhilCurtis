@@ -24,7 +24,7 @@ app.use('/systemhistory/', systemHistoryRoute);
 app.use('/business/', businessRoute);
 app.use('/usernotes/', userNotesRoute);
 app.use('/systemlist/', systemListRoute);
-app.use('./clientroute/', clientRouteRoute);
+// app.use('./clientroute/', clientRouteRoute);
 
 // NOTE: PacMan = app.use drops to a '/' within routes.js AND app.post still uses /mainPage
 

@@ -19,11 +19,10 @@ getUsernotes();
   function deleteUsernotes(usernotesid) {
     $http({
       method: 'DELETE',
-      url: '/usernotes/delete' + usernotesid // NOTE: changing path resulted with this error: DELETE http://localhost:5500/mainpage/deleteMustMatc26 404 (Not Found)
+      url: '/usernotes/delete' + usernotesid
     }).then(function(response) {
       getUsernotes();
     });
-    console.log('usernotes.factory.js delete ', usernotesid); // NOTE: 02: logging ok!
   }
 
    // NOTE: Add new Usernotes
